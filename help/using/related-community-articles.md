@@ -13,7 +13,7 @@ topic-tags: Einführung
 discoiquuid: c0025940-2f68-4c45-a3da-73fb443e31cb
 mwpw-migration-script-version: 2017-10-12T21 46 58.665-0400
 translation-type: tm+mt
-source-git-commit: 796c55d3d85e6b5a3efaa5c04a25be1b0b4e54dd
+source-git-commit: 271c355ae56e16e309853b02b8ef09f2ff971a2e
 
 ---
 
@@ -32,7 +32,7 @@ Hier finden Sie eine Auflistung der verfügbaren Inhalte:
 1. [Erstellen einer Komponente für die HTML-Vorlagensprache, die die AEM querybuilder-API verwendet](https://helpx.adobe.com/experience-manager/using/htl_querybuilder.html)
 1. [Erstellen einer HTML-Vorlagensprache und eines Sling Model DOM-Parsers](https://helpx.adobe.com/experience-manager/using/domparser.html)
 1. [Erstellen einer AEM HTML-Vorlagensprachkomponente, die Daten mit AJAX bereitstellt](https://helpx.adobe.com/experience-manager/using/htl_ajax.html)
-1. [Erstellen einer AEM-HTL-Komponente, die javascrip verwendet](https://helpx.adobe.com/experience-manager/using/htl_js.html)
+1. [Erstellen einer AEM-HTL-Komponente, die javascript verwendet](https://helpx.adobe.com/experience-manager/using/htl_js.html)
 
 „Fragen Sie die Experten“-Sessions:
 
