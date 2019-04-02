@@ -14,7 +14,7 @@ index: y
 internal: n
 snippet: y
 translation-type: tm+mt
-source-git-commit: 796c55d3d85e6b5a3efaa5c04a25be1b0b4e54dd
+source-git-commit: 271c355ae56e16e309853b02b8ef09f2ff971a2e
 
 ---
 
@@ -26,9 +26,9 @@ Die folgenden Entwicklerwerkzeuge sind für HTL verfügbar:
 * [HTL Read Eval Print Loop](https://github.com/Adobe-Marketing-Cloud/aem-htl-repl)\
    Eine Live-Ausführungsumgebung für das Experimentieren mit der Sprache, die sich großartig zum Lernen eignet.
 
-* [AEM Brackets-Erweiterung](https://helpx.adobe.com/experience-manager/6-3/sites/developing/using/aem-brackets.html)\
+* [AEM Brackets-Erweiterung](https://helpx.adobe.com/experience-manager/6-4/sites/developing/using/aem-brackets.html)\
    Ein einfaches Tool für Front-End-Entwickler für die Arbeit an AEM-Komponenten.
 
-* [AEM Eclipse-Erweiterung](https://helpx.adobe.com/experience-manager/6-3/sites/developing/using/aem-eclipse.html)\
+* [AEM Eclipse-Erweiterung](https://helpx.adobe.com/experience-manager/6-4/sites/developing/using/aem-eclipse.html)\
    Ein Tool für Back-End-Entwickler zum Erstellen und einfachen Bearbeiten von AEM-Projekten.
 
