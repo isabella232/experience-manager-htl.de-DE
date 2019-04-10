@@ -12,8 +12,8 @@ topic-tags: html-template-language
 content-type: Referenz
 discoiquuid: 9ba37ca0-f318-48b0-a791-a944a72502ed
 mwpw-migration-script-version: 2017-10-12T21 46 58.665-0400
-translation-type: tm+mt
-source-git-commit: 271c355ae56e16e309853b02b8ef09f2ff971a2e
+translation-type: ht
+source-git-commit: 796c55d3d85e6b5a3efaa5c04a25be1b0b4e54dd
 
 ---
 
@@ -325,7 +325,7 @@ ${'Page {0} of {1}' @ format=[current, total]}
 
 ### Internationalisierung  {#internationalization}
 
-Übersetzt die Zeichenfolge mithilfe des aktuellen [Wörterbuchs](https://helpx.adobe.com/experience-manager/6-3/sites/developing/using/i18n-translator) in die Sprache der aktuellen *Quelle* (siehe unten). Wenn keine Übersetzung gefunden wird, wird die ursprüngliche Zeichenfolge verwendet.
+Übersetzt die Zeichenfolge in die Sprache der aktuellen *Quelle* (siehe unten) mit dem aktuellen [Wörterbuch](https://helpx.adobe.com/experience-manager/6-3/sites/developing/using/i18n-translator). Wenn keine Übersetzung gefunden wird, wird die ursprüngliche Zeichenfolge verwendet.
 
 ```xml
 ${'Page' @ i18n}
@@ -406,16 +406,16 @@ Maskierung und XSS-Schutz können auch deaktiviert werden:
 | Kontext | Wann ist sie einzusetzen? | Funktion |
 |--- |--- |--- |
 | text | Standard für inhaltsimmanente Elemente | Kodiert alle HTML-Sonderzeichen. |
-| html | Zur sicheren Markup-Ausgabe | Filtert HTML zum Erfüllen der AntiSamy-Richtlinienregeln,wodurch entfernt wird, was nicht mit den Regeln übereinstimmt. |
+| html | Zur sicheren Markup-Ausgabe | Filtert HTML zum Erfüllen der AntiSamy-Richtlinienregeln, wodurch entfernt wird, was nicht mit den Regeln übereinstimmt. |
 | attribute | Standard für Attributwerte | Kodiert alle HTML-Sonderzeichen. |
 | uri | Zum Anzeigen von Links und Pfaden Standard für die Attributwerte href und src | Validiert den URI für die Schreibung als ein href- oder src-Attributwert, gibt bei fehlerhafter Validierung keine Werte aus. |
-| number | Zum Anzeigen von Zahlen | Validiert den URI dahingehend, ob er eine Ganzzahl enthält,gibt bei fehlerhafter Validierung 0 aus. |
-| attributeName | Standard für data-sly-attribute beim Festlegen von Attributnamen | Validiert den Attributnamen,gibt bei fehlerhafter Validierung keine Werte aus. |
-| elementName | Standard für data-sly-element | Validiert den Elementnamen,gibt bei fehlerhafter Validierung nichts aus. |
-| scriptToken | Für JS-Bezeichner, literale Zahlen oder literale Zeichenfolgen | Validiert das JavaScript-Token,gibt bei fehlerhafter Validierung keine Werte aus. |
+| number | Zum Anzeigen von Zahlen | Validiert den URI dahingehend, ob er eine Ganzzahl enthält, gibt bei fehlerhafter Validierung 0 aus. |
+| attributeName | Standard für data-sly-attribute beim Festlegen von Attributnamen | Validiert den Attributnamen, gibt bei fehlerhafter Validierung keine Werte aus. |
+| elementName | Standard für data-sly-element | Validiert den Elementnamen, gibt bei fehlerhafter Validierung nichts aus. |
+| scriptToken | Für JS-Bezeichner, literale Zahlen oder literale Zeichenfolgen | Validiert das JavaScript-Token, gibt bei fehlerhafter Validierung keine Werte aus. |
 | scriptString | In JS-Zeichenfolgen | Kodiert Zeichen, die aus der Zeichenfolge ausbrechen würden. |
 | scriptComment | In JS-Kommentaren | Validiert den JavaScript-Kommentar, gibt bei fehlerhafter Validierung keine Werte aus. |
-| styleToken | Für CSS-Bezeichner, Zahlen, Dimensionen, Zeichenfolgen, hexadezimale Farbwerte oder Funktionen. | Validiert das CSS-Token,gibt bei fehlerhafter Validierung keine Werte aus. |
+| styleToken | Für CSS-Bezeichner, Zahlen, Dimensionen, Zeichenfolgen, hexadezimale Farbwerte oder Funktionen. | Validiert das CSS-Token, gibt bei fehlerhafter Validierung keine Werte aus. |
 | styleString | In CSS-Zeichenfolgen | Kodiert Zeichen, die aus der Zeichenfolge ausbrechen würden. |
 | styleComment | In CSS-Kommentaren | Validiert den CSS-Kommentar, gibt bei fehlerhafter Validierung keine Werte aus. |
 | unsafe | Trifft nur zu, wenn keiner der oben genannten Punkte den Auftrag vornimmt | Deaktiviert die Maskierung und den XSS-Schutz vollständig. |
