@@ -11,8 +11,8 @@ topic-tags: html-template-language
 content-type: Referenz
 discoiquuid: 69412ff1-b926-4125-9cb7-1c2818c7094d
 mwpw-migration-script-version: 2017-10-12T21 46 58.665-0400
-translation-type: tm+mt
-source-git-commit: 271c355ae56e16e309853b02b8ef09f2ff971a2e
+translation-type: ht
+source-git-commit: 796c55d3d85e6b5a3efaa5c04a25be1b0b4e54dd
 
 ---
 
@@ -21,8 +21,8 @@ source-git-commit: 271c355ae56e16e309853b02b8ef09f2ff971a2e
 
 Nachfolgend sind die HTL-Standards aufgeführt:
 
-* [HTL-Spezifikation](https://github.com/Adobe-Marketing-Cloud/sightly-spec)\
+* [Die HTL-Spezifikation](https://github.com/Adobe-Marketing-Cloud/sightly-spec)\
    Für Sprachanwälte, die formale Syntax und Feature-Beschreibung.
 
-* [HTL-TCK](https://github.com/Adobe-Marketing-Cloud/sightly-tck)\
+* [Das HTL-TCK](https://github.com/Adobe-Marketing-Cloud/sightly-tck)\
    Eine Suite an Tests zum Zertifizieren der Kompatibilität der Sprache.
