@@ -12,8 +12,8 @@ topic-tags: html-template-language
 content-type: Referenz
 discoiquuid: fe071a7e-0dae-45c1-9f86-80c558483f87
 mwpw-migration-script-version: 2017-10-12T21 46 58.665-0400
-translation-type: tm+mt
-source-git-commit: 271c355ae56e16e309853b02b8ef09f2ff971a2e
+translation-type: ht
+source-git-commit: 796c55d3d85e6b5a3efaa5c04a25be1b0b4e54dd
 
 ---
 
@@ -28,9 +28,9 @@ Diese Objekte bieten praktischen Zugriff auf häufig verwendete Informationen. A
 
 | Variablenname | Beschreibung |
 |--- |--- |
-| properties | Liste der Eigenschaften der aktuellen Resource. Unterstützt von [org. apache. sling. api. resource. valuemap](https://helpx.adobe.com/experience-manager/6-3/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/resource/ValueMap.html) |
-| pageProperties | Liste der Seiteneigenschaften der aktuellen Page. Unterstützt von [org. apache. sling. api. resource. valuemap](https://helpx.adobe.com/experience-manager/6-3/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/resource/ValueMap.hmtl) |
-| inheritedPageProperties | Liste der vererbten Seiteneigenschaften der aktuellen Page. Unterstützt von [org. apache. sling. api. resource. valuemap](https://helpx.adobe.com/experience-manager/6-3/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/resource/ValueMap.html) |
+| properties | Liste der Eigenschaften der aktuellen Resource. Unterstützt von [org.apache.sling.api.resource.ValueMap](https://helpx.adobe.com/experience-manager/6-3/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/resource/ValueMap.html) |
+| pageProperties | Liste der Seiteneigenschaften der aktuellen Page. Unterstützt von [org.apache.sling.api.resource.ValueMap](https://helpx.adobe.com/experience-manager/6-3/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/resource/ValueMap.hmtl) |
+| inheritedPageProperties | Liste der vererbten Seiteneigenschaften der aktuellen Page. Unterstützt von [org.apache.sling.api.resource.ValueMap](https://helpx.adobe.com/experience-manager/6-3/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/resource/ValueMap.html) |
 
 
 ## Java-unterstützte Objekte {#java-backed-objects}
