@@ -12,7 +12,7 @@ content-type: Referenz
 topic-tags: Einführung
 discoiquuid: c0025940-2f68-4c45-a3da-73fb443e31cb
 mwpw-migration-script-version: 2017-10-12T21 46 58.665-0400
-translation-type: tm+mt
+translation-type: ht
 source-git-commit: 271c355ae56e16e309853b02b8ef09f2ff971a2e
 
 ---
@@ -24,18 +24,18 @@ Die AEM-Community hat eine Reihe von Artikeln, Videos und Webinaren zur Verwendu
 
 Hier finden Sie eine Auflistung der verfügbaren Inhalte:
 
-1. [Erstellen einer AEM-HTML-Vorlagensprache, die die Klasse wcmusepojo verwendet](https://helpx.adobe.com/experience-manager/using/first_htl_WCMUsePojo.html)
+1. [Erstellen einer AEM-HTML-Vorlagensprachkomponente, die die WCMUsePojo-Klasse](https://helpx.adobe.com/experience-manager/using/first_htl_WCMUsePojo.html) verwendet
 
-1. [Erstellen einer AEM-Überschrift-Komponente](https://helpx.adobe.com/experience-manager/using/aem_headline.html)
-1. [Erstellen einer AEM-Filmkomponente](https://helpx.adobe.com/experience-manager/using/movie.html)
-1. [Entwickeln von HTML-Vorlagenkomponenten, die nach AEM Content Tags suchen](https://helpx.adobe.com/experience-manager/using/tagmanager-api-htl.html)
-1. [Erstellen einer Komponente für die HTML-Vorlagensprache, die die AEM querybuilder-API verwendet](https://helpx.adobe.com/experience-manager/using/htl_querybuilder.html)
-1. [Erstellen einer HTML-Vorlagensprache und eines Sling Model DOM-Parsers](https://helpx.adobe.com/experience-manager/using/domparser.html)
-1. [Erstellen einer AEM HTML-Vorlagensprachkomponente, die Daten mit AJAX bereitstellt](https://helpx.adobe.com/experience-manager/using/htl_ajax.html)
-1. [Erstellen einer AEM-HTL-Komponente, die javascript verwendet](https://helpx.adobe.com/experience-manager/using/htl_js.html)
+1. [Erstellen einer AEM-Überschriftskomponente](https://helpx.adobe.com/experience-manager/using/aem_headline.html)
+1. [Erstellen einer AEM-Filmkomponente]( https://helpx.adobe.com/experience-manager/using/movie.html )
+1. [Entwickeln von HTML-Vorlagensprachkomponenten, die nach AEM Inhalts-Tags](https://helpx.adobe.com/experience-manager/using/tagmanager-api-htl.html) suchen
+1. [Erstellen einer HTML-Vorlagensprachkomponente, die die AEM QueryBuilder API](https://helpx.adobe.com/experience-manager/using/htl_querybuilder.html) verwendet
+1. [Erstellen einer HTML-Vorlagensprach- und einer Sling-Model-DOM-Parserkomponente](https://helpx.adobe.com/experience-manager/using/domparser.html)
+1. [Erstellen einer AEM HTML-Vorlagensprachkomponente, die Daten mit AJAX](https://helpx.adobe.com/experience-manager/using/htl_ajax.html) veröffentlicht
+1. [Erstellen einer AEM-HTL-Komponente, die JavaScript](https://helpx.adobe.com/de/experience-manager/using/htl_js.html) verwendet
 
-„Fragen Sie die Experten“-Sessions:
+Experten-Sessions:
 
-* [Januar 2015 HTL-Sitzung (Einführung in HTL)](http://scottsdigitalcommunity.blogspot.ca/2015/01/upcoming-sessions-of-ask-aem-community.html)
-* [HTL-Sitzung März 2016 (erweiterte Komponentenentwicklung)](http://scottsdigitalcommunity.blogspot.ca/2016/03/ask-aem-community-experts-deep-dive.html)
+* [HTL-Session aus dem Januar 2015 (Einführung in HTL)](http://scottsdigitalcommunity.blogspot.ca/2015/01/upcoming-sessions-of-ask-aem-community.html)
+* [HTL-Session aus dem März 2016 (Erweiterte Komponentenentwicklung)](http://scottsdigitalcommunity.blogspot.ca/2016/03/ask-aem-community-experts-deep-dive.html)
 
