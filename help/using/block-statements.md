@@ -12,8 +12,8 @@ topic-tags: html-template-language
 content-type: Referenz
 discoiquuid: 58aa6ea8-1d45-4f6f-a77e-4819f593a19d
 mwpw-migration-script-version: 2017-10-12T21 46 58.665-0400
-translation-type: tm+mt
-source-git-commit: 271c355ae56e16e309853b02b8ef09f2ff971a2e
+translation-type: ht
+source-git-commit: 7a94b0b010461b29d2b74c9c717e3b218d0ca5a8
 
 ---
 
@@ -390,7 +390,7 @@ cssClassName='className'}"></article>
 
 >[!NOTE]
 >
->AEM bietet klare und einfache Logik zur Steuerung der Dekorationstags, die Elemente aufnehmen. Weitere Informationen finden Sie unter [Design-Tag](https://helpx.adobe.com/experience-manager/6-4/sites/developing/using/decoration-tag.html) in der Dokumentation zur Entwicklung von Komponenten.
+>AEM bietet klare und einfache Logik, die die decoration-Tags steuert, die enthaltene Elemente umschließen. Weitere Informationen finden Sie unter [Decoration-Tag](https://helpx.adobe.com/de/experience-manager/6-4/sites/developing/using/decoration-tag.html) in der Dokumentation zu Entwicklungskomponenten.
 
 ## include {#include}
 
@@ -518,7 +518,7 @@ Die folgenden Beispiele zeigen, dass das Format zuerst festgelegt wird und dann 
 
 >[!NOTE]
 >
->Ausführliche Informationen zu dem Format, das Sie verwenden können, finden Sie [unter HTL-Spezifikation](https://github.com/Adobe-Marketing-Cloud/htl-spec/blob/master/SPECIFICATION.md).
+>Ausführliche Informationen zu dem Format, das Sie verwenden können, finden Sie unter [HTL-Spezifikation](https://github.com/Adobe-Marketing-Cloud/htl-spec/blob/master/SPECIFICATION.md).
 
 ### data-sly-use mit Ressourcen {#data-sly-use-with-resources}
 
@@ -573,7 +573,7 @@ public class ProductSettings {
 
 ### Fehlerbehebung für @extension {#fix-for-extension}
 
-@extension funktioniert in allen Szenarios in AEM 6.3, bevor Sie ein Ergebnis wie *www.adobe.com.html* haben können. Außerdem wird überprüft, ob die Erweiterung hinzugefügt oder nicht hinzugefügt werden soll.
+Das Attribut @extension funktioniert in allen Szenarios in AEM 6.3, bevor Sie ein Ergebnis wie *www.adobe.com.html* haben können. Außerdem wird überprüft, ob die Erweiterung hinzugefügt oder nicht hinzugefügt werden soll.
 
 ```xml
 ${ link @ extension = 'html' }
