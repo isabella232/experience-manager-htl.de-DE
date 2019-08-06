@@ -1,13 +1,8 @@
 ---
-title: Überblick
-seo-title: Überblick
-description: Die durch AEM unterstützte HTL bietet ein hoch produktives Webframework
-  auf Konzernebene, das die Sicherheit erhöht und es HTML-Entwicklern ohne Java-Kenntnissen
-  ermöglicht, besser an AEM-Projekten teilhaben zu können.
-seo-description: Die zuvor als Sightly bekannte HTML-Vorlagensprache – HTL –, die
-  durch Adobe Experience Manager unterstützt wird, bietet ein hoch produktives Webframework
-  auf Konzernebene, das die Sicherheit erhöht und es HTML-Entwicklern ohne Java-Kenntnissen
-  ermöglicht, besser an AEM-Projekten teilhaben zu können.
+title: AEM-HTL-Übersicht
+seo-title: Übersicht über die technische Dokumentation zu AEM HTL.
+description: Die durch AEM unterstützte HTL bietet ein hoch produktives Webframework auf Konzernebene, das die Sicherheit erhöht und es HTML-Entwicklern ohne Java-Kenntnissen ermöglicht, besser an AEM-Projekten teilhaben zu können.
+seo-description: In diesem Dokument werden die Prinzipien und den Zweck der HTML-Vorlagensprache - HTL - unterstützt von Adobe Experience Manager. HTL ist ein äußerst produktives Weblevel-Webframework, das die Sicherheit erhöht und HTML-Entwickler ohne Java-Kenntnisse ermöglicht, sich an AEM-Projekten zu beteiligen.
 uuid: 8f486325-0a1b-4186-a998-96fc0034c44a
 contentOwner: Benutzer
 products: SG_EXPERIENCEMANAGER/HTL
@@ -15,8 +10,8 @@ topic-tags: Einführung
 content-type: Referenz
 discoiquuid: 8f779e08-94c7-43bc-a6e5-d81a9f818c5c
 mwpw-migration-script-version: 2017-10-12T21 46 58.665-0400
-translation-type: ht
-source-git-commit: 796c55d3d85e6b5a3efaa5c04a25be1b0b4e54dd
+translation-type: tm+mt
+source-git-commit: 1d4565a4cffa6e5d42d6a5242f7ce62203dc7c63
 
 ---
 
