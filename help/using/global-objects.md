@@ -1,10 +1,8 @@
 ---
 title: Globale HTL-Objekte
 seo-title: Globale HTL-Objekte
-description: Ohne etwas angeben zu müssen, bietet HTL Zugriff auf alle Objekte, die
-  nach dem Einschließen von global.jsp in JSP verfügbar waren.
-seo-description: Ohne etwas angeben zu müssen, bietet HTL Zugriff auf alle Objekte,
-  die nach dem Einschließen von global.jsp in JSP verfügbar waren.
+description: Ohne etwas angeben zu müssen, bietet HTL Zugriff auf alle Objekte, die nach dem Einschließen von global.jsp in JSP verfügbar waren.
+seo-description: 'Ohne etwas angeben zu müssen, bietet HTL Zugriff auf alle Objekte, die nach dem Einschließen von global.jsp in JSP verfügbar waren. '
 uuid: e03affbb-a683-4323-8224-53d8ef59caef
 contentOwner: Benutzer
 products: SG_EXPERIENCEMANAGER/HTL
@@ -12,8 +10,8 @@ topic-tags: html-template-language
 content-type: Referenz
 discoiquuid: fe071a7e-0dae-45c1-9f86-80c558483f87
 mwpw-migration-script-version: 2017-10-12T21 46 58.665-0400
-translation-type: ht
-source-git-commit: 796c55d3d85e6b5a3efaa5c04a25be1b0b4e54dd
+translation-type: tm+mt
+source-git-commit: c3beb0d02f18483b1b000c1bf70cd59a3dcc2035
 
 ---
 
@@ -28,9 +26,9 @@ Diese Objekte bieten praktischen Zugriff auf häufig verwendete Informationen. A
 
 | Variablenname | Beschreibung |
 |--- |--- |
-| properties | Liste der Eigenschaften der aktuellen Resource. Unterstützt von [org.apache.sling.api.resource.ValueMap](https://helpx.adobe.com/experience-manager/6-3/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/resource/ValueMap.html) |
-| pageProperties | Liste der Seiteneigenschaften der aktuellen Page. Unterstützt von [org.apache.sling.api.resource.ValueMap](https://helpx.adobe.com/experience-manager/6-3/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/resource/ValueMap.hmtl) |
-| inheritedPageProperties | Liste der vererbten Seiteneigenschaften der aktuellen Page. Unterstützt von [org.apache.sling.api.resource.ValueMap](https://helpx.adobe.com/experience-manager/6-3/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/resource/ValueMap.html) |
+| properties | Liste der Eigenschaften der aktuellen Resource. Backed by [org.apache.sling.api.resource.ValueMap](https://helpx.adobe.com/experience-manager/6-3/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/resource/ValueMap.html) |
+| pageProperties | Liste der Seiteneigenschaften der aktuellen Page. Backed by [org.apache.sling.api.resource.ValueMap](https://helpx.adobe.com/experience-manager/6-3/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/resource/ValueMap.hmtl) |
+| inheritedPageProperties | Liste der vererbten Seiteneigenschaften der aktuellen Page. Backed by [org.apache.sling.api.resource.ValueMap](https://helpx.adobe.com/experience-manager/6-3/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/resource/ValueMap.html) |
 
 
 ## Java-unterstützte Objekte {#java-backed-objects}
