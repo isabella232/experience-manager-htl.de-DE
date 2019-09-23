@@ -1,10 +1,8 @@
 ---
 title: HTL-Ausdruckssprache
 seo-title: HTL-Ausdruckssprache
-description: Die HTML-Vorlagensprache verwendet eine Ausdruckssprache für den Zugriff
-  auf den Datenstrukturen, die die dynamischen Elemente der HTML-Ausgabe bereitstellen.
-seo-description: Die HTML-Vorlagensprache verwendet eine Ausdruckssprache für den
-  Zugriff auf den Datenstrukturen, die die dynamischen Elemente der HTML-Ausgabe bereitstellen.
+description: Die HTML-Vorlagensprache verwendet eine Ausdruckssprache für den Zugriff auf den Datenstrukturen, die die dynamischen Elemente der HTML-Ausgabe bereitstellen.
+seo-description: 'Die HTML-Vorlagensprache verwendet eine Ausdruckssprache für den Zugriff auf den Datenstrukturen, die die dynamischen Elemente der HTML-Ausgabe bereitstellen. '
 uuid: 38b4a259-03b5-4847-91c6-e20377600070
 contentOwner: Benutzer
 products: SG_EXPERIENCEMANAGER/HTL
@@ -12,8 +10,8 @@ topic-tags: html-template-language
 content-type: Referenz
 discoiquuid: 9ba37ca0-f318-48b0-a791-a944a72502ed
 mwpw-migration-script-version: 2017-10-12T21 46 58.665-0400
-translation-type: ht
-source-git-commit: 796c55d3d85e6b5a3efaa5c04a25be1b0b4e54dd
+translation-type: tm+mt
+source-git-commit: 84ed515309831fe413abf317d8739f2bba79afdb
 
 ---
 
@@ -54,11 +52,11 @@ Die einfachere Punkt-Notation sollte in den meisten Fällen bevorzugt werden. De
 
 Bei den Eigenschaften, auf die zugegriffen wurde, kann es sich um Funktionen handeln. Das Weitergeben von Argumenten wird jedoch nicht unterstützt. Daher ist nur der Zugriff auf Funktionen möglich, die keine Argumente erwarten. Dazu zählen beispielsweise Getter. Hierbei handelt es sich um eine erwünschte Einschränkung. Sie soll die Menge der in Ausdrücken eingebetteten Logik reduzieren. Bei Bedarf kann die Anweisung [`data-sly-use`](block-statements.md#use) verwendet werden, um Parameter an die Logik weiterzugeben.
 
-Im obigen Beispiel wird ebenfalls gezeigt, dass der Zugriff auf die Java-Getter-Funktionen, beispielsweise `getTitle()`**, auch möglich ist, ohne `get`** Elemente voranzustellen, und durch Kleinschreibung des folgenden Zeichens.
+Im obigen Beispiel wird ebenfalls gezeigt, dass der Zugriff auf die Java-Getter-Funktionen, beispielsweise `getTitle()`**, auch möglich ist, ohne`get`** Elemente voranzustellen, und durch Kleinschreibung des folgenden Zeichens.
 
 ### Gültige Bezeichnerzeichen {#valid-indentifier-characters}
 
-Die Variablennamen, sog. Bezeichner, sind mit bestimmten Regeln konform. Sie müssen mit einem Buchstaben (**`A`**-**`Z`** und **`a`**-**`z`**) oder einem Unterstrich (**`_`**) beginnen. Nachfolgende Zeichen können auch Ziffern (**`0`**-**`9`**) oder ein Doppelpunkt (**`:`**) sein. Unicode-Buchstaben wie **`å`** und **`ü` können in Bezeichnern nicht verwendet werden.**
+Die Variablennamen, sog. Bezeichner, sind mit bestimmten Regeln konform. Sie müssen mit einem Buchstaben (**`A`**-**`Z`** und **`a`**-**`z`**) oder einem Unterstrich (**`_`**) beginnen. Nachfolgende Zeichen können auch Ziffern (**`0`**-**`9`**) oder ein Doppelpunkt (**`:`**) sein. Unicode-Buchstaben wie **`å`** und **`ü`können in Bezeichnern nicht verwendet werden.**
 
 Wenn wir davon ausgehen, dass der Doppelpunkt (**:**) in AEM-Eigenschaftsnamen gängig ist, ist es praktisch, dass es sich hierbei um ein gültiges Bezeichnerzeichen handelt:
 
@@ -181,7 +179,7 @@ Arrays sind hilfreich, um eine Liste der Werte anhand der Vorlage bereitzustelle
 
 Diese Operatoren werden für gewöhnlich mit Booleschen Werten verwendet. Sie geben jedoch wie in JavaScript tatsächlich den Wert eines der angegebenen Operanden zurück. Bei der Verwendung mit nicht Booleschen Werten geben sie möglicherweise einen nicht Booleschen Wert zurück.
 
-Wenn ein Wert in **`true`** umgewandelt werden kann, ist der Wert sozusagen wahr. Wenn ein Wert in **`false`** umgewandelt werden kann, ist der Wert sozusagen falsch. Werte, die in **`false` umgewandelt werden können, sind: undefinierte Variablen, Null-Werte, die Zahl 0 und leere Zeichenfolgen.**
+Wenn ein Wert in **`true`** umgewandelt werden kann, ist der Wert sozusagen wahr. Wenn ein Wert in **`false`** umgewandelt werden kann, ist der Wert sozusagen falsch. Werte, die in **`false`umgewandelt werden können, sind: undefinierte Variablen, Null-Werte, die Zahl 0 und leere Zeichenfolgen.**
 
 #### Logisches NICHT {#logical-not}
 
@@ -325,7 +323,7 @@ ${'Page {0} of {1}' @ format=[current, total]}
 
 ### Internationalisierung  {#internationalization}
 
-Übersetzt die Zeichenfolge in die Sprache der aktuellen *Quelle* (siehe unten) mit dem aktuellen [Wörterbuch](https://helpx.adobe.com/experience-manager/6-3/sites/developing/using/i18n-translator). Wenn keine Übersetzung gefunden wird, wird die ursprüngliche Zeichenfolge verwendet.
+Übersetzt die Zeichenfolge mithilfe des aktuellen [Wörterbuchs](https://helpx.adobe.com/experience-manager/6-3/sites/developing/using/i18n-translator) in die Sprache der aktuellen *Quelle* (siehe unten). Wenn keine Übersetzung gefunden wird, wird die ursprüngliche Zeichenfolge verwendet.
 
 ```xml
 ${'Page' @ i18n}
@@ -367,7 +365,7 @@ ${['one', 'two'] @ join='; '}
 
 ### Anzeigekontext  {#display-context}
 
-Der Anzeigekontext eines HTL-Ausdrucks bezieht sich auf seine Position in der Struktur der HTML-Seite. Wenn der Ausdruck beispielsweise an einer Stelle angezeigt wird, wodurch ein Textknoten einmalig gerendert wird, befindet er sich in einem **`text`-Kontext. ** Wenn er im Wert eines Attributs gefunden wird, befindet er sich in einem **`attribute`-Kontext usw.**
+Der Anzeigekontext eines HTL-Ausdrucks bezieht sich auf seine Position in der Struktur der HTML-Seite. Wenn der Ausdruck beispielsweise an einer Stelle angezeigt wird, wodurch ein Textknoten einmalig gerendert wird, befindet er sich in einem **`text`-Kontext.** Wenn er im Wert eines Attributs gefunden wird, befindet er sich in einem **`attribute`-Kontext usw.**
 
 Außer in Kontexten vom Typ script (JS) und style (CSS) erkennt HTL automatisch den Kontext der Ausdrücke und maskiert sie entsprechend, um XSS-Sicherheitsprobleme zu verhindern. Im Fall von Skripts und CSS muss das gewünschte Kontextverhalten explizit festgelegt werden. Zusätzlich kann das Kontextverhalten zudem in jedem anderen Fall explizit festgelegt werden, in dem das automatische Verhalten überschrieben werden soll.
 
