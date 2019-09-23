@@ -21,4 +21,4 @@ The HTML Template Language Technology Compatibility Kit - HTL TCK - provides a s
 
 ## Weitere Informationen
 
-[Vollständige Informationen zu Adobe Experience Manager HTL TCK finden Sie hier](https://github.com/adobe/htl-tck)
+[Vollständige Informationen zu Adobe Experience Manager HTML TCK finden Sie hier](https://github.com/adobe/htl-tck)
