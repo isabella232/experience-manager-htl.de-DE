@@ -1,10 +1,8 @@
 ---
 title: HTL-Blockanweisungen
 seo-title: HTL-Blockanweisungen
-description: Bei HTML-Vorlagensprachen-Blockanweisungen (HTL) handelt es sich um direkt
-  zur vorhandenen HTML hinzugefügten data-Attributen.
-seo-description: Bei HTML-Vorlagensprachen-Blockanweisungen (HTL) handelt es sich
-  um direkt zur vorhandenen HTML hinzugefügten data-Attributen.
+description: Bei HTML-Vorlagensprachen-Blockanweisungen (HTL) handelt es sich um direkt zur vorhandenen HTML hinzugefügten data-Attributen.
+seo-description: 'Bei HTML-Vorlagensprachen-Blockanweisungen (HTL) handelt es sich um direkt zur vorhandenen HTML hinzugefügten data-Attributen. '
 uuid: 0624fb6e-6989-431b-aabc-1138325393f1
 contentOwner: Benutzer
 products: SG_EXPERIENCEMANAGER/HTL
@@ -12,8 +10,8 @@ topic-tags: html-template-language
 content-type: Referenz
 discoiquuid: 58aa6ea8-1d45-4f6f-a77e-4819f593a19d
 mwpw-migration-script-version: 2017-10-12T21 46 58.665-0400
-translation-type: ht
-source-git-commit: 7a94b0b010461b29d2b74c9c717e3b218d0ca5a8
+translation-type: tm+mt
+source-git-commit: afc29cbad83caeb549097da3fc33fd9147f1157a
 
 ---
 
@@ -24,7 +22,7 @@ Bei HTML-Vorlagensprachen-Blockanweisungen (HTL) handelt es sich um direkt zur v
 
 ## Sly-Element {#sly-element}
 
-Das **&lt;Sly&gt;-Element** wird nicht in der resultierenden HTML angezeigt und kann anstelle von data-sly-unwrap verwendet werden. Das &lt;Sly&gt;-Element soll genauer verdeutlichen, dass das Element nicht ausgegeben wird. Sie können weiterhin data-sly-unwrap verwenden, wenn Sie möchten.
+The **&lt;sly&gt; element** does not get displayed in the resulting HTML and can be used instead of the data-sly-unwrap. Das Ziel des &lt;sly&gt;-Elements ist es, das Element deutlicher darzustellen, dass es nicht ausgegeben wird. Sie können weiterhin data-sly-unwrap verwenden, wenn Sie möchten.
 
 ```xml
 <sly data-sly-test.varone="${properties.yourProp}"/>
@@ -128,7 +126,7 @@ entspricht
 <p data-sly-text="${properties.jcr:description}">Lorem ipsum</p>
 ```
 
-Beide zeigen den Wert von **`jcr:description` als Absatztext an. ** Der Vorteil der zweiten Methode besteht darin, dass sie die unauffällige Anmerkung der HTML ermöglicht und gleichzeitig den statischen Platzhalterinhalt aus dem ursprünglichen Designer beibehält.
+Beide zeigen den Wert von **`jcr:description`als Absatztext an.** Der Vorteil der zweiten Methode besteht darin, dass sie die unauffällige Anmerkung der HTML ermöglicht und gleichzeitig den statischen Platzhalterinhalt aus dem ursprünglichen Designer beibehält.
 
 ## attribute  {#attribute}
 
@@ -390,7 +388,7 @@ cssClassName='className'}"></article>
 
 >[!NOTE]
 >
->AEM bietet klare und einfache Logik, die die decoration-Tags steuert, die enthaltene Elemente umschließen. Weitere Informationen finden Sie unter [Decoration-Tag](https://helpx.adobe.com/de/experience-manager/6-4/sites/developing/using/decoration-tag.html) in der Dokumentation zu Entwicklungskomponenten.
+>AEM bietet klare und einfache Logik, die die decoration-Tags steuert, die enthaltene Elemente umschließen. For details see [Decoration Tag](https://helpx.adobe.com/experience-manager/6-4/sites/developing/using/decoration-tag.html) in the developing components documentation.
 
 ## include {#include}
 
@@ -422,7 +420,7 @@ Sie können auch den WCM-Modus ändern:
 <section data-sly-include="${'template.html' @ wcmmode='disabled'}"></section>
 ```
 
-## template & call  {#template-call}
+## template &amp; call  {#template-call}
 
 `data-sly-template`: Definiert eine Vorlage. Das Hostelement und die zugehörigen Inhalte werden durch HTL nicht ausgegeben
 
@@ -518,7 +516,7 @@ Die folgenden Beispiele zeigen, dass das Format zuerst festgelegt wird und dann 
 
 >[!NOTE]
 >
->Ausführliche Informationen zu dem Format, das Sie verwenden können, finden Sie unter [HTL-Spezifikation](https://github.com/Adobe-Marketing-Cloud/htl-spec/blob/master/SPECIFICATION.md).
+>For complete details on the format you can use, refer to [HTL-specification](https://github.com/Adobe-Marketing-Cloud/htl-spec/blob/master/SPECIFICATION.md).
 
 ### data-sly-use mit Ressourcen {#data-sly-use-with-resources}
 
