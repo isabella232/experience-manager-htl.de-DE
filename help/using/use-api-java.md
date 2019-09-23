@@ -1,12 +1,8 @@
 ---
 title: HTL-Java-Anwendungs-API
 seo-title: HTL-Java-Anwendungs-API
-description: Mit der Java-Anwendungs-API der HTML-Vorlagensprache – HTL – wird es
-  einer HTL-Datei ermöglicht, in einer benutzerdefinierten Java-Klasse auf die Hilfsmethoden
-  zuzugreifen.
-seo-description: Mit der Java-Anwendungs-API der HTML-Vorlagensprache – HTL – wird
-  es einer HTL-Datei ermöglicht, in einer benutzerdefinierten Java-Klasse auf die
-  Hilfsmethoden zuzugreifen.
+description: 'Mit der Java-Anwendungs-API der HTML-Vorlagensprache – HTL – wird es einer HTL-Datei ermöglicht, in einer benutzerdefinierten Java-Klasse auf die Hilfsmethoden zuzugreifen. '
+seo-description: 'Mit der Java-Anwendungs-API der HTML-Vorlagensprache – HTL – wird es einer HTL-Datei ermöglicht, in einer benutzerdefinierten Java-Klasse auf die Hilfsmethoden zuzugreifen. '
 uuid: b340f8f7-a193-45c8-aa39-5c6e2c0194ea
 contentOwner: Benutzer
 products: SG_EXPERIENCEMANAGER/HTL
@@ -14,8 +10,8 @@ topic-tags: html-template-language
 content-type: Referenz
 discoiquuid: 126ebc9d-5f7b-47a4-aea2-c8840d34864c
 mwpw-migration-script-version: 2017-10-12T21 46 58.665-0400
-translation-type: ht
-source-git-commit: 796c55d3d85e6b5a3efaa5c04a25be1b0b4e54dd
+translation-type: tm+mt
+source-git-commit: 48f09cfbdc5ef0bc5b951de1444ce40ea53dc07f
 
 ---
 
@@ -68,7 +64,7 @@ Die Komponente **info** benötigt in ihrer gegebenen Form keine Anwendungsklas
 >
 >*Eine Anwendungsklasse sollte nur verwendet werden, wenn eine Aktion nicht allein in HTL ausgeführt werden kann.*
 
-Angenommen, Sie möchten, dass die Komponente `info` die Eigenschaften `title` und **`description`** der Ressource anzeigt, jedoch komplett in Kleinschreibung. Da HTL über keine Methode zur Zeichenfolgenkleinschreibung verfügt, benötigen Sie eine Anwendungsklasse. Wir können dies vornehmen, indem eine Java-Anwendungsklasse hinzugefügt und die Datei **`info.html` wie folgt geändert wird:**
+Angenommen, Sie möchten, dass die Komponente `info` die Eigenschaften `title` und **`description`** der Ressource anzeigt, jedoch komplett in Kleinschreibung. Da HTL über keine Methode zur Zeichenfolgenkleinschreibung verfügt, benötigen Sie eine Anwendungsklasse. Wir können dies vornehmen, indem eine Java-Anwendungsklasse hinzugefügt und die Datei **`info.html`wie folgt geändert wird:**
 
 ### `/apps/my-example/component/info/info.html` {#apps-my-example-component-info-info-html-1}
 
@@ -165,7 +161,7 @@ public class Info extends WCMUsePojo {
 
 ### Initialisieren der Klasse {#initializing-the-class}
 
-Wenn die Anwendungsklasse von **`WCMUsePojo`** erweitert wird, wird die Initialisierung vorgenommen, indem die Methode **`activate` überschrieben wird:**
+Wenn die Anwendungsklasse von **`WCMUsePojo`** erweitert wird, wird die Initialisierung vorgenommen, indem die Methode **`activate`überschrieben wird:**
 
 ### /apps/my-example/component/info/Info.java {#apps-my-example-component-info-info-java-3}
 
@@ -189,7 +185,7 @@ public class Info extends WCMUsePojo {
 
 ### Kontext {#context}
 
-In der Regel wird die Methode [activate](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/adobe/cq/sightly/WCMUse.html) verwendet, um die Werte vorab zu berechnen und zu speichern (in Mitgliedervariablen), die im HTL-Code basierend auf dem aktuellen Kontext (z. B. aktuelle Anforderung und Ressource) benötigt werden.
+Typically, the [activate](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/adobe/cq/sightly/WCMUse.html) method is used to precompute and store (in member variables) the values needed in your HTL code, based on the current context (the current request and resource, for example).
 
 Die `WCMUsePojo`-Klasse bietet Zugriff auf denselben Satz an Kontextobjekten, die in einer HTL-Datei verfügbar sind (siehe [Globale Objekte](global-objects.md)).
 
@@ -199,19 +195,19 @@ In einer **`WCMUsePojo`** erweiternden Klasse ist der Zugriff auf Kontextobjekte
 
 Alternativ ist der Zugriff auf häufig verwendete Kontextobjekte direkt über die entsprechende **Convenience-Methode** möglich:
 
-|  |
+|  |  |
 |---|---|
 | [PageManager](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/day/cq/wcm/api/PageManager.html) | [getPageManager()](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/adobe/cq/sightly/WCMUse.html#getPageManager()) |
-| [Page](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/day/cq/wcm/api/Page.html) | [getCurrentPage()](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/adobe/cq/sightly/WCMUse.html#getCurrentPage()) |
-| [Page](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/day/cq/wcm/api/Page.html) | [getResourcePage()](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/adobe/cq/sightly/WCMUse.html#getResourcePage()) |
+| [Seite](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/day/cq/wcm/api/Page.html) | [getCurrentPage()](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/adobe/cq/sightly/WCMUse.html#getCurrentPage()) |
+| [Seite](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/day/cq/wcm/api/Page.html) | [getResourcePage()](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/adobe/cq/sightly/WCMUse.html#getResourcePage()) |
 | [ValueMap](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/resource/ValueMap.html) | [getPageProperties()](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/adobe/cq/sightly/WCMUse.html#getPageProperties()) |
 | [ValueMap](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/resource/ValueMap.html) | [getProperties()](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/adobe/cq/sightly/WCMUse.html#getProperties()) |
 | [Designer](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/day/cq/wcm/api/designer/Designer.html) | [getDesigner()](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/adobe/cq/sightly/WCMUse.html#getDesigner()) |
 | [Design](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/day/cq/wcm/api/designer/Design.html) | [getCurrentDesign()](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/adobe/cq/sightly/WCMUse.html#getCurrentDesign()) |
-| [Style](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/day/cq/wcm/api/designer/Style.html) | [getCurrentStyle()](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/adobe/cq/sightly/WCMUse.html#getCurrentStyle()) |
+| [Stil](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/day/cq/wcm/api/designer/Style.html) | [getCurrentStyle()](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/adobe/cq/sightly/WCMUse.html#getCurrentStyle()) |
 | [Component](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/day/cq/wcm/api/components/Component.html) | [getComponent()](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/adobe/cq/sightly/WCMUse.html#getComponent()) |
 | [ValueMap](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/resource/ValueMap.html) | [getInheritedProperties()](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/adobe/cq/sightly/WCMUse#getInheritedProperties.html()) |
-| [Resource](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/resource/Resource.html) | [getResource()](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/adobe/cq/sightly/WCMUse.html#getResource()) |
+| [Ressource](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/resource/Resource.html) | [getResource()](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/adobe/cq/sightly/WCMUse.html#getResource()) |
 | [ResourceResolver](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/resource/ResourceResolver.html) | [getResourceResolver()](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/adobe/cq/sightly/WCMUse.html#getResourceResolver()) |
 | [SlingHttpServletRequest](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/SlingHttpServletRequest.html) | [getRequest()](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/adobe/cq/sightly/WCMUse.html#getRequest()) |
 | [SlingHttpServletResponse](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/SlingHttpServletResponse.html) | [getResponse()](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/adobe/cq/sightly/WCMUse.html#getResponse()) |
@@ -412,7 +408,7 @@ Beachten Sie, dass wir den Vorlagenblock in der Datei **`info.html`** platzieren
 
 Die **`Info`**-Klasse wird wie zuvor verwendet und ruft ihre Getter-Methoden **`getLowerCaseTitle()`** und `getLowerCaseDescription()` durch ihre entsprechenden HTL-Eigenschaften `info.lowerCaseTitle` und **`info.lowerCaseDescription`** auf.
 
-Anschließend führen wir einen **`data-sly-call`** zur Vorlage**`extra`** aus und geben ihr den Wert `properties.description` als den Parameter **`text`** weiter.
+Anschließend führen wir einen **`data-sly-call`** zur Vorlage **`extra`** aus und geben ihr den Wert `properties.description` als den Parameter **`text`** weiter.
 
 Die Java-Anwendungsklasse `Info.java` wird geändert, um den neuen Textparameter zu verarbeiten:
 
@@ -491,14 +487,14 @@ Das System verarbeitet die Anweisung wie folgt:
 
 * Versuchen Sie, die aktuelle **`Resource`** an *`UseClass.`* anzupassen. Wechseln Sie bei Erfolg zu (3).
 
-* Versuchen Sie andernfalls, die aktuelle ** `Request`** an *`UseClass`* anzupassen. Wechseln Sie bei Erfolg zu (3).
+* Versuchen Sie andernfalls, die aktuelle **`Request`** an *`UseClass`* anzupassen. Wechseln Sie bei Erfolg zu (3).
 
-* Versuchen Sie andernfalls, *`UseClass` mit einem Zero-Argument-Konstruktor zu instanziieren. * Wechseln Sie bei Erfolg zu (3).
+* Versuchen Sie andernfalls, *`UseClass`mit einem Zero-Argument-Konstruktor zu instanziieren.* Wechseln Sie bei Erfolg zu (3).
 
 (3)
 
 * Verbinden Sie in HTL das neu angepasste oder erstellte Objekt mit dem Namen *`localName`*.
-* Wenn *`UseClass`* [ `io.sightly.java.api.Use`](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/io/sightly/java/api/Use.html) implementiert, rufen Sie die Methode `init` auf und geben Sie dabei den aktuellen Ausführungskontext weiter (in Form eines `javax.scripting.Bindings`-Objekts).
+* If *`UseClass`* implements [ `io.sightly.java.api.Use`](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/io/sightly/java/api/Use.html) then call the `init` method, passing the current execution context (in the form of a `javax.scripting.Bindings` object).
 
 (4)
 
@@ -510,7 +506,7 @@ Im Folgenden finden Sie einige wichtige Punkte zur obigen Beschreibung:
 
 * Jede Klasse, die aus einer `Resource` oder einer `Request` angepasst werden kann oder einen Zero-Argument-Konstruktor aufweist, kann eine Anwendungsklasse sein. Die Klasse muss `WCMUsePojo` nicht erweitern oder gar `Use` implementieren.
 
-* Wenn die Anwendungsklasse * jedoch *`Use` implementiert, wird die zugehörige **`init`**-Methode im aktuellen Kontext automatisch abgerufen, wodurch Sie dort kontextbasierten Initialisierungscode platzieren können.
+* Wenn die Anwendungsklasse *jedoch*`Use` implementiert, wird die zugehörige **`init`**-Methode im aktuellen Kontext automatisch abgerufen, wodurch Sie dort kontextbasierten Initialisierungscode platzieren können.
 
 * Eine `WCMUsePojo` erweiternde Anwendungsklasse ist nur ein Sonderfall der Implementierung von **`Use`**. Sie bietet praktische Kontextmethoden und ihre **`activate`**-Methode wird automatisch über `Use.init` abgerufen.
 
@@ -556,7 +552,7 @@ Eine weitere Option besteht in der Verwendung einer Hilfsklasse, die über **`or
 
 Angenommen, Sie müssen ein HTL-Skript schreiben, dass den mimetyp eines DAM-Assets anzeigt. In diesem Fall wissen Sie, dass sich Ihr HTL-Skript, wenn es abgerufen wird, im Kontext einer **`Resource`** befindet, die einen JCR-**`Node`** mit Knotentyp **`dam:Asset`** umbricht.
 
-Sie wissen, dass ein Knoten vom Typ **`dam:Asset` über eine derartige Struktur verfügt:**
+Sie wissen, dass ein Knoten vom Typ **`dam:Asset`über eine derartige Struktur verfügt:**
 
 ### Repository-Struktur {#repository-structure}
 
@@ -616,10 +612,10 @@ Um in der HTL auf das Asset zuzugreifen, können Sie ` [com.day.cq.dam.api.Asset
 </div>
 ```
 
-Die Anweisung `data-sly-use`** fordert die HTL auf, die aktuelle `Resource`** für ein **`Asset`** anzupassen, und gibt ihr den lokalen Namen **`asset`**. Anschließend ruft sie die Methode **`getMimeType`** des `Asset` mithilfe der HTL-Getter-Kurzschreibweise auf: `asset.mimeType`.
+Die Anweisung `data-sly-use`**fordert die HTL auf, die aktuelle`Resource`** für ein **`Asset`** anzupassen, und gibt ihr den lokalen Namen **`asset`**. Anschließend ruft sie die Methode **`getMimeType`** des `Asset` mithilfe der HTL-Getter-Kurzschreibweise auf: `asset.mimeType`.
 
 ### Aus Anforderung anpassbar {#adaptable-from-request}
 
 Es ist ebenfalls möglich, jede Klasse, die über **` [org.apache.sling.api.SlingHttpServletRequest](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/SlingHttpServletRequest.html)`** angepasst werden kann, als eine Anwendungsklasse zu verwenden.
 
-Wie beim obigen Fall einer Anwendungsklasse, die über `Resource` angepasst werden kann, kann eine Anwendungsklasse, die über [`SlingHttpServletRequest`](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/SlingHttpServletRequest.html) angepasst werden kann, in der Anweisung `data-sly-use` angegeben werden. Bei der Ausführung wird die aktuelle Anforderung an die gegebene Klasse angepasst und das daraus resultierende Objekt wird in HTL zur Verfügung gestellt.
+As with the above case of a use-class adaptable from `Resource`, a use-class adaptable from [`SlingHttpServletRequest`](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/SlingHttpServletRequest.html) can be specified in the `data-sly-use` statement. Bei der Ausführung wird die aktuelle Anforderung an die gegebene Klasse angepasst und das daraus resultierende Objekt wird in HTL zur Verfügung gestellt.
