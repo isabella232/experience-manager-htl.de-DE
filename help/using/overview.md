@@ -1,8 +1,8 @@
 ---
-title: AEM-HTL-Übersicht
+title: AEM HTL-Übersicht
 seo-title: Übersicht über die technische Dokumentation zu AEM HTL.
 description: Die durch AEM unterstützte HTL bietet ein hoch produktives Webframework auf Konzernebene, das die Sicherheit erhöht und es HTML-Entwicklern ohne Java-Kenntnissen ermöglicht, besser an AEM-Projekten teilhaben zu können.
-seo-description: In diesem Dokument werden die Prinzipien und den Zweck der HTML-Vorlagensprache - HTL - unterstützt von Adobe Experience Manager. HTL ist ein äußerst produktives Weblevel-Webframework, das die Sicherheit erhöht und HTML-Entwickler ohne Java-Kenntnisse ermöglicht, sich an AEM-Projekten zu beteiligen.
+seo-description: In diesem Dokument werden die Grundsätze und der Zweck der HTML-Vorlagensprache - HTL - erläutert, die von Adobe Experience Manager unterstützt wird. HTL ist ein hochproduktives Web-Framework auf Unternehmensebene, das die Sicherheit erhöht und HTML-Entwicklern ohne Java-Wissen eine bessere Teilnahme an AEM-Projekten ermöglicht.
 uuid: 8f486325-0a1b-4186-a998-96fc0034c44a
 contentOwner: Benutzer
 products: SG_EXPERIENCEMANAGER/HTL
