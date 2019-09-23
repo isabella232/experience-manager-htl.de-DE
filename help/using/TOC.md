@@ -1,7 +1,7 @@
 ---
 cloud: experience-cloud
 product: Experience Manager
-sub-product: experience manager htl
+sub-product: experience Manager html
 archetype: admin
 user-guide-title: Hilfe zu Experience Manager HTL
 translation-type: tm+mt
