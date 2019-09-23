@@ -1,18 +1,15 @@
 ---
 title: Erste Schritte mit HTL
 seo-title: Erste Schritte mit HTL
-description: Die von AEM unterstützte Vorlagensprache HTL löst JSP als bevorzugtes
-  und empfohlenes serverseitiges Vorlagensystem für HTML in AEM ab.
-seo-description: Die durch Adobe Experience Manager unterstützte HTML-Vorlagensprache
-  – HTL – löst JSP als bevorzugtes und empfohlenes serverseitiges Vorlagensystem für
-  HTML in AEM ab.
+description: Die von AEM unterstützte Vorlagensprache HTL löst JSP als bevorzugtes und empfohlenes serverseitiges Vorlagensystem für HTML in AEM ab.
+seo-description: Die durch Adobe Experience Manager unterstützte HTML-Vorlagensprache – HTL – löst JSP als bevorzugtes und empfohlenes serverseitiges Vorlagensystem für HTML in AEM ab.
 uuid: 4a7d6748-8cdf-4280-a85d-6c5319abf487
 content-type: Referenz
 topic-tags: Einführung
 discoiquuid: 3bf2ca75-0d68-489d-bd1c-1d4fd730c61a
 mwpw-migration-script-version: 2017-10-12T21 46 58.665-0400
-translation-type: ht
-source-git-commit: 796c55d3d85e6b5a3efaa5c04a25be1b0b4e54dd
+translation-type: tm+mt
+source-git-commit: 1e3df6159b48da27460f3ad95c22c13d025b1a72
 
 ---
 
@@ -47,12 +44,12 @@ Bevor wir mit der HTML-Vorlagensprache beginnen können, müssen wir im Voraus e
 **Weist HTL Einschränkungen auf, die bei JSP nicht vorhanden sind?**
 HTL weist im Vergleich zu JSP keine wirklichen Einschränkungen auf. Was mit JSP erledigt werden kann, sollte auch mit HTL erreichbar sein. HTL ist per Definition in verschiedener Hinsicht strenger als JSP. Was vielleicht in nur einer JSP-Datei erreicht werden kann, muss unter Umständen in eine Java-Klasse oder eine JavaScript-Datei separiert werden, damit es in HTL erreicht werden kann. Dies ist jedoch generell erwünscht, um eine entsprechende Trennung von Belangen zwischen der Logik und dem Markup sicherzustellen.
 
-**Werden JSP-Tag-Bibliotheken durch HTL unterstützt?**Nein, aber wie im Abschnitt über das [Laden von Client-Bibliotheken](getting-started.md#loading-client-libraries) gezeigt, bieten die Anweisungen vom Typ [template & call](block-statements.md#template-call) ein ähnliches Muster.
+**Werden JSP-Tag-Bibliotheken durch HTL unterstützt?** Nein, aber wie im Abschnitt über das [Laden von Client-Bibliotheken](getting-started.md#loading-client-libraries) gezeigt, bieten die Anweisungen vom Typ [template &amp; call](block-statements.md#template-call) ein ähnliches Muster.
 
-**Können die HTL-Funktionen für ein AEM-Projekt erweitert werden?****Nein, aber wie im Abschnitt über das [Laden von Client-Bibliotheken](getting-started.md#loading-client-libraries) gezeigt, bieten die Anweisungen vom Typ [template & call](block-statements.md#template-call) ein ähnliches Muster.
-Nein, das können sie nicht. HTL verfügt über leistungsstarke Erweiterungsmechanismen für die Wiederverwendung der Logik (die [Anwendungs-API](getting-started.md#use-api-for-accessing-logic)) und des Markups (die Anweisungen [template & call](block-statements.md#template-call)), die verwendet werden können, um den Code der Projekte zu modularisieren.
+**Können die HTL-Funktionen für ein AEM-Projekt erweitert werden?****Nein, aber wie im Abschnitt über das [Laden von Client-Bibliotheken](getting-started.md#loading-client-libraries) gezeigt, bieten die Anweisungen vom Typ [template &amp; call](block-statements.md#template-call) ein ähnliches Muster.
+Nein, das können sie nicht. HTL verfügt über leistungsstarke Erweiterungsmechanismen für die Wiederverwendung der Logik (die [Anwendungs-API](getting-started.md#use-api-for-accessing-logic)) und des Markups (die Anweisungen [template &amp; call](block-statements.md#template-call)), die verwendet werden können, um den Code der Projekte zu modularisieren.
 
-**Was sind die Hauptvorteile von HTL im Vergleich zu JSP?**Sicherheit und Projekteffizienz sind die wichtigsten Vorteile, die in der [Übersicht](overview.md) genauer beschrieben werden.
+**Was sind die Hauptvorteile von HTL im Vergleich zu JSP?** Sicherheit und Projekteffizienz sind die wichtigsten Vorteile, die in der [Übersicht](overview.md) genauer beschrieben werden.
 
 **Wird JSP schließlich verschwinden?**
 Für diese Zeilen gibt es derzeit keine Pläne.
@@ -63,7 +60,7 @@ Die HTML-Vorlagensprache verwendet eine Ausdruckssprache zum Einfügen von Inhal
 
 ### Blöcke und Ausdrücke  {#blocks-and-expressions}
 
-Hier finden Sie ein erstes Beispiel, das wie besehen in der Datei **`template.html` enthalten sein könnte:**
+Hier finden Sie ein erstes Beispiel, das wie besehen in der Datei **`template.html`enthalten sein könnte:**
 
 ```xml
 <h1 data-sly-test="${properties.jcr:title}">
@@ -73,9 +70,9 @@ Hier finden Sie ein erstes Beispiel, das wie besehen in der Datei **`template.ht
 
 Es können zwei Syntaxarten unterschieden werden:
 
-* **[Blockanweisungen](block-statements.md)** Zum bedingten Anzeigen des Elements **&lt;h1&gt;** wird das HTML5-Datenattribut `[data-sly-test](block-statements.md#test)` verwendet. HTL stellt mehrere solcher Attribute bereit. Dadurch können HTML-Elementen Verhaltensweisen angehängt werden, wobei allen `data-sly` vorangestellt ist.
+* **[Blockanweisungen](block-statements.md)** Um das Element **&lt;h1&gt;** bedingt anzuzeigen, wird ein `[data-sly-test](block-statements.md#test)` HTML5-Datenattribut verwendet. HTL stellt mehrere solcher Attribute bereit. Dadurch können HTML-Elementen Verhaltensweisen angehängt werden, wobei allen `data-sly` vorangestellt ist.
 
-* **[Ausdruckssprache](expression-language.md)**HTL-Ausdrücke sind durch die Zeichen `${` und `}` voneinander getrennt. Diese Ausdrücke werden zur Laufzeit ausgewertet und ihr Wert wird in den ausgehenden HTML-Stream eingeschleust.
+* **[Ausdruckssprache](expression-language.md)** HTL-Ausdrücke sind durch die Zeichen `${` und `}` voneinander getrennt. Diese Ausdrücke werden zur Laufzeit ausgewertet und ihr Wert wird in den ausgehenden HTML-Stream eingeschleust.
 
 Die zwei Seiten, die oben verknüpft wurden, enthalten die detaillierte Liste der für die Syntax verfügbaren Funktionen.
 
@@ -358,7 +355,7 @@ Im Folgenden finden Sie zwei kurze Beispiele:
 
 Im zweiten obigen Beispiel würde, sofern die HTML-Elemente **`head`** und **`body`** in unterschiedlichen Dateien platziert werden würden, die Vorlage **`clientlib.html`** anschließend in jeder Datei geladen werden müssen, die sie benötigt.
 
-Der Abschnitt zu den Anweisungen [template & call](block-statements.md#template-call) enthält weitere Details darüber, wie das Deklarieren und Aufrufen solcher Vorlagen funktioniert.
+Der Abschnitt zu den Anweisungen [template &amp; call](block-statements.md#template-call) enthält weitere Details darüber, wie das Deklarieren und Aufrufen solcher Vorlagen funktioniert.
 
 ### Weitergeben von Daten an den Client {#passing-data-to-the-client}
 
@@ -413,7 +410,7 @@ Ein spezieller Fall, in dem die im Abschnitt [Einschränkungen für Erhebungen s
 </div>
 ```
 
-Wie oben gezeigt, kann das im Element **`script`** einzuschließende Markup HTL-Blockanweisungen enthalten. Zudem müssen die Ausdrücke keine expliziten Kontexte bereitstellen, da die Inhalte der Handlebars-Vorlage in ihrer eigenen Datei isoliert wurden. In diesem Beispiel wird zudem gezeigt, wie die serverseitig ausgeführte HTL (wie im Element **`h2`**) mit einer clientseitig ausgeführten Vorlagensprache, beispielsweise Handlebars (im Element **`h3` gezeigt), kombiniert werden kann.**
+Wie oben gezeigt, kann das im Element **`script`** einzuschließende Markup HTL-Blockanweisungen enthalten. Zudem müssen die Ausdrücke keine expliziten Kontexte bereitstellen, da die Inhalte der Handlebars-Vorlage in ihrer eigenen Datei isoliert wurden. In diesem Beispiel wird zudem gezeigt, wie die serverseitig ausgeführte HTL (wie im Element **`h2`**) mit einer clientseitig ausgeführten Vorlagensprache, beispielsweise Handlebars (im Element **`h3`gezeigt), kombiniert werden kann.**
 
 Eine modernere Technik bestünde jedoch darin, stattdessen das HTML-Element **`template`** zu verwenden. Damit würde sich die Notwendigkeit erübrigen, die Inhalte der Vorlagen in separaten Dateien zu isolieren.
 
