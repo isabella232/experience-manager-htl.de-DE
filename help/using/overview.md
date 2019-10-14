@@ -1,8 +1,8 @@
 ---
-title: AEM HTL-Übersicht
+title: Übersicht über AEM HTL
 seo-title: Übersicht über die technische Dokumentation zu AEM HTL.
-description: Die durch AEM unterstützte HTL bietet ein hoch produktives Webframework auf Konzernebene, das die Sicherheit erhöht und es HTML-Entwicklern ohne Java-Kenntnissen ermöglicht, besser an AEM-Projekten teilhaben zu können.
-seo-description: In diesem Dokument werden die Grundsätze und der Zweck der HTML-Vorlagensprache - HTL - erläutert, die von Adobe Experience Manager unterstützt wird. HTL ist ein hochproduktives Web-Framework auf Unternehmensebene, das die Sicherheit erhöht und HTML-Entwicklern ohne Java-Wissen eine bessere Teilnahme an AEM-Projekten ermöglicht.
+description: Die durch AEM unterstützte HTL bietet ein hoch produktives Webframework auf Unternehmensebene, das die Sicherheit erhöht und es HTML-Entwicklern ohne Java-Kenntnissen ermöglicht, besser an AEM-Projekten teilhaben zu können.
+seo-description: In diesem Dokument werden die Grundsätze und der Zweck der HTML-Vorlagensprache HTL erläutert, die von Adobe Experience Manager unterstützt wird. HTL ist ein hoch produktives Webframework auf Unternehmensebene, das die Sicherheit erhöht und es HTML-Entwicklern ohne Java-Kenntnissen ermöglicht, besser an AEM-Projekten teilhaben zu können.
 uuid: 8f486325-0a1b-4186-a998-96fc0034c44a
 contentOwner: Benutzer
 products: SG_EXPERIENCEMANAGER/HTL
@@ -11,7 +11,7 @@ content-type: Referenz
 discoiquuid: 8f779e08-94c7-43bc-a6e5-d81a9f818c5c
 mwpw-migration-script-version: 2017-10-12T21 46 58.665-0400
 skyline: Testen der Replikation
-translation-type: tm+mt
+translation-type: ht
 source-git-commit: 0aa1e905fd6d24f7031dceb0a8a89b56da198719
 
 ---
@@ -29,13 +29,13 @@ Die HTML-Vorlagensprache erhöht die Sicherheit der Sites, die sie in ihrer Impl
 
 Auch wenn dasselbe Ergebnis mit Vorlagensprachen wie JSP erzielt werden kann, muss dort der Entwickler manuell sicherstellen, dass jede Variable entsprechend maskiert wird. Da ein einzelner Wegfall oder Fehler hinsichtlich der angewendeten Maskierung potenziell ausreichen kann, um eine Sicherheitslücke beim Cross-Site-Scripting (XSS) zu verursachen, haben wir uns dafür entschieden, diese Aufgabe mit HTL zu automatisieren. Bei Bedarf können Entwickler weiterhin eine andere Maskierung für die Ausdrücke angeben. Mit HTL entspricht das Standardverhalten mit höherer Wahrscheinlichkeit dem gewünschten Verhalten, wobei die Fehlerwahrscheinlichkeit reduziert wird.
 
-## Vereinfachte Bereitstellung  {#simplified-development}
+## Vereinfachte Entwicklung {#simplified-development}
 
 Die HTML-Vorlagensprache lässt sich einfach erlernen und ihre Funktionen sind zweckgebunden, um sicherzustellen, dass sie einfach und gezielt bleibt. Sie verfügt über leistungsstarke Mechanismen für das Strukturieren von Markup und das Aufrufen der Logik. Zugleich erzwingt sie immer die strenge Trennung von Belangen zwischen Markup und Logik. Bei der HTL an sich handelt es sich um den Standard HTML5, da sie Ausdrücke und Datenattribute verwendet, um das Markup mit dem gewünschten dynamischen Verhalten mit Anmerkungen zu versehen. Sie unterbricht demnach nicht die Gültigkeit des Markups und sorgt dafür, dass es weiterhin lesbar bleibt. Beachten Sie, dass die Auswertung der Ausdrücke und Datenattribute vollständig serverseitig erfolgt und auf der Clientseite nicht sichtbar ist, wo jedes gewünschte JavaScript-Framework ohne Störung verwendet werden kann. 
 
 Durch diese Funktionen können HTML-Entwickler ohne Java-Kenntnisse und nur mit geringen produktspezifischen Kenntnissen HTL-Vorlagen bearbeiten, wodurch sie Teil des Entwicklungsteams sein und die Zusammenarbeit mit den Java-Entwicklerexperten optimieren können. Zudem können sich Java-Entwickler wiederum auf den Back-End-Code konzentrieren und müssen sich nicht um HTML kümmern.
 
-## Reduzierte Kosten  {#reduced-costs}
+## Reduzierte Kosten {#reduced-costs}
 
 Erhöhte Sicherheit, vereinfachte Entwicklung und verbesserte Teamzusammenarbeit, in der Folge weniger Aufwand bei AEM-Projekten, schnellere Markteinführungszeiten (TTM) und niedrigere Gesamtbetriebskosten (TCO).
 
