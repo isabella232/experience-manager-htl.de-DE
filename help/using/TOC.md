@@ -1,10 +1,10 @@
 ---
 cloud: experience-cloud
 product: Experience Manager
-sub-product: experience Manager html
+sub-product: Experience Manager HTL
 archetype: admin
 user-guide-title: Hilfe zu Experience Manager HTL
-translation-type: tm+mt
+translation-type: ht
 source-git-commit: 60258140976a8d2182c4d75c18863c4b607bffbd
 
 ---
