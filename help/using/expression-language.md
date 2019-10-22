@@ -11,7 +11,7 @@ content-type: Referenz
 discoiquuid: 9ba37ca0-f318-48b0-a791-a944a72502ed
 mwpw-migration-script-version: 2017-10-12T21 46 58.665-0400
 translation-type: tm+mt
-source-git-commit: 84ed515309831fe413abf317d8739f2bba79afdb
+source-git-commit: 6de5ed20e4463c0c2e804e24cb853336229a7c1f
 
 ---
 
@@ -45,8 +45,10 @@ Ohne etwas angeben zu müssen, bietet HTL Zugriff auf alle Objekte, die nach dem
 
 Es gibt zwei Möglichkeiten, auf Variableneigenschaften zuzugreifen, entweder mit Punkt- oder einer Klammer-Notation:
 
-`${currentPage.title}  
-${currentPage['title']} or ${currentPage["title"]}`
+```
+${currentPage.title}  
+${currentPage['title']} or ${currentPage["title"]}
+```
 
 Die einfachere Punkt-Notation sollte in den meisten Fällen bevorzugt werden. Demgegenüber sollte die Klammer-Notation verwendet werden, um auf Eigenschaften zuzugreifen, die ungültige Bezeichnerzeichen enthalten, oder um dynamisch auf Eigenschaften zuzugreifen. In den folgenden zwei Kapiteln finden Sie Details zu diesen zwei Fällen.
 
@@ -222,7 +224,7 @@ Dieser Operator kann verwendet werden, um zu testen, ob eine der zwei Bedingunge
 
 Da der logische ODER-Operator die erste wahre Variable zurückgibt, gestaltet sich seine Verwendung auch sehr praktisch, wenn es darum geht, Ausweichwerte bereitzustellen.
 
-Zeigen Sie HTML-Attribute bedingt an, da HTL Attribute mit Werten entfernt, die durch Ausdrücke festgelegt wurden, welche als false oder zu einer leeren Zeichenfolge ausgewertet werden. Im folgenden Beispiel wird demnach der Titel **`properties.jcr:`** angezeigt, sofern er vorhanden und nicht leer ist. Ansonsten wird als Ausweichlösung **`properties.jcr:description`** angezeigt, sofern er vorhanden und nicht leer ist. Sonst wird die Meldung „no title or description provided“ (Kein Titel oder keine Beschreibung bereitgestellt) angezeigt:
+Zeigen Sie HTML-Attribute bedingt an, da HTL Attribute mit Werten entfernt, die durch Ausdrücke festgelegt wurden, welche als false oder zu einer leeren Zeichenfolge ausgewertet werden. So the example below will display **`properties.jcr:`** title if it exists and is not empty, else it falls back to dislaying **`properties.jcr:description`** if it exists and is not empty, else it will display the message "no title or description provided":
 
 ```xml
 <p>${properties.jcr:title || properties.jcr:description || "no title or description provided"}</p>
