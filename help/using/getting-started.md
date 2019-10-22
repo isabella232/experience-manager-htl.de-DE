@@ -9,7 +9,7 @@ topic-tags: Einführung
 discoiquuid: 3bf2ca75-0d68-489d-bd1c-1d4fd730c61a
 mwpw-migration-script-version: 2017-10-12T21 46 58.665-0400
 translation-type: tm+mt
-source-git-commit: 1e3df6159b48da27460f3ad95c22c13d025b1a72
+source-git-commit: 6de5ed20e4463c0c2e804e24cb853336229a7c1f
 
 ---
 
@@ -46,7 +46,7 @@ HTL weist im Vergleich zu JSP keine wirklichen Einschränkungen auf. Was mit JSP
 
 **Werden JSP-Tag-Bibliotheken durch HTL unterstützt?** Nein, aber wie im Abschnitt über das [Laden von Client-Bibliotheken](getting-started.md#loading-client-libraries) gezeigt, bieten die Anweisungen vom Typ [template &amp; call](block-statements.md#template-call) ein ähnliches Muster.
 
-**Können die HTL-Funktionen für ein AEM-Projekt erweitert werden?****Nein, aber wie im Abschnitt über das [Laden von Client-Bibliotheken](getting-started.md#loading-client-libraries) gezeigt, bieten die Anweisungen vom Typ [template &amp; call](block-statements.md#template-call) ein ähnliches Muster.
+**Können die HTL-Funktionen für ein AEM-Projekt erweitert werden?** Nein, aber wie im Abschnitt über das [Laden von Client-Bibliotheken](getting-started.md#loading-client-libraries) gezeigt, bieten die Anweisungen vom Typ [template &amp; call](block-statements.md#template-call) ein ähnliches Muster.
 Nein, das können sie nicht. HTL verfügt über leistungsstarke Erweiterungsmechanismen für die Wiederverwendung der Logik (die [Anwendungs-API](getting-started.md#use-api-for-accessing-logic)) und des Markups (die Anweisungen [template &amp; call](block-statements.md#template-call)), die verwendet werden können, um den Code der Projekte zu modularisieren.
 
 **Was sind die Hauptvorteile von HTL im Vergleich zu JSP?** Sicherheit und Projekteffizienz sind die wichtigsten Vorteile, die in der [Übersicht](overview.md) genauer beschrieben werden.
