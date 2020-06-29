@@ -1,30 +1,25 @@
 ---
 title: HTL-Anwendungs-API
-seo-title: Adobe HTL-Anwendungs-API
 description: Für HTL sind zwei APIs verfügbar – Java-Anwendungs-API und Javascript-Anwendungs-API.
-seo-description: Für Adobe HTL sind zwei APIs verfügbar – Java-Anwendungs-API und Javascript-Anwendungs-API.
-uuid: ab44aa5c-ce7e-40b9-97fb-e86c6a28405c
-contentOwner: Benutzer
-products: SG_EXPERIENCEMANAGER/HTL
-topic-tags: html-template-language
-content-type: Referenz
-discoiquuid: 89004426-eb59-4b63-913f-51bf98662773
-mwpw-migration-script-version: 2017-10-12T21 46 58.665-0400
 translation-type: tm+mt
-source-git-commit: 5cbaf9c747acf748d12559c2c8e3aba4600cf9a4
+source-git-commit: d7efae3d1b4d1bc22c63c21f544a99bf0ae4b3c9
+workflow-type: tm+mt
+source-wordcount: '183'
+ht-degree: 55%
 
 ---
 
 
 # HTL-Anwendungs-API {#htl-use-api}
 
-In der folgenden Tabelle sind die Vor- und Nachteile jeder API in einer Übersicht aufgeführt.
+HTL fördert die Trennung von Bedenken, indem es nicht erlaubt, Geschäftslogik mit Markup zu mischen. Geschäftslogik kann über die Use-API implementiert werden.
+
+Die folgende Tabelle gibt einen Überblick über die Vor- und Nachteile der einzelnen APIs.
 
 |  | **Java-Anwendungs-API** | **JavaScript-Anwendungs-API** |
 |--- |--- |--- |
-| **Vorteile** | <ul><li>schneller</li><li>kann mit einem Debugger geprüft werden</li><li>einfacher Unit-Test möglich</li></ul> | <ul><li>kann durch Front-End-Entwickler geändert werden</li><li>befindet sich in der Komponente, wodurch die Ansichtslogik einer Komponente in der Nähe der entsprechenden Vorlage beibehalten wird</li></ul> |
-| **Nachteile** | <ul><li>kann nicht durch Front-End-Entwickler geändert werden</li></ul> | <ul><li>langsamer</li><li>(bisher) kein Debugger</li><li>Unit-Test schwieriger</li></ul> |
-
+| **Vorteile** | <ul><li>Schneller</li><li>Kann mit einem Debugger überprüft werden</li><li>Einfache Prüfung</li></ul> | <ul><li>Kann von Frontend-Entwicklern geändert werden</li><li>Befindet sich innerhalb der Komponente und behält die Ansichten-Logik einer Komponente nahe der zugehörigen Vorlage bei</li></ul> |
+| **Nachteile** | <ul><li>Kann nicht von Frontend-Entwicklern geändert werden</li></ul> | <ul><li>langsamer</li><li>Kein Debugger (noch)</li><li>Härter-Unit-Test</li></ul> |
 
 Für Seitenkomponenten sollte ein kombiniertes Modell verwendet werden, in dem sich die gesamte Modelllogik in Java befindet, wodurch eindeutige APIs bereitgestellt werden, die von den Aktionen in der Ansicht unabhängig sind (d. h. in den Komponenten). AEM verfügt über großartige Standardmodelle wie die Seiten- oder die Ressourcen-API, die die meisten Fälle abdecken sollten.
 
