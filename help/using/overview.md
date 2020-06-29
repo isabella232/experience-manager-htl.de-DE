@@ -1,18 +1,11 @@
 ---
 title: Übersicht über AEM HTL
-seo-title: Übersicht über die technische Dokumentation zu AEM HTL.
 description: Die durch AEM unterstützte HTL bietet ein hoch produktives Webframework auf Unternehmensebene, das die Sicherheit erhöht und es HTML-Entwicklern ohne Java-Kenntnissen ermöglicht, besser an AEM-Projekten teilhaben zu können.
-seo-description: In diesem Dokument werden die Grundsätze und der Zweck der HTML-Vorlagensprache HTL erläutert, die von Adobe Experience Manager unterstützt wird. HTL ist ein hoch produktives Webframework auf Unternehmensebene, das die Sicherheit erhöht und es HTML-Entwicklern ohne Java-Kenntnissen ermöglicht, besser an AEM-Projekten teilhaben zu können.
-uuid: 8f486325-0a1b-4186-a998-96fc0034c44a
-contentOwner: Benutzer
-products: SG_EXPERIENCEMANAGER/HTL
-topic-tags: Einführung
-content-type: Referenz
-discoiquuid: 8f779e08-94c7-43bc-a6e5-d81a9f818c5c
-mwpw-migration-script-version: 2017-10-12T21 46 58.665-0400
-skyline: Testen der Replikation
-translation-type: ht
-source-git-commit: 0aa1e905fd6d24f7031dceb0a8a89b56da198719
+translation-type: tm+mt
+source-git-commit: d3426d87dce09ac34ff1aca431ff2bfad2f7134a
+workflow-type: tm+mt
+source-wordcount: '662'
+ht-degree: 95%
 
 ---
 
@@ -21,7 +14,7 @@ source-git-commit: 0aa1e905fd6d24f7031dceb0a8a89b56da198719
 
 Die HTML-Vorlagensprache (HTL), die durch Adobe Experience Manager (AEM) unterstützt wird, bietet ein hoch produktives Webframework auf Konzernebene, das die Sicherheit erhöht und es HTML-Entwicklern ohne Java-Kenntnissen ermöglicht, besser an AEM-Projekten teilhaben zu können.
 
-Die HTML-Vorlagensprache wurde zusammen mit AEM 6.0 eingeführt und löst JSP (JavaServer Pages) als bevorzugtes und empfohlenes serverseitiges Vorlagensystem für HTML ab. Die HTML-Vorlagensprache unterstützt Webentwickler, die zuverlässige Konzernwebsites erstellen müssen, dabei, die Sicherheit und die Entwicklungseffizienz zu erhöhen.
+Die HTML-Vorlagensprache wurde mit AEM 6.0 eingeführt und ersetzt JSP (JavaServer Pages) als bevorzugtes und empfohlenes serverseitiges Vorlagensystem für HTML. Die HTML-Vorlagensprache unterstützt Webentwickler, die zuverlässige Konzernwebsites erstellen müssen, dabei, die Sicherheit und die Entwicklungseffizienz zu erhöhen.
 
 ## Erhöhte Sicherheit {#increased-security}
 
@@ -41,7 +34,7 @@ Erhöhte Sicherheit, vereinfachte Entwicklung und verbesserte Teamzusammenarbeit
 
 Konkret wurde bei der Neuimplementierung der Website Adobe.com mit der HTML-Vorlagensprache beobachtet, dass Kosten und Dauer des Projekts um etwa 25 % reduziert werden konnten.
 
-![](assets/chlimage_1.png)
+![Effizienzsteigerung und Kostensenkung](assets/chlimage_1.png)
 
 Das obige Diagramm zeigt die folgenden, potenziell durch HTL ermöglichten Verbesserungen hinsichtlich der Effizienz:
 
@@ -52,4 +45,3 @@ Das obige Diagramm zeigt die folgenden, potenziell durch HTL ermöglichten Verbe
 **Lesen Sie als Nächstes:**
 
 * [Erste Schritte mit der HTML-Vorlagensprache](getting-started.md)
-
