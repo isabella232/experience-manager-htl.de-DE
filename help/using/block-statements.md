@@ -1,17 +1,11 @@
 ---
 title: HTL-Blockanweisungen
-seo-title: HTL-Blockanweisungen
 description: Bei HTML-Vorlagensprachen-Blockanweisungen (HTL) handelt es sich um direkt zur vorhandenen HTML hinzugefügten data-Attributen.
-seo-description: 'Bei HTML-Vorlagensprachen-Blockanweisungen (HTL) handelt es sich um direkt zur vorhandenen HTML hinzugefügten data-Attributen. '
-uuid: 0624fb6e-6989-431b-aabc-1138325393f1
-contentOwner: Benutzer
-products: SG_EXPERIENCEMANAGER/HTL
-topic-tags: html-template-language
-content-type: Referenz
-discoiquuid: 58aa6ea8-1d45-4f6f-a77e-4819f593a19d
-mwpw-migration-script-version: 2017-10-12T21 46 58.665-0400
 translation-type: tm+mt
-source-git-commit: afc29cbad83caeb549097da3fc33fd9147f1157a
+source-git-commit: 2336ce8860056f5bc6470b23ee4cda135f7107d8
+workflow-type: tm+mt
+source-wordcount: '1555'
+ht-degree: 59%
 
 ---
 
@@ -20,19 +14,62 @@ source-git-commit: afc29cbad83caeb549097da3fc33fd9147f1157a
 
 Bei HTML-Vorlagensprachen-Blockanweisungen (HTL) handelt es sich um direkt zur vorhandenen HTML hinzugefügten `data`-Attributen. Dadurch kann eine statische HTML-Musterseite einfach und unauffällig mit Anmerkungen versehen werden, wodurch sie in eine funktionierende dynamische Vorlage umgewandelt wird, ohne die Gültigkeit des HTML-Codes außer Kraft zu setzen.
 
-## Sly-Element {#sly-element}
+## Blockübersicht {#overview}
 
-The **&lt;sly&gt; element** does not get displayed in the resulting HTML and can be used instead of the data-sly-unwrap. Das Ziel des &lt;sly&gt;-Elements ist es, das Element deutlicher darzustellen, dass es nicht ausgegeben wird. Sie können weiterhin data-sly-unwrap verwenden, wenn Sie möchten.
+HTL-Block-Plugins werden durch `data-sly-*` Attribute definiert, die auf HTML-Elementen festgelegt werden. Elemente können ein schließendes Tag oder selbstschließend sein. Attribute können Werte haben (statische Zeichenfolgen oder Ausdruck) oder einfach boolesche Attribute sein (ohne Wert).
 
 ```xml
-<sly data-sly-test.varone="${properties.yourProp}"/>
+<tag data-sly-BLOCK></tag>                                 <!--/* A block is simply consists in a data-sly attribute set on an element. */-->
+<tag data-sly-BLOCK/>                                      <!--/* Empty elements (without a closing tag) should have the trailing slash. */-->
+<tag data-sly-BLOCK="string value"/>                       <!--/* A block statement usually has a value passed, but not necessarily. */-->
+<tag data-sly-BLOCK="${expression}"/>                      <!--/* The passed value can be an expression as well. */-->
+<tag data-sly-BLOCK="${@ myArg='foo'}"/>                   <!--/* Or a parametric expression with arguments. */-->
+<tag data-sly-BLOCKONE="value" data-sly-BLOCKTWO="value"/> <!--/* Several block statements can be set on a same element. */-->
 ```
 
-Wie bei data-sly-unwrap sollten Sie versuchen, die Verwendung zu minimieren.
+Alle ausgewerteten `data-sly-*` Attribute werden aus dem generierten Markup entfernt.
 
-## Verwenden Sie {#use}
+### Bezeichner {#identifiers}
 
-**`data-sly-use`**: Initialisiert ein Hilfsobjekt (definiert in JavaScript oder Java) und stellt es über eine Variable bereit.
+Auf eine Blockanweisung kann auch ein Bezeichner folgen:
+
+```xml
+<tag data-sly-BLOCK.IDENTIFIER="value"></tag>
+```
+
+Der Bezeichner kann von der Blockanweisung auf verschiedene Weise verwendet werden. Hier einige Beispiele:
+
+```xml
+<!--/* Example of statements that use the identifier to set a variable with their result: */-->
+<div data-sly-use.navigation="MyNavigation">${navigation.title}</div>
+<div data-sly-test.isEditMode="${wcmmode.edit}">${isEditMode}</div>
+<div data-sly-list.child="${currentPage.listChildren}">${child.properties.jcr:title}</div>
+<div data-sly-template.nav>Hello World</div>
+
+<!--/* The attribute statement uses the identifier to know to which attribute it should apply it's value: */-->
+<div data-sly-attribute.title="${properties.jcr:title}"></div> <!--/* This will create a title attribute */-->
+```
+
+Bei Bezeichnern der obersten Ebene wird nicht zwischen Groß- und Kleinschreibung unterschieden (da sie über HTML-Attribute festgelegt werden können, bei denen die Groß-/Kleinschreibung nicht beachtet wird), bei allen Eigenschaften wird jedoch die Groß-/Kleinschreibung beachtet.
+
+## Verfügbare Blockanweisungen {#available-block-statements}
+
+Es stehen eine Reihe von Blockanweisungen zur Verfügung. Bei Verwendung mit demselben Element definiert die folgende Prioritätsstufe, wie Blockanweisungen ausgewertet werden:
+
+1. `data-sly-template`
+1. `data-sly-set`, `data-sly-test`, `data-sly-use`
+1. `data-sly-call`
+1. `data-sly-text`
+1. `data-sly-element`, `data-sly-include`, `data-sly-resource`
+1. `data-sly-unwrap`
+1. `data-sly-list`, `data-sly-repeat`
+1. `data-sly-attribute`
+
+Wenn zwei Blockanweisungen dieselbe Priorität haben, wird ihre Bewertungsreihenfolge von links nach rechts geändert.
+
+### Verwenden Sie {#use}
+
+`data-sly-use` initialisiert ein Hilfsobjekt (in JavaScript oder Java definiert) und stellt es über eine Variable bereit.
 
 Initialisieren Sie ein JavaScript-Objekt, wobei sich die Quelldatei im selben Verzeichnis wie die Vorlage befindet. Beachten Sie, dass der Dateiname verwendet werden muss:
 
@@ -40,25 +77,25 @@ Initialisieren Sie ein JavaScript-Objekt, wobei sich die Quelldatei im selben Ve
 <div data-sly-use.nav="navigation.js">${nav.foo}</div>
 ```
 
-Initialisieren Sie eine Java-Klasse, wobei sich die Quelldatei im selben Verzeichnis wie die Vorlage befindet. Beachten Sie, dass der Klassenname verwendet werden muss und nicht der Dateiname:
+Initialisieren Sie eine Java-Klasse, wobei sich die Quelldatei im selben Verzeichnis wie die Vorlage befindet. Beachten Sie, dass der Klassenname verwendet werden muss, nicht der Dateiname:
 
 ```xml
-        <div data-sly-use.nav="Navigation">${nav.foo}</div>
+<div data-sly-use.nav="Navigation">${nav.foo}</div>
 ```
 
 Initialisieren Sie eine Java-Klasse, wobei diese Klasse als Teil eines OSGi-Bundles installiert wird. Beachten Sie, dass der zugehörige vollqualifizierte Klassenname verwendet werden muss:
 
 ```xml
-        <div data-sly-use.nav="org.example.Navigation">${nav.foo}</div>
+<div data-sly-use.nav="org.example.Navigation">${nav.foo}</div>
 ```
 
-Parameter können mithilfe von *options* an die Initialisierung weitergegeben werden. Diese Funktion sollte generell nur durch HTL-Code verwendet werden, der sich selbst in einem `data-sly-template`-Block befindet:
+Parameter können mithilfe von options an die Initialisierung weitergegeben werden. Diese Funktion sollte generell nur durch HTL-Code verwendet werden, der sich selbst in einem `data-sly-template`-Block befindet:
 
 ```xml
 <div data-sly-use.nav="${'navigation.js' @parentPage=currentPage}">${nav.foo}</div>
 ```
 
-Initialisieren Sie eine andere HTL-Vorlage, die mithilfe von **`data-sly-call`** abgerufen werden kann:
+Initialisieren Sie eine andere HTL-Vorlage, die mithilfe von `data-sly-call` abgerufen werden kann:
 
 ```xml
 <div data-sly-use.nav="navTemplate.html" data-sly-call="${nav.foo}"></div>
@@ -70,13 +107,27 @@ Initialisieren Sie eine andere HTL-Vorlage, die mithilfe von **`data-sly-call`**
 >
 >* [Java-Anwendungs-API](use-api-java.md)
 >* [JavaScript-Anwendungs-API](use-api-javascript.md)
+
+
+#### data-sly-use mit Ressourcen {#data-sly-use-with-resources}
+
+Dies ermöglicht es, Ressourcen direkt in HTML mit zu bekommen `data-sly-use` und erfordert kein Schreiben von Code, um es zu erhalten.
+
+Beispiel:
+
+```xml
+<div data-sly-use.product=“/etc/commerce/product/12345”>
+  ${ product.title }
+</div>
+```
+
+>[!TIP]
 >
+>Siehe auch Abschnitt [Pfad nicht immer erforderlich.](#path-not-required)
 
+### unwrap  {#unwrap}
 
-
-## unwrap  {#unwrap}
-
-**`data-sly-unwrap`**: Entfernt das Hostelement aus dem generierten Markup und behält seinen Inhalt bei. Dadurch können Elemente ausgeschlossen werden, die als Bestandteil der HTL-Darstellungslogik erforderlich, in der tatsächlichen Ausgabe jedoch nicht erwünscht sind.
+`data-sly-unwrap` Entfernt das Hostelement aus dem generierten Markup, während der Inhalt beibehalten wird. Dadurch können Elemente ausgeschlossen werden, die als Bestandteil der HTL-Darstellungslogik erforderlich, in der tatsächlichen Ausgabe jedoch nicht erwünscht sind.
 
 Diese Anweisung sollte jedoch sparsam verwendet werden. Im Allgemeinen ist es besser, das HTL-Markup möglichst nah beim vorgesehenen Ausgabe-Markup zu belassen. Versuchen Sie demnach beim Hinzufügen von HTL-Blockanweisungen, die vorhandene HTML soweit möglich einfach mit Anmerkungen zu versehen, ohne neue Elemente einzuführen.
 
@@ -110,9 +161,18 @@ Es ist auch möglich, ein Element bedingt zu umbrechen:
 <div class="popup" data-sly-unwrap="${isPopup}">content</div>
 ```
 
-## text  {#text}
+### set {#set}
 
-**`data-sly-text`**: Ersetzt den Kontext seines Hostelements durch den angegebenen Text.
+`data-sly-set` definiert einen neuen Bezeichner mit einem vordefinierten Wert.
+
+```xml
+<span data-sly-set.profile="${user.profile}">Hello, ${profile.firstName} ${profile.lastName}!</span>
+<a class="profile-link" href="${profile.url}">Edit your profile</a>
+```
+
+### text {#text}
+
+`data-sly-text` ersetzt den Inhalt des Hostelements durch den angegebenen Text.
 
 Dies beispielsweise
 
@@ -126,11 +186,11 @@ entspricht
 <p data-sly-text="${properties.jcr:description}">Lorem ipsum</p>
 ```
 
-Beide zeigen den Wert von **`jcr:description`als Absatztext an.** Der Vorteil der zweiten Methode besteht darin, dass sie die unauffällige Anmerkung der HTML ermöglicht und gleichzeitig den statischen Platzhalterinhalt aus dem ursprünglichen Designer beibehält.
+Beide zeigen den Wert von `jcr:description` als Absatztext an. Der Vorteil der zweiten Methode besteht darin, dass sie die unauffällige Anmerkung der HTML ermöglicht und gleichzeitig den statischen Platzhalterinhalt aus dem ursprünglichen Designer beibehält.
 
-## attribute  {#attribute}
+### attribute  {#attribute}
 
-**data-sly-attribute**: Fügt dem Hostelement Attribute hinzu.
+`data-sly-attribute` fügt dem Hostelement Attribute hinzu.
 
 Dies beispielsweise
 
@@ -144,11 +204,11 @@ entspricht
 <div title="Lorem Ipsum" data-sly-attribute.title="${properties.jcr:title}"></div>
 ```
 
-Beide legen das Attribut `title` auf den Wert von **`jcr:title`** fest. Der Vorteil der zweiten Methode besteht darin, dass sie die unauffällige Anmerkung der HTML ermöglicht und gleichzeitig den statischen Platzhalterinhalt aus dem ursprünglichen Designer beibehält.
+Beide legen das Attribut `title` auf den Wert von `jcr:title` fest. Der Vorteil der zweiten Methode besteht darin, dass sie die unauffällige Anmerkung der HTML ermöglicht und gleichzeitig den statischen Platzhalterinhalt aus dem ursprünglichen Designer beibehält.
 
-Attribute werden von links nach rechts aufgelöst, wobei die am weitesten rechts liegende Instanz eines Attributs (literal oder definiert über **`data-sly-attribute`**) vor anderen, links davon definierten Instanzen desselben Attributs (**`data-sly-attribute`**) Vorrang hat.
+Attribute werden von links nach rechts aufgelöst, wobei die am weitesten rechts liegende Instanz eines Attributs (literal oder definiert über `data-sly-attribute`) vor anderen, links davon definierten Instanzen desselben Attributs (`data-sly-attribute`) Vorrang hat.
 
-Beachten Sie, dass ein Attribut (**`literal`** oder festgelegt über **`data-sly-attribute`**), dessen Wert in einer leeren Zeichenfolge *ausgewertet* wird, aus dem endgültigen Markup entfernt wird. Die einzige Ausnahme von dieser Regel ist, dass ein auf eine leere *literal*-Zeichenfolge festgelegtes *literal*-Attribut beibehalten wird. Beispiel:
+Beachten Sie, dass ein Attribut (`literal` oder festgelegt über `data-sly-attribute`), dessen Wert in einer leeren Zeichenfolge ausgewertet wird, aus dem endgültigen Markup entfernt wird. Die einzige Ausnahme von dieser Regel ist, dass ein auf eine leere literal-Zeichenfolge festgelegtes literal-Attribut beibehalten wird. Beispiel:
 
 ```xml
 <div class="${''}" data-sly-attribute.id="${''}"></div>
@@ -194,9 +254,9 @@ produziert
 <div title="myTitle" class="myClass" id="myId"></div>
 ```
 
-## element  {#element}
+### element  {#element}
 
-**`data-sly-element`**: Ersetzt den Elementnamen des Hostelements.
+`data-sly-element` ersetzt den Elementnamen des Hostelements.
 
 Beispiel:
 
@@ -204,22 +264,22 @@ Beispiel:
 <h1 data-sly-element="${titleLevel}">text</h1>
 ```
 
-Ersetzt den **`h1`** durch den Wert **`titleLevel`**.
+Ersetzt den `h1` durch den Wert `titleLevel`.
 
 Aus Sicherheitsgründen akzeptiert `data-sly-element` nur die folgenden Elementnamen:
 
 ```xml
 a abbr address article aside b bdi bdo blockquote br caption cite code col colgroup
 data dd del dfn div dl dt em figcaption figure footer h1 h2 h3 h4 h5 h6 header i ins
-kbd li main mark nav ol p pre q rp rt ruby s samp section small span strong sub 
+kbd li main mark nav ol p pre q rp rt ruby s samp section small span strong sub
 sup table tbody td tfoot th thead time tr u var wbr
 ```
 
 Zum Festlegen anderer Elemente muss die XSS-Sicherheit deaktiviert sein ( `@context='unsafe'`).
 
-## test {#test}
+### test {#test}
 
-**`data-sly-test`:** Entfernt das Hostelement und die zugehörigen Inhalte bedingt. Durch den Wert `false` wird das Element entfernt. Durch den Wert `true` wird das Element beibehalten.
+`data-sly-test` entfernt das Hostelement und seinen Inhalt bedingt. Durch den Wert `false` wird das Element entfernt. Durch den Wert `true` wird das Element beibehalten.
 
 Zum Beispiel werden das Element `p` und die zugehörigen Inhalte nur dargestellt, wenn `isShown` dem Wert `true` entspricht:
 
@@ -243,22 +303,22 @@ Im Folgenden finden Sie einige Beispiele zum Vergleichen von Werten:
 <div data-sly-test="${properties.jcr:title != 'test'}">NOT TEST</div>
 
 <div data-sly-test="${properties['jcr:title'].length > 3}">Title is longer than 3</div>
-<div data-sly-test="${properties['jcr:title'].length >= 0}">Title is longer or equal to zero </div> 
+<div data-sly-test="${properties['jcr:title'].length >= 0}">Title is longer or equal to zero </div>
 
 <div data-sly-test="${properties['jcr:title'].length > aemComponent.MAX_LENGTH}">
     Title is longer than the limit of ${aemComponent.MAX_LENGTH}
 </div>
 ```
 
-## repeat {#repeat}
+### repeat {#repeat}
 
-Bei data-sly-repeat können Sie ein Element basierend auf der angegebenen Liste mehrmals *wiederholen*.
+With `data-sly-repeat` you can repeat an element multiple times based on the list that is specified.
 
 ```xml
 <div data-sly-repeat="${currentPage.listChildren}">${item.name}</div>
 ```
 
-Dies funktioniert genauso wie data-sly-list, mit der Ausnahme, dass Sie kein Containerelement benötigen.
+This works the same way as `data-sly-list`, except that you do not need a container element.
 
 Das folgende Beispiel zeigt, dass Sie für Attribute auch auf das *Element* verweisen können:
 
@@ -266,9 +326,9 @@ Das folgende Beispiel zeigt, dass Sie für Attribute auch auf das *Element* verw
 <div data-sly-repeat="${currentPage.listChildren}" data-sly-attribute.class="${item.name}">${item.name}</div>
 ```
 
-## list {#list}
+### list {#list}
 
-**`data-sly-list`**: Wiederholt den Inhalt des Hostelements für jede Aufzählungseigenschaft im angegebenen Objekt.
+`data-sly-list` wiederholt den Inhalt des Hostelements für jede Eigenschaft, die im bereitgestellten Objekt nummeriert werden kann.
 
 Im Folgenden finden Sie eine einfache Schleife:
 
@@ -281,25 +341,17 @@ Im Folgenden finden Sie eine einfache Schleife:
 
 Die folgenden standardmäßigen Variablen sind im Umfang der Liste verfügbar:
 
-**`item`**: Das aktuelle Elemente in der Wiederholung.
+* `item`: Das aktuelle Elemente in der Wiederholung.
+* `itemList`: Objekt, das die folgenden Eigenschaften enthält:
+* `index`: Zähler auf Basis null ( `0..length-1`).
+* `count`: Zähler auf Basis eins ( `1..length`).
+* `first`: `true`, wenn das aktuelle Element das erste Element ist.
+* `middle`: `true` wenn das aktuelle Element weder das erste noch das letzte Element ist.
+* `last`: `true` wenn das aktuelle Element das letzte Element ist.
+* `odd`: `true` wenn ungerade `index` ist.
+* `even`: `true` wenn `index` es gerade ist.
 
-**`itemList`**: Objekt, das die folgenden Eigenschaften enthält:
-
-**`index`**: Zähler auf Basis null ( `0..length-1`).
-
-**`count`**: Zähler auf Basis eins ( `1..length`).
-
-`first`: `true`, wenn das aktuelle Element das erste Element ist.
-
-**`middle`**: `true`, wenn das aktuelle Element weder das erste noch das letzte Element ist.
-
-**`last`**: `true` wenn das aktuelle Element das letzte Element ist.
-
-**`odd`**: `true` `index` ist ungerade.
-
-**`even`**: `true` `index` ist gerade.
-
-Durch das Definieren eines Bezeichners für die Anweisung `data-sly-list`** können Sie die Variablen `itemList`** und `item` umbenennen. **`item`** wird *** `<variable>`*** und **`itemList`** wird **`*<variable>*List`**.
+Durch das Definieren eines Bezeichners für die Anweisung `data-sly-list``itemList` können Sie die Variablen  und `item` umbenennen. `item` werden `<variable>` und werden `itemList` werden `<variable>List`.
 
 ```xml
 <dl data-sly-list.child="${currentPage.listChildren}">
@@ -317,15 +369,38 @@ Sie können auch dynamisch auf Eigenschaften zugreifen:
 </dl>
 ```
 
-## Ressource  {#resource}
+### Ressource  {#resource}
 
-**`data-sly-resource`**: Enthält das Ergebnis der Darstellung der angegebenen Ressource durch die Sling-Auflösung und den Darstellungsprozess.
+`data-sly-resource` enthält das Ergebnis der Wiedergabe der angegebenen Ressource durch die Sling-Auflösung und den Renderprozess.
 
 Zu einer einfachen Ressource gehören:
 
 ```xml
 <article data-sly-resource="path/to/resource"></article>
 ```
+
+#### Pfad nicht immer erforderlich {#path-not-required}
+
+Beachten Sie, dass die Verwendung eines Pfades mit nicht erforderlich `data-sly-resource` ist, wenn Sie bereits über die Ressource verfügen. Wenn Sie die Ressource bereits haben, können Sie sie direkt verwenden.
+
+Beispielsweise ist Folgendes richtig.
+
+```xml
+<sly data-sly-resource="${resource.path @ decorationTagName='div'}"></sly>
+```
+
+Gleichwohl ist Folgendes vollkommen akzeptabel.
+
+```xml
+<sly data-sly-resource="${resource @ decorationTagName='div'}"></sly>
+```
+
+Es wird empfohlen, die Ressource aus folgenden Gründen möglichst direkt zu verwenden.
+
+* Wenn Sie bereits über die Ressource verfügen, ist eine erneute Auflösung unter Verwendung des Pfads zusätzliche, unnötige Arbeit.
+* Die Verwendung des Pfads, wenn Sie bereits über die Ressource verfügen, kann zu unerwarteten Ergebnissen führen, da Sling-Ressourcen umschlossen werden können oder synthetisch sein können und nicht an dem angegebenen Pfad bereitgestellt werden.
+
+#### Optionen {#resource-options}
 
 Optionen ermöglichen einige zusätzliche Varianten:
 
@@ -388,11 +463,11 @@ cssClassName='className'}"></article>
 
 >[!NOTE]
 >
->AEM bietet klare und einfache Logik, die die decoration-Tags steuert, die enthaltene Elemente umschließen. For details see [Decoration Tag](https://helpx.adobe.com/experience-manager/6-4/sites/developing/using/decoration-tag.html) in the developing components documentation.
+>AEM bietet klare und einfache Logik, die die decoration-Tags steuert, die enthaltene Elemente umschließen. For details see [Decoration Tag](https://docs.adobe.com/content/help/en/experience-manager-65/developing/components/decoration-tag.html) in the developing components documentation.
 
-## include {#include}
+### include {#include}
 
-**`data-sly-include`**: Ersetzt den Inhalt des Hostelements durch das durch die angegebene HTML-Vorlagendatei (HTL, JSP, ESP usw.) generierte Markup, wenn er durch das entsprechende Vorlagenmodul verarbeitet wird. Der Darstellungskontext der *eingeschlossenen Datei* enthält den aktuellen HTL-Kontext nicht (den der *einzuschließenden Datei*). Demzufolge muss das aktuelle Element **`data-sly-use`** für das Einschließen der HTL-Dateien in der eingeschlossenen Datei wiederholt werden (in einem solchen Fall ist es für gewöhnlich besser, **`data-sly-template`** und `data-sly-call` zu verwenden).
+`data-sly-include` ersetzt den Inhalt des Hostelements durch das Markup, das von der angegebenen HTML-Vorlagendatei (HTL, JSP, ESP usw.) generiert wurde. wenn er durch das entsprechende Vorlagenmodul verarbeitet wird. Der Darstellungskontext der eingeschlossenen Datei enthält den aktuellen HTL-Kontext nicht (den der einzuschließenden Datei). Demzufolge muss das aktuelle Element `data-sly-use` für das Einschließen der HTL-Dateien in der eingeschlossenen Datei wiederholt werden (in einem solchen Fall ist es für gewöhnlich besser, `data-sly-template` und `data-sly-call` zu verwenden).
 
 Ein einfaches include-Beispiel:
 
@@ -420,11 +495,52 @@ Sie können auch den WCM-Modus ändern:
 <section data-sly-include="${'template.html' @ wcmmode='disabled'}"></section>
 ```
 
-## template &amp; call  {#template-call}
+### Request-attributes {#request-attributes}
 
-`data-sly-template`: Definiert eine Vorlage. Das Hostelement und die zugehörigen Inhalte werden durch HTL nicht ausgegeben
+In the `data-sly-include` and `data-sly-resource` you can pass `requestAttributes` in order to use them in the receiving HTL-script.
 
-`data-sly-call`: Ruft eine mit „data-sly-template“ definierte Vorlage auf. Der Inhalt der abgerufenen Vorlage (optional parametrisiert) ersetzt den Inhalt des Hostelements des Aufrufs.
+So können Sie Parameter in Skripten oder Komponenten ordnungsgemäß weitergeben.
+
+```xml
+<sly data-sly-use.settings="com.adobe.examples.htl.core.hashmap.Settings"
+        data-sly-include="${ 'productdetails.html' @ requestAttributes=settings.settings}" />
+```
+
+Java-Code der Einstellungsklasse, die Zuordnung wird zum Weitergeben in requestAttributes verwendet:
+
+```xml
+public class Settings extends WCMUsePojo {
+
+  // used to pass is requestAttributes to data-sly-resource
+  public Map<String, Object> settings = new HashMap<String, Object>();
+
+  @Override
+  public void activate() throws Exception {
+    settings.put("layout", "flex");
+  }
+}
+```
+
+For example, via a Sling-Model, you can consume the value of the specified `requestAttributes`.
+
+In diesem Beispiel wird layout über die Zuordnung aus der Anwendungsklasse eingefügt:
+
+```xml
+@Model(adaptables=SlingHttpServletRequest.class)
+public class ProductSettings {
+  @Inject @Optional @Default(values="empty")
+  public String layout;
+
+}
+```
+
+### template &amp; call  {#template-call}
+
+Vorlagenblöcke können wie Funktionsaufrufe verwendet werden: in ihrer Deklaration können sie Parameter abrufen, die dann beim Aufruf weitergegeben werden können. Sie ermöglichen auch eine Rekursion.
+
+`data-sly-template` definiert eine Vorlage. Das Hostelement und die zugehörigen Inhalte werden durch HTL nicht ausgegeben
+
+`data-sly-call` ruft eine mit einer datenbasierten Vorlage definierte Vorlage auf. Der Inhalt der abgerufenen Vorlage (optional parametrisiert) ersetzt den Inhalt des Hostelements des Aufrufs.
 
 Definieren Sie eine statische Vorlage und rufen Sie sie anschließend auf:
 
@@ -440,7 +556,7 @@ Definieren Sie eine dynamische Vorlage und rufen Sie sie dann mit Parametern auf
 <div data-sly-call="${two @ title=properties.jcr:title}"></div>
 ```
 
-In einer anderen Datei befindliche Vorlagen können mithilfe von `data-sly-use` initialisiert werden. Beachten Sie, dass in diesem Fall `data-sly-use` und `data-sly-call` auch im selben Element platziert werden könnten:
+Templates located in a different file, can be initialized with `data-sly-use`. Beachten Sie, dass in diesem Fall `data-sly-use` und `data-sly-call` auch im selben Element platziert werden könnten:
 
 ```xml
 <div data-sly-use.lib="templateLib.html">
@@ -463,116 +579,21 @@ Die Vorlagenverschachtelung wird unterstützt:
 <div data-sly-call="${nav @ page=currentPage}" data-sly-unwrap></div>
 ```
 
-## i18n- und Gebietsschema-Objekte {#i-n-and-locale-objects}
+## sly Element {#sly-element}
 
-Wenn Sie i18n und HTL verwenden, können Sie jetzt auch benutzerdefinierte Gebietsschema-Objekte übergeben.
-
-```xml
-${'Hello World' @ i18n, locale=request.locale}
-```
-
-## URL-Manipulation {#url-manipulation}
-
-Eine neue Gruppe von URL-Manipulationen ist verfügbar.
-
-Siehe folgende Beispiele zu ihrer Nutzung:
-
-Fügt die HTML-Erweiterung zu einem Pfad hinzu.
+Das `<sly>` HTML-Tag kann zum Entfernen des aktuellen Elements verwendet werden, sodass nur dessen untergeordnete Elemente angezeigt werden können. Seine Funktionalität ähnelt dem `data-sly-unwrap` Blockelement:
 
 ```xml
-<a href="${item.path @ extension = 'html'}">${item.name}</a>
+<!--/* This will display only the output of the 'header' resource, without the wrapping <sly> tag */-->
+<sly data-sly-resource="./header"></sly>
 ```
 
-Fügt die HTML-Erweiterung und einen Selektor zu einem Pfad hinzu.
+Obwohl es sich nicht um ein gültiges HTML5-Tag handelt, kann das `<sly>` -Tag in der endgültigen Ausgabe angezeigt werden `data-sly-unwrap`:
 
 ```xml
-<a href="${item.path @ extension = 'html', selectors='products'}">${item.name}</a>
+<sly data-sly-unwrap="${false}"></sly> <!--/* outputs: <sly></sly> */-->
 ```
 
-Fügt die HTML-Erweiterung und ein Fragment (#value) zu einem Pfad hinzu.
+The goal of the `<sly>` element is to make it more obvious that the element is not output. If you want you can still use `data-sly-unwrap`.
 
-```xml
-<a href="${item.path @ extension = 'html', fragment=item.name}">${item.name}</a>
-```
-
-## In AEM 6.3 unterstützte HTL-Funktionen {#htl-features-supported-in-aem}
-
-Die folgenden neuen HTL-Funktionen werden in Adobe Experience Manager (AEM) 6.3 unterstützt:
-
-### Zahlen-/Datumsformatierung {#number-date-formatting}
-
-AEM 6.3 unterstützt native Formatierungen von Zahlen und Daten, ohne benutzerdefinierten Code zu schreiben. Dies unterstützt auch die Zeitzone und das Gebietsschema.
-
-Die folgenden Beispiele zeigen, dass das Format zuerst festgelegt wird und dann der Wert, der formatiert werden muss:
-
-```xml
-<h2>${ 'dd-MMMM-yyyy hh:mm:ss' @
-           format=currentPage.lastModified,
-           timezone='PST',
-           locale='fr'}</h2>
-
-<h2>${ '#.00' @ format=300}</h2>
-```
-
->[!NOTE]
->
->For complete details on the format you can use, refer to [HTL-specification](https://github.com/Adobe-Marketing-Cloud/htl-spec/blob/master/SPECIFICATION.md).
-
-### data-sly-use mit Ressourcen {#data-sly-use-with-resources}
-
-Dadurch können Ressourcen direkt in HTL mit data-sly-use abgerufen werden und Sie müssen keinen Code schreiben, um die Ressource zu erhalten.
-
-Beispiel:
-
-```xml
-<div data-sly-use.product=“/etc/commerce/product/12345”>
-  ${ product.title }
-</div>
-```
-
-### Request-attributes {#request-attributes}
-
-In *datensly-include* und *data-sly-resource* können Sie jetzt *requestAttributes* weitergeben, um sie im empfangenden HTL-Skript zu verwenden.
-
-So können Sie Parameter in Skripten oder Komponenten ordnungsgemäß weitergeben.
-
-```xml
-<sly data-sly-use.settings="com.adobe.examples.htl.core.hashmap.Settings" 
-        data-sly-include="${ 'productdetails.html' @ requestAttributes=settings.settings}" />
-```
-
-Java-Code der Einstellungsklasse, die Zuordnung wird zum Weitergeben in requestAttributes verwendet:
-
-```xml
-public class Settings extends WCMUsePojo {
-
-  // used to pass is requestAttributes to data-sly-resource
-  public Map<String, Object> settings = new HashMap<String, Object>();
-
-  @Override
-  public void activate() throws Exception {
-    settings.put("layout", "flex");
-  }
-}
-```
-
-Beispielsweise können Sie über ein Sling-Model den Wert der angegebenen requestAttributes verbrauchen.
-
-In diesem Beispiel wird *layout* über die Zuordnung aus der Anwendungsklasse eingefügt:
-
-```xml
-@Model(adaptables=SlingHttpServletRequest.class)
-public class ProductSettings {
-  @Inject @Optional @Default(values="empty")
-  public String layout;
-
-}
-```
-
-### Fehlerbehebung für @extension {#fix-for-extension}
-
-Das Attribut @extension funktioniert in allen Szenarios in AEM 6.3, bevor Sie ein Ergebnis wie *www.adobe.com.html* haben können. Außerdem wird überprüft, ob die Erweiterung hinzugefügt oder nicht hinzugefügt werden soll.
-
-```xml
-${ link @ extension = 'html' }
-```
+As with `data-sly-unwrap`, try to minimize the use of this.
