@@ -1,30 +1,23 @@
 ---
 title: Codebeispiele
-seo-title: Codebeispiele für AEM HTL
 description: Codebeispiele einschließlich der We.Retail-Referenzimplementierung
-seo-description: Codebeispiele einschließlich der We.Retail-Referenzimplementierung
-uuid: 4c84532e-1cd0-4faf-b99c-1965557b5d15
-contentOwner: Benutzer
-products: SG_EXPERIENCEMANAGER/HTL
-topic-tags: html-template-language
-content-type: Referenz
-discoiquuid: bea6396e-13c4-4048-9a8a-e5d7c281deba
-mwpw-migration-script-version: 2017-10-12T21 46 58.665-0400
-index: y
-internal: n
-snippet: y
 translation-type: tm+mt
-source-git-commit: f0473c2d7c2fc22a63232565452558001a9fd99e
+source-git-commit: d7efae3d1b4d1bc22c63c21f544a99bf0ae4b3c9
+workflow-type: tm+mt
+source-wordcount: '107'
+ht-degree: 31%
 
 ---
 
 
-# Codebeispiele{#code-samples}
+# Codebeispiele {#code-samples}
 
 Im Folgenden finden Sie Codebeispiele für HTL:
 
-* [We.Retail-Referenzimplementierung](https://helpx.adobe.com/experience-manager/6-4/sites/developing/using/we-retail.html)\
-   Eine vollständig mit HTL implementierte AEM-Site.
+* [WKND Tutorial](https://docs.adobe.com/content/help/en/experience-manager-learn/getting-started-wknd-tutorial-develop/overview.html) - Dieses Tutorial durchläuft die Implementierung einer AEM-Site für eine fiktive Lifestyle-Marke der WKND und behandelt grundlegende Themen wie Projekteinrichtung, Kernkomponenten, bearbeitbare Vorlagen, clientseitige Bibliotheken und Komponentenentwicklung mit Adobe Experience Manager-Sites, die alle in HTML implementiert sind.
+* [HTL TodoMVC Beispiel](https://github.com/Adobe-Marketing-Cloud/aem-sightly-sample-todomvc) - Eine AEM + HTL Implementierung der berühmten Übung.
 
-* [HTL TodoMVC-Beispiel](https://github.com/Adobe-Marketing-Cloud/aem-sightly-sample-todomvc)\
-   Eine AEM + HTL-Implementierung der berühmten Übung.
+Experten-Sessions:
+
+* [HTL-Sitzung Januar 2015 (Einführung in HTL)](http://scottsdigitalcommunity.blogspot.ca/2015/01/upcoming-sessions-of-ask-aem-community.html)
+* [HTML-Sitzung im März 2016 (Entwicklung erweiterter Komponenten)](http://scottsdigitalcommunity.blogspot.ca/2016/03/ask-aem-community-experts-deep-dive.html)
