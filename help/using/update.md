@@ -1,35 +1,27 @@
 ---
 title: Was ist HTL?
-seo-title: Was ist die Adobe HTML-Vorlagensprache – HTL
 description: 'Die HTML-Vorlagensprache – HTL – ist das von Adobe Experience Manager bevorzugte und empfohlene serverseitige Vorlagensystem für HTML. '
-seo-description: 'Die auch als HTL bezeichnete HTML-Vorlagensprache ist das von Adobe Experience Manager bevorzugte und empfohlene serverseitige Vorlagensystem für HTML. '
-uuid: 196e79f4-f9ff-451d-86e5-394feecd2e50
-contentOwner: Benutzer
-products: SG_EXPERIENCEMANAGER/HTL
-content-type: Referenz
-topic-tags: Einführung
-discoiquuid: f94c2abc-2752-4922-9369-acb76c3f00e9
-disttype: dist5
-gnavtheme: light
-mwpw-migration-script-version: 2017-10-12T21 46 58.665-0400
 translation-type: tm+mt
-source-git-commit: 41d6afffb2f01def6398c0a17c53b28769b43f4b
+source-git-commit: 7c37792729ca8caaf94ce6879ac02f241a571e44
+workflow-type: tm+mt
+source-wordcount: '180'
+ht-degree: 71%
 
 ---
 
 
 # Was ist HTL? {#what-is-htl}
 
-**Zuvor als *Sightly*** bezeichnet
+**Zuvor als *Sightly ***bezeichnet
 
 Aktualisiert: August 2016
 
 Die (auch als HTL bezeichnete) HTML-Vorlagensprache ist das von Adobe Experience Manager bevorzugte und empfohlene serverseitige Vorlagensystem für HTML. Wie in allen HTML-Server-seitigen Vorlagensystemen definiert eine HTL-Datei die an den Browser gesendete Ausgabe, indem sie die HTML-Datei selbst, etwas grundlegende Darstellungslogik und Variablen, die zur Laufzeit ausgewertet werden sollen, angibt.
 
-In AEM 6.0 und 6.1 wurde HTL als **Sightly** bezeichnet. Wir nehmen die Umbenennung in „HTML-Vorlagensprache“ vor, damit klarer wird, wofür die Spezifikation steht, und damit Übereinstimmung mit den allgemeinen Richtlinien für die Benennung von Adobe gegeben ist. Diese Namensänderung erfolgt ab August 2016 und gilt für die AEM-Versionen 6.0, 6.1, 6.2 und alle künftigen Versionen.
+In AEM 6.0 und 6.1 wurde HTL als **Sightly** bezeichnet. Adobe umbenennt sie in &quot;HTML-Vorlagensprache&quot;, um klarzustellen, wozu die Spezifikation dient, und um sie allgemein an die Benennungsrichtlinien von Adobe anzupassen. Diese Namensänderung findet ab August 2016 statt und gilt für AEM Version 6.0 und höher.
 
 >[!NOTE]
 >
->Die Namensänderung wirkt sich weder auf den Code noch auf die API aus. Daher ist die Kompatibilität nicht betroffen. Weitere Informationen finden Sie im Blogartikel über Kundenerlebnisse. In diesem Artikel wird die Umbenennung näher erläutert.
+>Die Namensänderung wirkt sich weder auf den Code noch auf die API aus. Daher ist die Kompatibilität nicht betroffen. Weitere Informationen [finden Sie in diesem Video zur Ankündigung.](https://helpx.adobe.com/experience-manager/how-to/announce-htl.html)
 
 Weitere Informationen über HTL finden Sie in unserem [Leitfaden für die ersten Schritte mit der HTML-Vorlagensprache (HTL)](overview.md), der ein guter Einstiegspunkt ist.
