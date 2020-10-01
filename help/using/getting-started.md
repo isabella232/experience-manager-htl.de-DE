@@ -2,9 +2,9 @@
 title: Erste Schritte mit HTL
 description: Die von AEM unterstützte Vorlagensprache HTL löst JSP als bevorzugtes und empfohlenes serverseitiges Vorlagensystem für HTML in AEM ab.
 translation-type: tm+mt
-source-git-commit: ee712ef61018b5e05ea052484e2a9a6b12e6c5c8
+source-git-commit: c7fa6014cd954a2ccb175e4c3a6be9deb83af890
 workflow-type: tm+mt
-source-wordcount: '2490'
+source-wordcount: '2471'
 ht-degree: 92%
 
 ---
@@ -61,9 +61,9 @@ Hier finden Sie ein erstes Beispiel, das wie besehen in der Datei **`template.ht
 
 Es können zwei Syntaxarten unterschieden werden:
 
-* **[Blockanweisungen](block-statements.md)**: Um das Element **&lt;h1>**bedingt anzuzeigen, wird ein[`data-sly-test`](block-statements.md#test)HTML5-Datenattribut verwendet. HTL stellt mehrere solcher Attribute bereit. Dadurch können HTML-Elementen Verhaltensweisen angehängt werden, wobei allen`data-sly`vorangestellt ist.
+* **[Blockanweisungen](block-statements.md)** : Um das Element **&lt;h1>** bedingt anzuzeigen, wird ein [`data-sly-test`](block-statements.md#test) HTML5-Datenattribut verwendet. HTL stellt mehrere solcher Attribute bereit. Dadurch können HTML-Elementen Verhaltensweisen angehängt werden, wobei allen `data-sly` vorangestellt ist.
 
-* **[Ausdruck Language](expression-language.md)**- HTL-Ausdruck werden durch Zeichen`${`und`}`. Diese Ausdrücke werden zur Laufzeit ausgewertet und ihr Wert wird in den ausgehenden HTML-Stream eingeschleust.
+* **[Ausdruck Language](expression-language.md)** - HTL-Ausdruck werden durch Zeichen `${` und `}`. Diese Ausdrücke werden zur Laufzeit ausgewertet und ihr Wert wird in den ausgehenden HTML-Stream eingeschleust.
 
 Die zwei Seiten, die oben verknüpft wurden, enthalten die detaillierte Liste der für die Syntax verfügbaren Funktionen.
 
@@ -110,12 +110,6 @@ und das DIV-Element könnte annotiert werden mit der Bedingung:
     <p>${properties.jcr:description}</p>
 </div>
 ```
-
->[!NOTE]
->
->Das SLY-Element wurde mit AEM 6.1 oder HTL 1.1 eingeführt.
->
->Zuvor musste stattdessen das Attribut [`data-sly-unwrap`](block-statements.md) verwendet werden.
 
 ### HTL-Kommentare  {#htl-comments}
 
