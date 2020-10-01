@@ -2,10 +2,10 @@
 title: HTL-Ausdruckssprache
 description: Die HTML-Vorlagensprache verwendet eine Ausdruckssprache für den Zugriff auf den Datenstrukturen, die die dynamischen Elemente der HTML-Ausgabe bereitstellen.
 translation-type: tm+mt
-source-git-commit: ee712ef61018b5e05ea052484e2a9a6b12e6c5c8
+source-git-commit: c7fa6014cd954a2ccb175e4c3a6be9deb83af890
 workflow-type: tm+mt
-source-wordcount: '1848'
-ht-degree: 82%
+source-wordcount: '1854'
+ht-degree: 81%
 
 ---
 
@@ -194,7 +194,7 @@ Dieser Operator kann verwendet werden, um zu testen, ob eine der zwei Bedingunge
 
 Da der logische ODER-Operator die erste wahre Variable zurückgibt, gestaltet sich seine Verwendung auch sehr praktisch, wenn es darum geht, Ausweichwerte bereitzustellen.
 
-Zeigen Sie HTML-Attribute bedingt an, da HTL Attribute mit Werten entfernt, die durch Ausdrücke festgelegt wurden, welche als false oder zu einer leeren Zeichenfolge ausgewertet werden. So the example below will display **`properties.jcr:`** title if it exists and is not empty, else it falls back to displaying **`properties.jcr:description`** if it exists and is not empty, else it will display the message &quot;no title or description provided&quot;:
+Sie kann auch zur bedingten Anzeige von HTML-Attributen verwendet werden, da HTML Attribute mit Werten entfernt, die von Ausdrücken festgelegt wurden, die als &quot;false&quot;oder als leere Zeichenfolge gelten. So the example below will display **`properties.jcr:`** title if it exists and is not empty, else it falls back to displaying **`properties.jcr:description`** if it exists and is not empty, else it will display the message &quot;no title or description provided&quot;:
 
 ```xml
 <p>${properties.jcr:title || properties.jcr:description || "no title or description provided"}</p>
