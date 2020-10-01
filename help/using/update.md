@@ -2,23 +2,23 @@
 title: Was ist HTL?
 description: 'Die HTML-Vorlagensprache – HTL – ist das von Adobe Experience Manager bevorzugte und empfohlene serverseitige Vorlagensystem für HTML. '
 translation-type: tm+mt
-source-git-commit: 7c37792729ca8caaf94ce6879ac02f241a571e44
+source-git-commit: c7fa6014cd954a2ccb175e4c3a6be9deb83af890
 workflow-type: tm+mt
-source-wordcount: '180'
-ht-degree: 71%
+source-wordcount: '181'
+ht-degree: 70%
 
 ---
 
 
 # Was ist HTL? {#what-is-htl}
 
-**Zuvor als *Sightly ***bezeichnet
+**Zuvor als *Sightly***bezeichnet
 
 Aktualisiert: August 2016
 
 Die (auch als HTL bezeichnete) HTML-Vorlagensprache ist das von Adobe Experience Manager bevorzugte und empfohlene serverseitige Vorlagensystem für HTML. Wie in allen HTML-Server-seitigen Vorlagensystemen definiert eine HTL-Datei die an den Browser gesendete Ausgabe, indem sie die HTML-Datei selbst, etwas grundlegende Darstellungslogik und Variablen, die zur Laufzeit ausgewertet werden sollen, angibt.
 
-In AEM 6.0 und 6.1 wurde HTL als **Sightly** bezeichnet. Adobe umbenennt sie in &quot;HTML-Vorlagensprache&quot;, um klarzustellen, wozu die Spezifikation dient, und um sie allgemein an die Benennungsrichtlinien von Adobe anzupassen. Diese Namensänderung findet ab August 2016 statt und gilt für AEM Version 6.0 und höher.
+In AEM 6.0 und 6.1 wurde HTL als **Sightly** bezeichnet. Die Adobe hat sie in &quot;HTML-Vorlagensprache&quot;umbenannt, um zu klären, wofür die Spezifikation vorgesehen ist, und um allgemein den Benennungsrichtlinien der Adobe zu entsprechen. Diese Benennungsänderung trat im August 2016 in Kraft und gilt für AEM Version 6.0 und Forward.
 
 >[!NOTE]
 >
