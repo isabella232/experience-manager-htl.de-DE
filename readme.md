@@ -1,11 +1,18 @@
 ---
-source-git-commit: 96e201fd34c7bffb8e7ea2f88b36a557ae05dc33
+source-git-commit: c952e1cba774aef252ab16da9cff7c530d329329
+workflow-type: tm+mt
 translation-type: tm+mt
+source-wordcount: '158'
+ht-degree: 40%
 
 ---
-# Dokumentation zu Adobe Experience Manager HTL
+# Adobe Experience Manager HTL-Dokumentation
 
-Dies ist das Repository für die Dokumentation zur HTML-Vorlage für Adobe Experience Manager (HTML Templating Language).
+| EXL-PR | EXL | Vorschau | Aktivieren | Veröffentlichte  | Hilfe |
+|--- |--- |--- |--- |--- |--- |
+| [![Build-Status](https://docs.ci.corp.adobe.com/view/exl-pr/job/experience-manager-html.en_pr-exl/badge/icon)](https://docs.ci.corp.adobe.com/view/exl-pr/job/experience-manager-html.en_pr-exl/lastBuild/) | [![Build-Status](https://docs.ci.corp.adobe.com/view/exl-pr/job/experience-manager-html.en_exl/lastBuild/badge/icon)](https://docs.ci.corp.adobe.com/view/exl-pr/job/experience-manager-html.en_exl/lastBuild/lastBuild) | [Vorschauen-URL](https://experienceleague.corp.adobe.com/docs/experience-manager-html/using/overview.html?lang=en) | [activate-exl](https://docs.ci.corp.adobe.com/job/activate-exl/build/) | [Live-URL](https://experienceleague.adobe.com/docs/experience-manager-html/using/overview.html?lang=en) | [Autorenanleitung](https://experienceleague.adobe.com/docs/authoring-guide-exl/using/home.html?lang=en) |
+
+Dies ist das Repository für die Dokumentation zur Adobe Experience Manager HTML-Vorlagensprache (HTL).
 
 Ihre Beiträge zur Dokumentation sind willkommen. Sehen Sie sich die folgenden Ressourcen an:
 
