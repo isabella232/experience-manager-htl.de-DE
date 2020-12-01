@@ -37,11 +37,11 @@ Bevor wir mit der HTML-Vorlagensprache beginnen können, müssen wir im Voraus e
 
 **Weist HTL Einschränkungen auf, die bei JSP nicht vorhanden sind?** - HTL weist im Vergleich zu JSP keine wirklichen Einschränkungen auf. Was mit JSP erledigt werden kann, sollte auch mit HTL erreichbar sein. HTL ist per Definition in verschiedener Hinsicht strenger als JSP. Was vielleicht in nur einer JSP-Datei erreicht werden kann, muss unter Umständen in eine Java-Klasse oder eine JavaScript-Datei separiert werden, damit es in HTL erreicht werden kann. Dies ist jedoch generell erwünscht, um eine entsprechende Trennung von Belangen zwischen der Logik und dem Markup sicherzustellen.
 
-**Werden JSP-Tag-Bibliotheken durch HTL unterstützt?** - Nein, aber wie im Abschnitt &quot; [Clientbibliotheken](getting-started.md#loading-client-libraries) laden&quot;dargestellt, weisen die [template &amp; call](block-statements.md#template-call) -Anweisungenein ähnliches Angebot auf.
+**Werden JSP-Tag-Bibliotheken durch HTL unterstützt?** - Nein, aber wie im Abschnitt  [Loading Client ](getting-started.md#loading-client-libraries) Librariessection gezeigt, weist das Angebot  [template &amp; ](block-statements.md#template-call) callstatement ein ähnliches Muster auf.
 
 **Können die HTL-Funktionen für ein AEM-Projekt erweitert werden?** - Nein, das können sie nicht. HTL verfügt über leistungsstarke Erweiterungsmechanismen für die Wiederverwendung der Logik (die [Anwendungs-API](getting-started.md#use-api-for-accessing-logic)) und des Markups (die Anweisungen [template &amp; call](block-statements.md#template-call)), die verwendet werden können, um den Code der Projekte zu modularisieren.
 
-**Was sind die Hauptvorteile von HTL im Vergleich zu JSP?** - Sicherheit und Projekteffizienz sind die Hauptvorteile, die im [Überblick](overview.md)beschrieben werden.
+**Was sind die Hauptvorteile von HTL im Vergleich zu JSP?** - Sicherheit und Projekteffizienz sind die Hauptvorteile, die im  [Überblick](overview.md) beschrieben werden.
 
 **Wird JSP schließlich verschwinden?** - Für diese Zeilen gibt es derzeit keine Pläne.
 
@@ -61,13 +61,13 @@ Hier finden Sie ein erstes Beispiel, das wie besehen in der Datei **`template.ht
 
 Es können zwei Syntaxarten unterschieden werden:
 
-* **[Blockanweisungen](block-statements.md)** : Um das Element **&lt;h1>** bedingt anzuzeigen, wird ein [`data-sly-test`](block-statements.md#test) HTML5-Datenattribut verwendet. HTL stellt mehrere solcher Attribute bereit. Dadurch können HTML-Elementen Verhaltensweisen angehängt werden, wobei allen `data-sly` vorangestellt ist.
+* **[Blockanweisungen](block-statements.md)**  - So zeigen Sie die  **&lt;h1>** -Element wird ein  [`data-sly-test`](block-statements.md#test) HTML5-Datenattribut verwendet. HTL stellt mehrere solcher Attribute bereit. Dadurch können HTML-Elementen Verhaltensweisen angehängt werden, wobei allen `data-sly` vorangestellt ist.
 
-* **[Ausdruck Language](expression-language.md)** - HTL-Ausdruck werden durch Zeichen `${` und `}`. Diese Ausdrücke werden zur Laufzeit ausgewertet und ihr Wert wird in den ausgehenden HTML-Stream eingeschleust.
+* **[Ausdruck Language](expression-language.md)**  - HTML-Ausdruck werden durch Zeichen  `${` und  `}`Zeichen getrennt. Diese Ausdrücke werden zur Laufzeit ausgewertet und ihr Wert wird in den ausgehenden HTML-Stream eingeschleust.
 
 Die zwei Seiten, die oben verknüpft wurden, enthalten die detaillierte Liste der für die Syntax verfügbaren Funktionen.
 
-### Das SLY-Element  {#the-sly-element}
+### Das SLY-Element   {#the-sly-element}
 
 Ein zentrales Konzept von HTL besteht darin, die Möglichkeit zu eröffnen, vorhandene HTML-Elemente zum Definieren von Blockanweisungen erneut zu verwenden. Dadurch erübrigt sich die Notwendigkeit, zusätzliche Trennzeichen einzufügen, um zu definieren, wo die Anweisung beginnt und endet. Diese unauffällige Annotation des Markups zur Umwandlung einer statischen HTML in eine funktionierende dynamische Vorlage ermöglicht es, dass die Gültigkeit des HTML-Codes nicht gebrochen wird, wodurch weiterhin die ordnungsgemäße Anzeige erfolgt, sogar als statische Dateien.
 
@@ -82,7 +82,7 @@ Beispiel:
 </sly>
 ```
 
-will output something like following HTML, but only if there are both, a **`jcr:title`** and a **`jcr:description`** property defined, and if neither of them are empty:
+gibt etwas wie folgendes HTML aus, aber nur, wenn beide vorhanden sind, eine **`jcr:title`**- und eine **`jcr:description`**-Eigenschaft definiert sind und keiner von ihnen leer ist:
 
 ```xml
 <h1>MY TITLE</h1>
@@ -111,7 +111,7 @@ und das DIV-Element könnte annotiert werden mit der Bedingung:
 </div>
 ```
 
-### HTL-Kommentare  {#htl-comments}
+### HTL-Kommentare   {#htl-comments}
 
 Im folgenden Beispiel wird in **Zeile 1** ein HTL-Kommentar und in **Zeile 2** ein HTML-Kommentar gezeigt:
 
@@ -126,11 +126,11 @@ Die Inhalte der HTML-Standardkommentare werden jedoch weitergegeben und die Ausd
 
 HTML-Kommentare dürfen keine HTL-Kommentare enthalten und umgekehrt.
 
-### Spezielle Kontexte  {#special-contexts}
+### Spezielle Kontexte   {#special-contexts}
 
 Um HTL bestmöglich zu verwenden, ist es wichtig, die Konsequenzen zu verstehen, die sich daraus ergeben, dass sie auf der HTML-Syntax basiert.
 
-### Element- und Attributnamen  {#element-and-attribute-names}
+### Element- und Attributnamen   {#element-and-attribute-names}
 
 Ausdrücke können nur in HTML-Text- oder -Attributwerten platziert werden, jedoch nicht in Elementnamen oder Attributnamen, sonst wäre die HTML nicht mehr gültig. Zum dynamischen Festlegen der Elementnamen kann die Anweisung [`data-sly-element`](block-statements.md#element) für die gewünschten Elemente verwendet werden und zum dynamischen Festlegen der Attributnamen oder sogar zum Festlegen von mehreren Attributen gleichzeitig, die Anweisung [`data-sly-attribute`](block-statements.md#attribute).
 
@@ -168,7 +168,7 @@ gibt etwas wie die folgende HTML aus:
 -->
 ```
 
-### Explizite Kontexte erforderlich  {#explicit-contexts-required}
+### Explizite Kontexte erforderlich   {#explicit-contexts-required}
 
 Wie im unten folgenden Abschnitt [Automatische kontextsensitive Maskierung](getting-started.md#automatic-context-aware-escaping) erläutert, besteht ein Ziel der HTL darin, das Risiko von Sicherheitslücken beim Cross-Site-Scripting (XSS) zu reduzieren, indem automatisch auf alle Ausdrücke die kontextsensitive Maskierung angewendet wird. Auch wenn HTL automatisch den Kontext der im HTML-Markup platzierten Ausdrücke erkennen kann, analysiert sie nicht die Syntax der Inline-JavaScript oder CSS und verlässt sich daher darauf, dass der Entwickler explizit angibt, welcher exakte Kontext auf solche Ausdrücke anzuwenden ist.
 
@@ -193,11 +193,11 @@ Ein Beispiel finden Sie weiter unten im Abschnitt [Arbeiten mit clientseitigen V
 >
 >Diese Technik kann Sicherheitslücken beim Cross-Site-Scripting (XSS) hervorrufen. Daher sollten Sicherheitsaspekte sorgfältig geprüft werden, wenn sie verwendet wird. Es gibt für gewöhnlich bessere Möglichkeiten für die Implementierung desselben Aspekts, als sich auf diese Praktik zu verlassen.
 
-## Allgemeine HTL-Funktionen  {#general-capabilities-of-htl}
+## Allgemeine HTL-Funktionen   {#general-capabilities-of-htl}
 
 In diesem Abschnitt werden die allgemeinen Funktionen der HTML-Vorlagensprache kurz behandelt.
 
-### Anwendungs-API für den Zugriff auf die Logik  {#use-api-for-accessing-logic}
+### Anwendungs-API für den Zugriff auf die Logik   {#use-api-for-accessing-logic}
 
 Siehe folgendes Beispiel:
 
@@ -221,7 +221,7 @@ Im obigen Beispiel wird ein serverseitiges ausgeführtes JavaScript-Element verw
 
 Weitere Informationen dazu finden Sie in den folgenden Abschnitten:
 
-* The section on the [`data-sly-use` statement](block-statements.md#use) explains everything that can be done with that statement.
+* Der Abschnitt auf der [`data-sly-use`-Anweisung](block-statements.md#use) erklärt alles, was mit dieser Anweisung getan werden kann.
 * Die [Anwendungs-API-Seite](use-api.md) enthält einige Informationen, die dabei helfen, sich zwischen dem Schreiben der Logik in Java oder in JavaScript zu entscheiden.
 * Für detaillierte Informationen über das Schreiben der Logik sind die Seiten über die [JavaScript-Anwendungs-API](use-api-javascript.md) und die [Java-Anwendungs-API](use-api-java.md) hilfreich.
 
@@ -315,7 +315,7 @@ Jede Hilfsvorlage erwartet eine **`categories`**-Option für das Referenzieren d
 
 Im Folgenden finden Sie zwei kurze Beispiele:
 
-### Vollständiges Laden mehrerer Client-Bibliotheken gleichzeitig  {#loading-multiple-client-libraries-fully-at-once}
+### Vollständiges Laden mehrerer Client-Bibliotheken gleichzeitig   {#loading-multiple-client-libraries-fully-at-once}
 
 ```xml
 <sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
@@ -377,7 +377,7 @@ for (var i = 0; i < elements.length; i++) {
 }
 ```
 
-### Arbeiten mit clientseitigen Vorlagen  {#working-with-client-side-templates}
+### Arbeiten mit clientseitigen Vorlagen   {#working-with-client-side-templates}
 
 Ein spezieller Fall, in dem die im Abschnitt [Einschränkungen für Erhebungen spezieller Kontexte](getting-started.md#lifting-limitations-of-special-contexts) erläuterte Technik legitimerweise verwendet werden kann, besteht im Schreiben von clientseitigen Vorlagen (beispielsweise Handlebars), die sich in **script**-Elementen befinden. Der Grund, weshalb diese Technik in diesem Fall sicher verwendet werden kann, besteht darin, dass das **script**-Element nicht wie angenommen JavaScript-Elemente enthält, sondern weitere HTML-Elemente. Im Folgenden finden Sie ein Beispiel, wie dies funktionieren würde:
 
