@@ -20,9 +20,9 @@ Diese Objekte bieten praktischen Zugriff auf häufig verwendete Informationen. A
 
 | Variablenname | Beschreibung |
 |--- |--- |
-| `properties` | Liste der Eigenschaften der aktuellen Resource. Backed by [org.apache.sling.api.resource.ValueMap](https://helpx.adobe.com/experience-manager/6-5/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/resource/ValueMap.html) |
-| `pageProperties` | Liste der Seiteneigenschaften der aktuellen Page. Backed by [org.apache.sling.api.resource.ValueMap](https://helpx.adobe.com/experience-manager/6-5/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/resource/ValueMap.html) |
-| `inheritedPageProperties` | Liste der vererbten Seiteneigenschaften der aktuellen Page. Backed by [org.apache.sling.api.resource.ValueMap](https://helpx.adobe.com/experience-manager/6-5/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/resource/ValueMap.html) |
+| `properties` | Liste der Eigenschaften der aktuellen Resource. Unterstützt von [org.apache.sling.api.resource.ValueMap](https://helpx.adobe.com/experience-manager/6-5/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/resource/ValueMap.html) |
+| `pageProperties` | Liste der Seiteneigenschaften der aktuellen Page. Unterstützt von [org.apache.sling.api.resource.ValueMap](https://helpx.adobe.com/experience-manager/6-5/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/resource/ValueMap.html) |
+| `inheritedPageProperties` | Liste der vererbten Seiteneigenschaften der aktuellen Page. Unterstützt von [org.apache.sling.api.resource.ValueMap](https://helpx.adobe.com/experience-manager/6-5/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/resource/ValueMap.html) |
 
 ## Java-unterstützte Objekte {#java-backed-objects}
 
