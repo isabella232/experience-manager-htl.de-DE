@@ -28,7 +28,7 @@ Die HTML-Vorlagensprache lässt sich einfach erlernen und ihre Funktionen sind z
 
 Durch diese Funktionen können HTML-Entwickler ohne Java-Kenntnisse und nur mit geringen produktspezifischen Kenntnissen HTL-Vorlagen bearbeiten, wodurch sie Teil des Entwicklungsteams sein und die Zusammenarbeit mit den Java-Entwicklerexperten optimieren können. Zudem können sich Java-Entwickler wiederum auf den Back-End-Code konzentrieren und müssen sich nicht um HTML kümmern.
 
-## Reduzierte Kosten {#reduced-costs}
+## Reduzierte Kosten  {#reduced-costs}
 
 Erhöhte Sicherheit, vereinfachte Entwicklung und verbesserte Teamzusammenarbeit, in der Folge weniger Aufwand bei AEM-Projekten, schnellere Markteinführungszeiten (TTM) und niedrigere Gesamtbetriebskosten (TCO).
 
