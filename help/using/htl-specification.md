@@ -12,6 +12,6 @@ ht-degree: 14%
 
 # HTL-Spezifikation {#htl-specification}
 
-Die HTML-Vorlagensprache (HTL), [früher Sightly genannt,](update.md) wurde mit Adobe Experience Manager 6.0 eingeführt und ist das bevorzugte und empfohlene Vorlagensystem für HTML-Server, das anstelle von JSP (JavaServer Pages) verwendet wird.
+Die HTML-Vorlagensprache (HTL), [ehemals Sightly,](update.md) wurde mit Adobe Experience Manager 6.0 eingeführt und ist das bevorzugte und empfohlene Vorlagensystem für die Server-Site für HTML, das anstelle von JSP (JavaServer-Seiten) verwendet wird.
 
-Die vollständige HTL-Spezifikation, die die Syntax und das Verhalten der Sprache definiert, wird in ihrem [Open Source Git Repository beschrieben.](https://github.com/adobe/htl-spec)
+Die vollständige HTL-Spezifikation, die die Syntax und das Verhalten der Sprache definiert, ist im [Open Source Git Repository](https://github.com/adobe/htl-spec)
