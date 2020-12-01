@@ -16,7 +16,7 @@ Bei HTML-Vorlagensprachen-Blockanweisungen (HTL) handelt es sich um direkt zur v
 
 ## Blockübersicht {#overview}
 
-HTL-Block-Plugins werden durch `data-sly-*` Attribute definiert, die auf HTML-Elementen festgelegt werden. Elemente können ein schließendes Tag oder selbstschließend sein. Attribute können Werte haben (statische Zeichenfolgen oder Ausdruck) oder einfach boolesche Attribute sein (ohne Wert).
+HTL-Block-Plugins werden durch `data-sly-*`-Attribute definiert, die auf HTML-Elementen festgelegt sind. Elemente können ein schließendes Tag oder selbstschließend sein. Attribute können Werte haben (statische Zeichenfolgen oder Ausdruck) oder einfach boolesche Attribute sein (ohne Wert).
 
 ```xml
 <tag data-sly-BLOCK></tag>                                 <!--/* A block is simply consists in a data-sly attribute set on an element. */-->
@@ -27,7 +27,7 @@ HTL-Block-Plugins werden durch `data-sly-*` Attribute definiert, die auf HTML-El
 <tag data-sly-BLOCKONE="value" data-sly-BLOCKTWO="value"/> <!--/* Several block statements can be set on a same element. */-->
 ```
 
-Alle ausgewerteten `data-sly-*` Attribute werden aus dem generierten Markup entfernt.
+Alle ausgewerteten `data-sly-*`-Attribute werden aus dem generierten Markup entfernt.
 
 ### Bezeichner {#identifiers}
 
@@ -60,7 +60,7 @@ Es stehen eine Reihe von Blockanweisungen zur Verfügung. Bei Verwendung mit dem
 1. `data-sly-set`, `data-sly-test`, `data-sly-use`
 1. `data-sly-call`
 1. `data-sly-text`
-1. `data-sly-element`, `data-sly-include`, `data-sly-resource`
+1. `data-sly-element`,  `data-sly-include`,  `data-sly-resource`
 1. `data-sly-unwrap`
 1. `data-sly-list`, `data-sly-repeat`
 1. `data-sly-attribute`
@@ -111,7 +111,7 @@ Initialisieren Sie eine andere HTL-Vorlage, die mithilfe von `data-sly-call` abg
 
 #### data-sly-use mit Ressourcen {#data-sly-use-with-resources}
 
-Dies ermöglicht es, Ressourcen direkt in HTML mit zu bekommen `data-sly-use` und erfordert kein Schreiben von Code, um es zu erhalten.
+Dies ermöglicht es, Ressourcen direkt in HTML mit `data-sly-use` zu erhalten und erfordert kein Schreiben von Code, um es zu erhalten.
 
 Beispiel:
 
@@ -188,7 +188,7 @@ entspricht
 
 Beide zeigen den Wert von `jcr:description` als Absatztext an. Der Vorteil der zweiten Methode besteht darin, dass sie die unauffällige Anmerkung der HTML ermöglicht und gleichzeitig den statischen Platzhalterinhalt aus dem ursprünglichen Designer beibehält.
 
-### attribute  {#attribute}
+### attribute   {#attribute}
 
 `data-sly-attribute` fügt dem Hostelement Attribute hinzu.
 
@@ -254,7 +254,7 @@ produziert
 <div title="myTitle" class="myClass" id="myId"></div>
 ```
 
-### element  {#element}
+### element   {#element}
 
 `data-sly-element` ersetzt den Elementnamen des Hostelements.
 
@@ -312,13 +312,13 @@ Im Folgenden finden Sie einige Beispiele zum Vergleichen von Werten:
 
 ### repeat {#repeat}
 
-With `data-sly-repeat` you can repeat an element multiple times based on the list that is specified.
+Mit `data-sly-repeat` können Sie ein Element mehrmals wiederholen, basierend auf der angegebenen Liste.
 
 ```xml
 <div data-sly-repeat="${currentPage.listChildren}">${item.name}</div>
 ```
 
-This works the same way as `data-sly-list`, except that you do not need a container element.
+Dies funktioniert genauso wie `data-sly-list`, außer dass Sie kein Container-Element benötigen.
 
 Das folgende Beispiel zeigt, dass Sie für Attribute auch auf das *Element* verweisen können:
 
@@ -346,12 +346,12 @@ Die folgenden standardmäßigen Variablen sind im Umfang der Liste verfügbar:
 * `index`: Zähler auf Basis null ( `0..length-1`).
 * `count`: Zähler auf Basis eins ( `1..length`).
 * `first`: `true`, wenn das aktuelle Element das erste Element ist.
-* `middle`: `true` wenn das aktuelle Element weder das erste noch das letzte Element ist.
+* `middle`:  `true` wenn das aktuelle Element weder das erste noch das letzte Element ist.
 * `last`: `true` wenn das aktuelle Element das letzte Element ist.
-* `odd`: `true` wenn ungerade `index` ist.
-* `even`: `true` wenn `index` es gerade ist.
+* `odd`:  `true` wenn ungerade  `index` ist.
+* `even`:  `true` wenn  `index` es gerade ist.
 
-Durch das Definieren eines Bezeichners für die Anweisung `data-sly-list``itemList` können Sie die Variablen  und `item` umbenennen. `item` werden `<variable>` und werden `itemList` werden `<variable>List`.
+Durch das Definieren eines Bezeichners für die Anweisung `data-sly-list``itemList` können Sie die Variablen  und `item` umbenennen. `item` werden  `<variable>` und  `itemList` werden  `<variable>List`.
 
 ```xml
 <dl data-sly-list.child="${currentPage.listChildren}">
@@ -369,7 +369,7 @@ Sie können auch dynamisch auf Eigenschaften zugreifen:
 </dl>
 ```
 
-### Ressource  {#resource}
+### Ressource   {#resource}
 
 `data-sly-resource` enthält das Ergebnis der Wiedergabe der angegebenen Ressource durch die Sling-Auflösung und den Renderprozess.
 
@@ -381,7 +381,7 @@ Zu einer einfachen Ressource gehören:
 
 #### Pfad nicht immer erforderlich {#path-not-required}
 
-Beachten Sie, dass die Verwendung eines Pfades mit nicht erforderlich `data-sly-resource` ist, wenn Sie bereits über die Ressource verfügen. Wenn Sie die Ressource bereits haben, können Sie sie direkt verwenden.
+Beachten Sie, dass die Verwendung eines Pfades mit `data-sly-resource` nicht erforderlich ist, wenn Sie bereits über die Ressource verfügen. Wenn Sie die Ressource bereits haben, können Sie sie direkt verwenden.
 
 Beispielsweise ist Folgendes richtig.
 
@@ -463,7 +463,7 @@ cssClassName='className'}"></article>
 
 >[!NOTE]
 >
->AEM bietet klare und einfache Logik, die die decoration-Tags steuert, die enthaltene Elemente umschließen. For details see [Decoration Tag](https://docs.adobe.com/content/help/en/experience-manager-65/developing/components/decoration-tag.html) in the developing components documentation.
+>AEM bietet klare und einfache Logik, die die decoration-Tags steuert, die enthaltene Elemente umschließen. Weitere Informationen finden Sie unter [Dekorationstag](https://docs.adobe.com/content/help/en/experience-manager-65/developing/components/decoration-tag.html) in der Dokumentation zu den Entwicklungskomponenten.
 
 ### include {#include}
 
@@ -497,7 +497,7 @@ Sie können auch den WCM-Modus ändern:
 
 ### Request-attributes {#request-attributes}
 
-In the `data-sly-include` and `data-sly-resource` you can pass `requestAttributes` in order to use them in the receiving HTL-script.
+In den `data-sly-include` und `data-sly-resource` können Sie `requestAttributes` übergeben, um sie im empfangenden HTML-Skript zu verwenden.
 
 So können Sie Parameter in Skripten oder Komponenten ordnungsgemäß weitergeben.
 
@@ -521,7 +521,7 @@ public class Settings extends WCMUsePojo {
 }
 ```
 
-For example, via a Sling-Model, you can consume the value of the specified `requestAttributes`.
+Beispielsweise können Sie über ein Sling-Modell den Wert des angegebenen `requestAttributes` verwenden.
 
 In diesem Beispiel wird layout über die Zuordnung aus der Anwendungsklasse eingefügt:
 
@@ -534,7 +534,7 @@ public class ProductSettings {
 }
 ```
 
-### template &amp; call  {#template-call}
+### template &amp; call   {#template-call}
 
 Vorlagenblöcke können wie Funktionsaufrufe verwendet werden: in ihrer Deklaration können sie Parameter abrufen, die dann beim Aufruf weitergegeben werden können. Sie ermöglichen auch eine Rekursion.
 
@@ -556,7 +556,7 @@ Definieren Sie eine dynamische Vorlage und rufen Sie sie dann mit Parametern auf
 <div data-sly-call="${two @ title=properties.jcr:title}"></div>
 ```
 
-Templates located in a different file, can be initialized with `data-sly-use`. Beachten Sie, dass in diesem Fall `data-sly-use` und `data-sly-call` auch im selben Element platziert werden könnten:
+Vorlagen, die sich in einer anderen Datei befinden, können mit `data-sly-use` initialisiert werden. Beachten Sie, dass in diesem Fall `data-sly-use` und `data-sly-call` auch im selben Element platziert werden könnten:
 
 ```xml
 <div data-sly-use.lib="templateLib.html">
@@ -579,21 +579,21 @@ Die Vorlagenverschachtelung wird unterstützt:
 <div data-sly-call="${nav @ page=currentPage}" data-sly-unwrap></div>
 ```
 
-## sly Element {#sly-element}
+## Sly-Element {#sly-element}
 
-Das `<sly>` HTML-Tag kann zum Entfernen des aktuellen Elements verwendet werden, sodass nur dessen untergeordnete Elemente angezeigt werden können. Seine Funktionalität ähnelt dem `data-sly-unwrap` Blockelement:
+Das `<sly>`-HTML-Tag kann zum Entfernen des aktuellen Elements verwendet werden, sodass nur dessen untergeordnete Elemente angezeigt werden können. Seine Funktionalität ähnelt dem Blockelement `data-sly-unwrap`:
 
 ```xml
 <!--/* This will display only the output of the 'header' resource, without the wrapping <sly> tag */-->
 <sly data-sly-resource="./header"></sly>
 ```
 
-Obwohl es sich nicht um ein gültiges HTML5-Tag handelt, kann das `<sly>` -Tag in der endgültigen Ausgabe angezeigt werden `data-sly-unwrap`:
+Obwohl kein gültiges HTML5-Tag, kann das `<sly>`-Tag in der endgültigen Ausgabe mit `data-sly-unwrap` angezeigt werden:
 
 ```xml
 <sly data-sly-unwrap="${false}"></sly> <!--/* outputs: <sly></sly> */-->
 ```
 
-The goal of the `<sly>` element is to make it more obvious that the element is not output. If you want you can still use `data-sly-unwrap`.
+Das Ziel des `<sly>`-Elements ist es, es deutlicher zu machen, dass das Element nicht ausgegeben wird. Wenn Sie möchten, können Sie weiterhin `data-sly-unwrap` verwenden.
 
-As with `data-sly-unwrap`, try to minimize the use of this.
+Wie bei `data-sly-unwrap` sollten Sie versuchen, die Verwendung dieser Methode zu minimieren.
