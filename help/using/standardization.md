@@ -14,5 +14,5 @@ ht-degree: 35%
 
 Nachfolgend sind die HTL-Standards aufgeführt:
 
-* [Die HTL Spezifikation](https://github.com/adobe/htl-spec) - Für Sprachanwälte, die formale Syntax und Beschreibung.
-* [Die HTL TCK](https://github.com/adobe/htl-tck) - Eine Reihe von Tests zur Zertifizierung der Kompatibilität der Sprache.
+* [Die HTL Spezifikation](https://github.com/adobe/htl-spec)  - Für Sprachanwälte, die formale Syntax und Beschreibung.
+* [Die HTL TCK](https://github.com/adobe/htl-tck)  - Eine Reihe von Tests zur Zertifizierung der Kompatibilität der Sprache.
