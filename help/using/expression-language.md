@@ -21,7 +21,7 @@ Die HTML-Vorlagensprache verwendet eine Ausdruckssprache für den Zugriff auf de
 </h1>
 ```
 
-Expressions can be escaped by prepending a `\` character, for instance `\${test}` will render `${test}`.
+Ausdruck können mit einem vorangestellten `\`-Zeichen Escape-Zeichen versehen werden. `\${test}` rendert beispielsweise `${test}`.
 
 >[!NOTE]
 >
@@ -50,11 +50,11 @@ Bei den Eigenschaften, auf die zugegriffen wurde, kann es sich um Funktionen han
 
 Im obigen Beispiel wird ebenfalls gezeigt, dass der Zugriff auf die Java-Getter-Funktionen, beispielsweise `getTitle()``get`, auch möglich ist, ohne  Elemente voranzustellen, und durch Kleinschreibung des folgenden Zeichens.
 
-### Gültige Bezeichnerzeichen {#valid-identifier-characters}
+### Gültige Kennzeichen {#valid-identifier-characters}
 
-Die Variablennamen, sog. Bezeichner, sind mit bestimmten Regeln konform. They must start with a letter (`A`-`Z` and `a`-`z`), or an underscore (`_`), and subsequent characters can also be digits (`0`-`9`) or colon (`:`). Unicode-Buchstaben wie `å` und `ü` können in Bezeichnern nicht verwendet werden.
+Die Variablennamen, sog. Bezeichner, sind mit bestimmten Regeln konform. Sie müssen mit einem Beginn (`A`-`Z` und `a`-`z`) oder einem Unterstrich (`_`) und nachfolgende Zeichen können auch Ziffern (`0`-`9`) oder Doppelpunkt (`:`) sein. Unicode-Buchstaben wie `å` und `ü` können in Bezeichnern nicht verwendet werden.
 
-Given that the colon (`:`) character is common in AEM property names, it should be emphasized that it is conveniently a valid identifier character:
+Da das Doppelpunkt (`:`) in AEM Eigenschaftsnamen häufig vorkommt, ist es ein bequemes gültiges Bezeichnerzeichen:
 
 `${properties.jcr:title}`
 
@@ -78,7 +78,7 @@ ${currentPage.lastModified.time.toString}
 
 Bei einem Literal handelt es sich um eine Notation für das Darstellen eines festen Werts.
 
-### Boolesch  {#boolean}
+### Boolesch   {#boolean}
 
 Boolesch stellt eine logische Entität dar und kann zwei Werte aufweisen: `true` und `false`.
 
@@ -128,7 +128,7 @@ was die folgende Ausgabe zur Folge hat, da HTL die kontextspezifische Maskierung
 <p title="it&#39;s great, she said &#34;yes!&#34;">...</p>
 ```
 
-### Arrays  {#arrays}
+### Arrays   {#arrays}
 
 Bei einem Array handelt es sich um einen geordneten Satz an Werten, auf die mit einem Namen und einem Index verwiesen werden kann. Die Typen der zugehörigen Elemente können kombiniert werden.
 
@@ -145,17 +145,17 @@ Arrays sind hilfreich, um eine Liste der Werte anhand der Vorlage bereitzustelle
 </ul>
 ```
 
-## Operatoren  {#operators}
+## Operatoren   {#operators}
 
 ### Logische Operatoren {#logical-operators}
 
 Diese Operatoren werden für gewöhnlich mit Booleschen Werten verwendet. Sie geben jedoch wie in JavaScript tatsächlich den Wert eines der angegebenen Operanden zurück. Bei der Verwendung mit nicht Booleschen Werten geben sie möglicherweise einen nicht Booleschen Wert zurück.
 
-Wenn ein Wert in `true` umgewandelt werden kann, ist der Wert sozusagen wahr. Wenn ein Wert in `false` umgewandelt werden kann, ist der Wert sozusagen falsch. Values that can be converted to `false` are undefined variables, null values, the number zero, and empty strings.
+Wenn ein Wert in `true` umgewandelt werden kann, ist der Wert sozusagen wahr. Wenn ein Wert in `false` umgewandelt werden kann, ist der Wert sozusagen falsch. Werte, die in `false` konvertiert werden können, sind nicht definierte Variablen, Null-Werte, die Zahl Null und leere Zeichenfolgen.
 
 #### Logisches NICHT {#logical-not}
 
-`${!myVar}` gibt zurück, `false` wenn der einzelne Operand in `true`konvertiert werden kann; andernfalls wird er zurückgegeben `true`.
+`${!myVar}` gibt zurück,  `false` wenn der einzelne Operand in  `true`konvertiert werden kann; andernfalls wird er zurückgegeben  `true`.
 
 Dieser Operator kann zum Beispiel zum Umkehren einer Testbedingung verwendet werden. Dazu zählt beispielsweise, dass ein Element nur dann angezeigt wird, wenn keine untergeordneten Seiten vorhanden sind:
 
@@ -163,9 +163,9 @@ Dieser Operator kann zum Beispiel zum Umkehren einer Testbedingung verwendet wer
 <p data-sly-test="${!currentPage.hasChild}">current page has no children</p>
 ```
 
-#### Logisches UND  {#logical-and}
+#### Logisches UND   {#logical-and}
 
-`${varOne && varTwo}` zurückgibt, `varOne` wenn sie falsch ist; andernfalls wird er zurückgegeben `varTwo`.
+`${varOne && varTwo}` zurückgibt,  `varOne` wenn sie falsch ist; andernfalls wird er zurückgegeben  `varTwo`.
 
 Dieser Operator kann verwendet werden, um zwei Bedingungen gleichzeitig zu testen, beispielsweise zum Verifizieren des Vorhandenseins von zwei Eigenschaften:
 
@@ -184,7 +184,7 @@ Der logische UND-Operator kann auch verwendet werden, um HTML-Attribute bedingt 
 
 #### Logisches ODER {#logical-or}
 
-`${varOne || varTwo}` zurückgibt, `varOne` wenn es wahrheitsgemäß ist; andernfalls wird er zurückgegeben `varTwo`.
+`${varOne || varTwo}` zurückgibt,  `varOne` wenn es wahrheitsgemäß ist; andernfalls wird er zurückgegeben  `varTwo`.
 
 Dieser Operator kann verwendet werden, um zu testen, ob eine der zwei Bedingungen zutrifft, beispielsweise zum Verifizieren des Vorhandenseins von mindestens einer Eigenschaft:
 
@@ -194,7 +194,7 @@ Dieser Operator kann verwendet werden, um zu testen, ob eine der zwei Bedingunge
 
 Da der logische ODER-Operator die erste wahre Variable zurückgibt, gestaltet sich seine Verwendung auch sehr praktisch, wenn es darum geht, Ausweichwerte bereitzustellen.
 
-Sie kann auch zur bedingten Anzeige von HTML-Attributen verwendet werden, da HTML Attribute mit Werten entfernt, die von Ausdrücken festgelegt wurden, die als &quot;false&quot;oder als leere Zeichenfolge gelten. So the example below will display **`properties.jcr:`** title if it exists and is not empty, else it falls back to displaying **`properties.jcr:description`** if it exists and is not empty, else it will display the message &quot;no title or description provided&quot;:
+Sie kann auch zur bedingten Anzeige von HTML-Attributen verwendet werden, da HTML Attribute mit Werten entfernt, die von Ausdrücken festgelegt wurden, die als &quot;false&quot;oder als leere Zeichenfolge gelten. Im folgenden Beispiel wird der Titel **`properties.jcr:`** angezeigt, wenn er vorhanden ist und nicht leer ist. Andernfalls wird **`properties.jcr:description`** angezeigt, wenn er vorhanden ist und nicht leer ist. Andernfalls wird die Meldung &quot;Kein Titel oder keine Beschreibung angegeben&quot;angezeigt:
 
 ```xml
 <p>${properties.jcr:title || properties.jcr:description || "no title or description provided"}</p>
@@ -218,7 +218,7 @@ Dieser Operator kann für gewöhnlich verwendet werden, um Bedingungen in Ausdr�
 <p>${properties.showDescription ? properties.jcr:description : properties.jcr:title}</p>
 ```
 
-### Vergleichsoperatoren  {#comparison-operators}
+### Vergleichsoperatoren   {#comparison-operators}
 
 Die Gleich- und Ungleich-Operatoren unterstützen nur Operanden identischen Typs. Wenn die Typen nicht übereinstimmen, wird ein Fehler angezeigt.
 
@@ -227,15 +227,15 @@ Die Gleich- und Ungleich-Operatoren unterstützen nur Operanden identischen Typs
 * Boolesche Werte sind identisch, wenn beide `true` oder `false` sind.
 * Null- oder undefinierte Variablen sind identisch mit sich selbst und miteinander.
 
-`${varOne == varTwo}` gibt zurück, `true` wenn `varOne` und `varTwo` gleich sind.
+`${varOne == varTwo}` gibt zurück,  `true` wenn  `varOne` und  `varTwo` gleich sind.
 
-`${varOne != varTwo}` gibt zurück, `true` wenn `varOne` und `varTwo` nicht gleich sind.
+`${varOne != varTwo}` gibt zurück,  `true` wenn  `varOne` und nicht gleich  `varTwo` sind.
 
 Die relationalen Operatoren unterstützen nur Operanden, die Zahlen sind. Bei allen anderen Typen wird ein Fehler angezeigt.
 
-`${varOne > varTwo}` zurückgibt, `true` wenn `varOne` größer als `varTwo`.
+`${varOne > varTwo}` zurückgibt,  `true` wenn  `varOne` größer als  `varTwo`.
 
-`${varOne < varTwo}` zurückgibt, `true` wenn `varOne` kleiner als `varTwo`.
+`${varOne < varTwo}` zurückgibt,  `true` wenn  `varOne` kleiner als  `varTwo`.
 
 `${varOne >= varTwo}` gibt `true` zurück, wenn `varOne` größer als/gleich `varTwo` ist.
 
@@ -278,7 +278,7 @@ Es sind auch Parameterausdrücke möglich, die nur Optionen enthalten:
 ${@ optOne, optTwo=bar}
 ```
 
-### Zeichenfolgenformatierung  {#string-formatting}
+### Zeichenfolgenformatierung   {#string-formatting}
 
 Option, die die Aufzählungsplatzhalter {*n*} durch den entsprechenden Wert ersetzt:
 
@@ -310,7 +310,7 @@ Fügt die HTML-Erweiterung und ein Fragment (#value) zu einem Pfad hinzu.
 <a href="${item.path @ extension = 'html', fragment=item.name}">${item.name}</a>
 ```
 
-Die Funktion `@extension` funktioniert in allen Szenarien und prüft, ob die Erweiterung hinzugefügt werden soll oder nicht.
+Das `@extension` funktioniert in allen Szenarien und prüft, ob die Erweiterung hinzugefügt werden soll oder nicht.
 
 ```xml
 ${ link @ extension = 'html' }
@@ -333,9 +333,9 @@ Die folgenden Beispiele zeigen, dass das Format zuerst festgelegt wird und dann 
 
 >[!NOTE]
 >
->For complete details on the format you can use, refer to [HTL-specification](https://github.com/Adobe-Marketing-Cloud/htl-spec/blob/master/SPECIFICATION.md).
+>Ausführliche Informationen zum Format, das Sie verwenden können, finden Sie unter [HTL-Specification](https://github.com/Adobe-Marketing-Cloud/htl-spec/blob/master/SPECIFICATION.md).
 
-### Internationalisierung  {#internationalization}
+### Internationalisierung   {#internationalization}
 
 Übersetzt die Zeichenfolge mithilfe des aktuellen [Wörterbuchs](https://docs.adobe.com/content/help/en/experience-manager-65/developing/components/internationalization/i18n-translator.html) in die Sprache der aktuellen *Quelle* (siehe unten). Wenn keine Übersetzung gefunden wird, wird die ursprüngliche Zeichenfolge verwendet.
 
@@ -349,7 +349,7 @@ Die Option „hint“ kann verwendet werden, um Übersetzern einen entsprechende
 ${'Page' @ i18n, hint='Translation Hint'}
 ```
 
-The default source for the language is `resource`, meaning that the text gets translated to the same language as the content. This can be changed to `user`, meaning that the language is taken from the browser locale or from the locale of the logged-in user:
+Die Standardquelle für die Sprache ist `resource`, d. h. der Text wird in dieselbe Sprache wie der Inhalt übersetzt. Dies kann in `user` geändert werden, d. h. die Sprache wird vom Browser-Gebietsschema oder vom Gebietsschema des angemeldeten Benutzers übernommen:
 
 ```xml
 ${'Page' @ i18n, source='user'}
@@ -367,7 +367,7 @@ Zum Einbetten von Variablen in einer übersetzten Zeichenfolge kann die Option �
 ${'Page {0} of {1}' @ i18n, format=[current, total]}
 ```
 
-### Array-Verbund  {#array-join}
+### Array-Verbund   {#array-join}
 
 HTL zeigt standardmäßig, wenn ein Array als Text angezeigt wird, kommagetrennte Werte (ohne Leerzeichen) an.
 
@@ -377,7 +377,7 @@ Verwenden Sie die Option „join“, um ein anderes Trennzeichen anzugeben:
 ${['one', 'two'] @ join='; '}
 ```
 
-### Anzeigekontext  {#display-context}
+### Anzeigekontext   {#display-context}
 
 Der Anzeigekontext eines HTL-Ausdrucks bezieht sich auf seine Position in der Struktur der HTML-Seite. Wenn der Ausdruck beispielsweise an einer Stelle angezeigt wird, wodurch ein Textknoten einmalig gerendert wird, befindet er sich in einem `text`-Kontext. Wenn er im Wert eines Attributs gefunden wird, befindet er sich in einem `attribute`-Kontext usw.
 
@@ -419,7 +419,7 @@ Maskierung und XSS-Schutz können auch deaktiviert werden:
 <div>${myScript @ context='unsafe'}</div>
 ```
 
-### Kontexteinstellungen  {#context-settings}
+### Kontexteinstellungen   {#context-settings}
 
 | Kontext | Wann ist sie einzusetzen? | Funktion |
 |--- |--- |--- |
