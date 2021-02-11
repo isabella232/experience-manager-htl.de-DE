@@ -1,10 +1,10 @@
 ---
-title: Übersicht über AEM HTL
+title: Adobe Experience Manager HTL-Übersicht
 description: Die durch AEM unterstützte HTL bietet ein hoch produktives Webframework auf Unternehmensebene, das die Sicherheit erhöht und es HTML-Entwicklern ohne Java-Kenntnissen ermöglicht, besser an AEM-Projekten teilhaben zu können.
 translation-type: tm+mt
-source-git-commit: c7fa6014cd954a2ccb175e4c3a6be9deb83af890
+source-git-commit: 88f6ad56a8d8f704b51aa84765de8da15e6c594e
 workflow-type: tm+mt
-source-wordcount: '665'
+source-wordcount: '667'
 ht-degree: 94%
 
 ---
