@@ -2,7 +2,7 @@
 title: Was ist HTL?
 description: 'Die HTML-Vorlagensprache – HTL – ist das von Adobe Experience Manager bevorzugte und empfohlene serverseitige Vorlagensystem für HTML. '
 translation-type: tm+mt
-source-git-commit: c7fa6014cd954a2ccb175e4c3a6be9deb83af890
+source-git-commit: f7e46aaac2a4b51d7fa131ef46692ba6be58d878
 workflow-type: tm+mt
 source-wordcount: '181'
 ht-degree: 70%
