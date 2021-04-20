@@ -4,8 +4,8 @@ user-guide-title: Adobe Experience Manager HTL
 breadcrumb-title: HTL-Anleitung
 user-guide-description: Verwenden Sie die HTML Template Language (HTL), um ein Web-Framework auf Unternehmensebene anzulegen.
 feature-set: Experience Manager
-feature: Entwicklertools
-role: Entwickler
+feature: Developer Tools
+role: Developer
 translation-type: tm+mt
 source-git-commit: 5b88f6255534ef5af0958681c80303ab3da112b5
 workflow-type: tm+mt
