@@ -1,14 +1,13 @@
 ---
 title: Globale HTL-Objekte
 description: Ohne etwas angeben zu müssen, bietet HTL Zugriff auf alle Objekte, die nach dem Einschließen von global.jsp in JSP verfügbar waren.
-translation-type: tm+mt
-source-git-commit: f7e46aaac2a4b51d7fa131ef46692ba6be58d878
+exl-id: ca590b92-f1b3-4e44-a04a-a2c10dff256f
+source-git-commit: 8e70ee4921a7ea071ab7e06947824c371f4013d8
 workflow-type: tm+mt
 source-wordcount: '220'
 ht-degree: 86%
 
 ---
-
 
 # Globale HTL-Objekte {#htl-global-objects}
 
@@ -58,7 +57,7 @@ Die hilfreichsten Variablen in der folgenden Tabelle sind in Fettdruck hervorgeh
 
 ## JavaScript-unterstützte Objekte {#javascript-backed-objects}
 
-Es ist möglich, HTML-Logik mit JavaScript zu unterstützen. Die bevorzugte oder empfohlene Methode ist jedoch die Verwendung von [Sling-Modellen.](https://sling.apache.org/documentation/bundles/models.html)
+Es ist möglich, die HTL-Logik mit JavaScript zu unterstützen. Die bevorzugte oder empfohlene Methode ist jedoch die Verwendung von [Sling-Modellen.](https://sling.apache.org/documentation/bundles/models.html)
 
 <!-- 
 
