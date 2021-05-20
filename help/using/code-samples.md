@@ -1,23 +1,22 @@
 ---
 title: Codebeispiele
 description: Codebeispiele einschließlich der We.Retail-Referenzimplementierung
-translation-type: tm+mt
-source-git-commit: f7e46aaac2a4b51d7fa131ef46692ba6be58d878
+exl-id: cdc0a525-e5d1-4d7f-97ae-b9192163caee
+source-git-commit: 8e70ee4921a7ea071ab7e06947824c371f4013d8
 workflow-type: tm+mt
 source-wordcount: '107'
 ht-degree: 31%
 
 ---
 
-
 # Codebeispiele {#code-samples}
 
 Im Folgenden finden Sie Codebeispiele für HTL:
 
-* [WKND Tutorial](https://docs.adobe.com/content/help/de-DE/experience-manager-learn/getting-started-wknd-tutorial-develop/overview.html)  - Dieses Tutorial durchläuft die Implementierung einer AEM Website für eine fiktive Lifestyle-Marke der WKND und behandelt grundlegende Themen wie Projekteinrichtung, Kernkomponenten, bearbeitbare Vorlagen, clientseitige Bibliotheken und Komponentenentwicklung mit Adobe Experience Manager Sites, die alle in HTML implementiert sind.
-* [HTL TodoMVC Beispiel](https://github.com/Adobe-Marketing-Cloud/aem-sightly-sample-todomvc)  - Eine AEM + HTL Implementierung der berühmten Übung.
+* [WKND-Tutorial](https://docs.adobe.com/content/help/de-DE/experience-manager-learn/getting-started-wknd-tutorial-develop/overview.html)  - Dieses Tutorial führt Sie durch die Implementierung einer AEM Site für eine fiktive Lifestyle-Marke im WKND und behandelt grundlegende Themen wie Projekteinrichtung, Kernkomponenten, bearbeitbare Vorlagen, Client-seitige Bibliotheken und Komponentenentwicklung mit Adobe Experience Manager Sites, die alle in HTL implementiert sind.
+* [HTL TodoMVC-Beispiel](https://github.com/Adobe-Marketing-Cloud/aem-sightly-sample-todomvc)  - Eine AEM + HTL-Implementierung der berühmten Übung.
 
 Experten-Sessions:
 
-* [HTL-Sitzung Januar 2015 (Einführung in HTL)](http://scottsdigitalcommunity.blogspot.ca/2015/01/upcoming-sessions-of-ask-aem-community.html)
-* [HTML-Sitzung im März 2016 (Entwicklung erweiterter Komponenten)](http://scottsdigitalcommunity.blogspot.ca/2016/03/ask-aem-community-experts-deep-dive.html)
+* [HTL-Sitzung vom Januar 2015 (Einführung in HTL)](http://scottsdigitalcommunity.blogspot.ca/2015/01/upcoming-sessions-of-ask-aem-community.html)
+* [HTL-Sitzung vom März 2016 (Erweiterte Komponentenentwicklung)](http://scottsdigitalcommunity.blogspot.ca/2016/03/ask-aem-community-experts-deep-dive.html)
