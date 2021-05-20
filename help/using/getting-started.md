@@ -1,18 +1,17 @@
 ---
 title: Erste Schritte mit HTL
 description: Die von AEM unterstützte Vorlagensprache HTL löst JSP als bevorzugtes und empfohlenes serverseitiges Vorlagensystem für HTML in AEM ab.
-translation-type: tm+mt
-source-git-commit: f7e46aaac2a4b51d7fa131ef46692ba6be58d878
+exl-id: c95eb1b3-3b96-4727-8f4f-d54e7136a8f9
+source-git-commit: 8e70ee4921a7ea071ab7e06947824c371f4013d8
 workflow-type: tm+mt
 source-wordcount: '2471'
 ht-degree: 92%
 
 ---
 
-
 # Erste Schritte mit HTL {#getting-started-with-htl}
 
-Die HTML-Vorlagensprache (HTL), die von Adobe Experience Manager (AEM) unterstützt wird, ist das bevorzugte und empfohlene serverseitige Vorlagensystem für HTML in AEM. Sie wird an die Stelle von JSP (JavaServer Pages) gesetzt, wie sie in früheren Versionen von AEM verwendet wurde.
+Die von Adobe Experience Manager (AEM) unterstützte HTML-Vorlagensprache (HTL) ist das bevorzugte und empfohlene serverseitige Vorlagensystem für HTML in AEM. Sie ersetzt JSP (JavaServer Pages), wie es in früheren Versionen von AEM verwendet wurde.
 
 >[!NOTE]
 >
@@ -37,11 +36,11 @@ Bevor wir mit der HTML-Vorlagensprache beginnen können, müssen wir im Voraus e
 
 **Weist HTL Einschränkungen auf, die bei JSP nicht vorhanden sind?** - HTL weist im Vergleich zu JSP keine wirklichen Einschränkungen auf. Was mit JSP erledigt werden kann, sollte auch mit HTL erreichbar sein. HTL ist per Definition in verschiedener Hinsicht strenger als JSP. Was vielleicht in nur einer JSP-Datei erreicht werden kann, muss unter Umständen in eine Java-Klasse oder eine JavaScript-Datei separiert werden, damit es in HTL erreicht werden kann. Dies ist jedoch generell erwünscht, um eine entsprechende Trennung von Belangen zwischen der Logik und dem Markup sicherzustellen.
 
-**Werden JSP-Tag-Bibliotheken durch HTL unterstützt?** - Nein, aber wie im Abschnitt  [Loading Client ](getting-started.md#loading-client-libraries) Librariessection gezeigt, weist das Angebot  [template &amp; ](block-statements.md#template-call) callstatement ein ähnliches Muster auf.
+**Werden JSP-Tag-Bibliotheken durch HTL unterstützt?** - Nein, aber wie im Abschnitt  [Laden der Client-](getting-started.md#loading-client-libraries) Bibliothek gezeigt, weisen die  [template &amp; ](block-statements.md#template-call) callinstructions ein ähnliches Muster auf.
 
 **Können die HTL-Funktionen für ein AEM-Projekt erweitert werden?** - Nein, das können sie nicht. HTL verfügt über leistungsstarke Erweiterungsmechanismen für die Wiederverwendung der Logik (die [Anwendungs-API](getting-started.md#use-api-for-accessing-logic)) und des Markups (die Anweisungen [template &amp; call](block-statements.md#template-call)), die verwendet werden können, um den Code der Projekte zu modularisieren.
 
-**Was sind die Hauptvorteile von HTL im Vergleich zu JSP?** - Sicherheit und Projekteffizienz sind die Hauptvorteile, die im  [Überblick](overview.md) beschrieben werden.
+**Was sind die Hauptvorteile von HTL im Vergleich zu JSP?** - Sicherheit und Projekteffizienz sind die wichtigsten Vorteile, die in der  [Übersicht](overview.md) beschrieben werden.
 
 **Wird JSP schließlich verschwinden?** - Für diese Zeilen gibt es derzeit keine Pläne.
 
@@ -61,9 +60,9 @@ Hier finden Sie ein erstes Beispiel, das wie besehen in der Datei **`template.ht
 
 Es können zwei Syntaxarten unterschieden werden:
 
-* **[Blockanweisungen](block-statements.md)**  - So zeigen Sie die  **&lt;h1>** -Element wird ein  [`data-sly-test`](block-statements.md#test) HTML5-Datenattribut verwendet. HTL stellt mehrere solcher Attribute bereit. Dadurch können HTML-Elementen Verhaltensweisen angehängt werden, wobei allen `data-sly` vorangestellt ist.
+* **[Blockanweisungen](block-statements.md)**  - So zeigen Sie die  **&lt;h1>** -Element ein  [`data-sly-test`](block-statements.md#test) HTML5-Datenattribut verwendet. HTL stellt mehrere solcher Attribute bereit. Dadurch können HTML-Elementen Verhaltensweisen angehängt werden, wobei allen `data-sly` vorangestellt ist.
 
-* **[Ausdruck Language](expression-language.md)**  - HTML-Ausdruck werden durch Zeichen  `${` und  `}`Zeichen getrennt. Diese Ausdrücke werden zur Laufzeit ausgewertet und ihr Wert wird in den ausgehenden HTML-Stream eingeschleust.
+* **[Ausdruckssprache](expression-language.md)**  - HTL-Ausdrücke werden durch Zeichen  `${` und  `}`getrennt. Diese Ausdrücke werden zur Laufzeit ausgewertet und ihr Wert wird in den ausgehenden HTML-Stream eingeschleust.
 
 Die zwei Seiten, die oben verknüpft wurden, enthalten die detaillierte Liste der für die Syntax verfügbaren Funktionen.
 
@@ -82,14 +81,14 @@ Beispiel:
 </sly>
 ```
 
-gibt etwas wie folgendes HTML aus, aber nur, wenn beide vorhanden sind, eine **`jcr:title`**- und eine **`jcr:description`**-Eigenschaft definiert sind und keiner von ihnen leer ist:
+gibt etwas wie die folgende HTML aus, jedoch nur, wenn eine **`jcr:title`** - und eine **`jcr:description`** -Eigenschaft definiert sind und keine der beiden leer ist:
 
 ```xml
 <h1>MY TITLE</h1>
 <p>MY DESCRIPTION</p>
 ```
 
-Zu beachten ist, dass das SLY-Element nur dann verwendet werden darf, wenn kein vorhandenes Element mit der block-Anweisung hätte versehen werden können, da SLY-Elemente den von der Sprache angebotenen Wert abschrecken, den statischen HTML-Code nicht zu ändern, wenn er dynamisch wird.
+Beachten Sie, dass das SLY-Element nur verwendet werden soll, wenn kein vorhandenes Element mit der Blockanweisung hätte kommentiert werden können, da SLY-Elemente den von der Sprache angebotenen Wert davon abhalten, den statischen HTML-Code bei der dynamischen Darstellung nicht zu ändern.
 
 Wenn das vorherige Beispiel beispielsweise bereits in einem DIV-Element umbrochen worden wäre, wäre das hinzugefügte SLY-Element missbräuchlich:
 
@@ -221,7 +220,7 @@ Im obigen Beispiel wird ein serverseitiges ausgeführtes JavaScript-Element verw
 
 Weitere Informationen dazu finden Sie in den folgenden Abschnitten:
 
-* Der Abschnitt auf der [`data-sly-use`-Anweisung](block-statements.md#use) erklärt alles, was mit dieser Anweisung getan werden kann.
+* Im Abschnitt zur [`data-sly-use`-Anweisung](block-statements.md#use) wird alles erläutert, was mit dieser Anweisung möglich ist.
 * Die [Anwendungs-API-Seite](use-api.md) enthält einige Informationen, die dabei helfen, sich zwischen dem Schreiben der Logik in Java oder in JavaScript zu entscheiden.
 * Für detaillierte Informationen über das Schreiben der Logik sind die Seiten über die [JavaScript-Anwendungs-API](use-api-javascript.md) und die [Java-Anwendungs-API](use-api-java.md) hilfreich.
 
