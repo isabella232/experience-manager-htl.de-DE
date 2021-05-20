@@ -1,18 +1,17 @@
 ---
 title: HTL-JavaScript-Anwendungs-API
-description: Die HTML-Vorlagensprache - HTL - JavaScript Use-API ermöglicht es einer HTML-Datei, auf in JavaScript geschriebenen Helfercode zuzugreifen.
-translation-type: tm+mt
-source-git-commit: f7e46aaac2a4b51d7fa131ef46692ba6be58d878
+description: Die HTML-Vorlagensprache - HTL - JavaScript-Anwendungs-API ermöglicht einer HTL-Datei den Zugriff auf in JavaScript geschriebenen Hilfscode.
+exl-id: e98bfbd5-fa64-48c7-bd14-477d4c5e1788
+source-git-commit: 8e70ee4921a7ea071ab7e06947824c371f4013d8
 workflow-type: tm+mt
 source-wordcount: '324'
 ht-degree: 87%
 
 ---
 
-
 # HTL-JavaScript-Anwendungs-API {#htl-javascript-use-api}
 
-Die HTML Template Language (HTL) JavaScript Use-API ermöglicht es einer HTML-Datei, auf in JavaScript geschriebenen Helfercode zuzugreifen. Dadurch kann die gesamte komplexe Geschäftslogik im JavaScript-Code verkapselt werden, während der HTL-Code nur die direkte Markup-Produktion verarbeiten muss.
+Die JavaScript-Anwendungs-API für die HTML-Vorlagensprache (HTL) ermöglicht einer HTL-Datei den Zugriff auf in JavaScript geschriebenen Hilfscode. Dadurch kann die gesamte komplexe Geschäftslogik im JavaScript-Code verkapselt werden, während der HTL-Code nur die direkte Markup-Produktion verarbeiten muss.
 
 Die folgenden Konventionen werden verwendet.
 
@@ -157,7 +156,7 @@ use(['../utils/MyUtils.js'], function (utils) {
 });
 ```
 
-## Erweitern   {#extending}
+## Erweitern  {#extending}
 
 Das Abhängigkeitsmuster kann auch verwendet werden, um die Logik einer anderen Komponente zu erweitern (für gewöhnlich ist dies der `sling:resourceSuperType` der aktuellen Komponente).
 
