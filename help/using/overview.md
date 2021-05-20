@@ -1,20 +1,19 @@
 ---
 title: Adobe Experience Manager HTL-Übersicht
 description: Die durch AEM unterstützte HTL bietet ein hoch produktives Webframework auf Unternehmensebene, das die Sicherheit erhöht und es HTML-Entwicklern ohne Java-Kenntnissen ermöglicht, besser an AEM-Projekten teilhaben zu können.
-translation-type: tm+mt
-source-git-commit: f7e46aaac2a4b51d7fa131ef46692ba6be58d878
+exl-id: 5d06ff25-d681-4b95-8375-c28a8364eb7e
+source-git-commit: 8e70ee4921a7ea071ab7e06947824c371f4013d8
 workflow-type: tm+mt
 source-wordcount: '667'
 ht-degree: 94%
 
 ---
 
-
 # Überblick {#overview}
 
 Die HTML-Vorlagensprache (HTL), die durch Adobe Experience Manager (AEM) unterstützt wird, bietet ein hoch produktives Webframework auf Konzernebene, das die Sicherheit erhöht und es HTML-Entwicklern ohne Java-Kenntnissen ermöglicht, besser an AEM-Projekten teilhaben zu können.
 
-Die HTML-Vorlagensprache ist das bevorzugte und empfohlene serverseitige Vorlagensystem für HTML in AEM. HTL wurde mit AEM 6.0 eingeführt und ersetzt JSP (JavaServer Pages). Die HTML-Vorlagensprache unterstützt Webentwickler, die zuverlässige Konzernwebsites erstellen müssen, dabei, die Sicherheit und die Entwicklungseffizienz zu erhöhen.
+Die HTML-Vorlagensprache ist das bevorzugte und empfohlene serverseitige Vorlagensystem für HTML in AEM. HTL wurde mit AEM 6.0 eingeführt und löst JSP (JavaServer Pages) ab. Die HTML-Vorlagensprache unterstützt Webentwickler, die zuverlässige Konzernwebsites erstellen müssen, dabei, die Sicherheit und die Entwicklungseffizienz zu erhöhen.
 
 ## Erhöhte Sicherheit {#increased-security}
 
