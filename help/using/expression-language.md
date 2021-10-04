@@ -2,9 +2,9 @@
 title: HTL-Ausdruckssprache
 description: Die HTML-Vorlagensprache verwendet eine Ausdruckssprache für den Zugriff auf den Datenstrukturen, die die dynamischen Elemente der HTML-Ausgabe bereitstellen.
 exl-id: 57e3961b-8c84-4d56-a049-597c7b277448
-source-git-commit: 8e70ee4921a7ea071ab7e06947824c371f4013d8
+source-git-commit: 89b9e89254f341e74f1a5a7b99735d2e69c8a91e
 workflow-type: tm+mt
-source-wordcount: '1854'
+source-wordcount: '1852'
 ht-degree: 81%
 
 ---
@@ -162,7 +162,7 @@ Dieser Operator kann zum Beispiel zum Umkehren einer Testbedingung verwendet wer
 <p data-sly-test="${!currentPage.hasChild}">current page has no children</p>
 ```
 
-#### Logisches UND   {#logical-and}
+#### Logisches UND  {#logical-and}
 
 `${varOne && varTwo}` gibt zurück,  `varOne` wenn es falsy ist; Andernfalls wird  `varTwo`zurückgegeben.
 
@@ -217,7 +217,7 @@ Dieser Operator kann für gewöhnlich verwendet werden, um Bedingungen in Ausdr�
 <p>${properties.showDescription ? properties.jcr:description : properties.jcr:title}</p>
 ```
 
-### Vergleichsoperatoren   {#comparison-operators}
+### Vergleichsoperatoren  {#comparison-operators}
 
 Die Gleich- und Ungleich-Operatoren unterstützen nur Operanden identischen Typs. Wenn die Typen nicht übereinstimmen, wird ein Fehler angezeigt.
 
@@ -277,7 +277,7 @@ Es sind auch Parameterausdrücke möglich, die nur Optionen enthalten:
 ${@ optOne, optTwo=bar}
 ```
 
-### Zeichenfolgenformatierung   {#string-formatting}
+### Zeichenfolgenformatierung  {#string-formatting}
 
 Option, die die Aufzählungsplatzhalter {*n*} durch den entsprechenden Wert ersetzt:
 
@@ -336,7 +336,7 @@ Die folgenden Beispiele zeigen, dass das Format zuerst festgelegt wird und dann 
 
 ### Internationalisierung  {#internationalization}
 
-Übersetzt die Zeichenfolge mithilfe des aktuellen [Wörterbuchs](https://docs.adobe.com/content/help/en/experience-manager-65/developing/components/internationalization/i18n-translator.html) in die Sprache der aktuellen *Quelle* (siehe unten). Wenn keine Übersetzung gefunden wird, wird die ursprüngliche Zeichenfolge verwendet.
+Übersetzt die Zeichenfolge mithilfe des aktuellen [Wörterbuchs](https://experienceleague.adobe.com/docs/experience-manager-65/developing/components/internationalization/i18n-translator.html) in die Sprache der aktuellen *Quelle* (siehe unten). Wenn keine Übersetzung gefunden wird, wird die ursprüngliche Zeichenfolge verwendet.
 
 ```xml
 ${'Page' @ i18n}
@@ -366,7 +366,7 @@ Zum Einbetten von Variablen in einer übersetzten Zeichenfolge kann die Option �
 ${'Page {0} of {1}' @ i18n, format=[current, total]}
 ```
 
-### Array-Verbund   {#array-join}
+### Array-Verbund  {#array-join}
 
 HTL zeigt standardmäßig, wenn ein Array als Text angezeigt wird, kommagetrennte Werte (ohne Leerzeichen) an.
 
@@ -376,7 +376,7 @@ Verwenden Sie die Option „join“, um ein anderes Trennzeichen anzugeben:
 ${['one', 'two'] @ join='; '}
 ```
 
-### Anzeigekontext   {#display-context}
+### Anzeigekontext  {#display-context}
 
 Der Anzeigekontext eines HTL-Ausdrucks bezieht sich auf seine Position in der Struktur der HTML-Seite. Wenn der Ausdruck beispielsweise an einer Stelle angezeigt wird, wodurch ein Textknoten einmalig gerendert wird, befindet er sich in einem `text`-Kontext. Wenn er im Wert eines Attributs gefunden wird, befindet er sich in einem `attribute`-Kontext usw.
 
@@ -418,7 +418,7 @@ Maskierung und XSS-Schutz können auch deaktiviert werden:
 <div>${myScript @ context='unsafe'}</div>
 ```
 
-### Kontexteinstellungen   {#context-settings}
+### Kontexteinstellungen  {#context-settings}
 
 | Kontext | Wann ist sie einzusetzen? | Funktion |
 |--- |--- |--- |

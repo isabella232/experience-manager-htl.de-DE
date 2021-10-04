@@ -2,7 +2,7 @@
 title: HTL-Blockanweisungen
 description: Bei HTML-Vorlagensprachen-Blockanweisungen (HTL) handelt es sich um direkt zur vorhandenen HTML hinzugefügten data-Attributen.
 exl-id: a517dcef-ab7a-4d4c-a1a9-2e57aad034f7
-source-git-commit: 8e70ee4921a7ea071ab7e06947824c371f4013d8
+source-git-commit: 89b9e89254f341e74f1a5a7b99735d2e69c8a91e
 workflow-type: tm+mt
 source-wordcount: '1555'
 ht-degree: 59%
@@ -105,14 +105,14 @@ Initialisieren Sie eine andere HTL-Vorlage, die mithilfe von `data-sly-call` abg
 >Weitere Informationen über die Anwendungs-API finden Sie unter:
 >
 >* [Java-Anwendungs-API](use-api-java.md)
-* [JavaScript-Anwendungs-API](use-api-javascript.md)
+>* [JavaScript-Anwendungs-API](use-api-javascript.md)
 
 
 #### data-sly-use mit Ressourcen {#data-sly-use-with-resources}
 
 Dies ermöglicht das direkte Abrufen von Ressourcen in HTL mit `data-sly-use` und erfordert kein Schreiben von Code, um ihn zu erhalten.
 
-Beispiel:
+Zum Beispiel:
 
 ```xml
 <div data-sly-use.product=“/etc/commerce/product/12345”>
@@ -121,7 +121,8 @@ Beispiel:
 ```
 
 >[!TIP]
-Siehe auch Abschnitt [Pfad nicht immer erforderlich.](#path-not-required)
+>
+>Siehe auch Abschnitt [Pfad nicht immer erforderlich.](#path-not-required)
 
 ### unwrap  {#unwrap}
 
@@ -460,7 +461,8 @@ cssClassName='className'}"></article>
 ```
 
 >[!NOTE]
-AEM bietet klare und einfache Logik, die die decoration-Tags steuert, die enthaltene Elemente umschließen. Weitere Informationen finden Sie unter [Decoration-Tag](https://docs.adobe.com/content/help/en/experience-manager-65/developing/components/decoration-tag.html) in der Dokumentation zu Entwicklungskomponenten.
+>
+>AEM bietet klare und einfache Logik, die die decoration-Tags steuert, die enthaltene Elemente umschließen. Weitere Informationen finden Sie unter [Decoration-Tag](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/implementing/developing/full-stack/components-templates/decoration-tag.html) in der Dokumentation zu Entwicklungskomponenten.
 
 ### include {#include}
 
@@ -576,7 +578,7 @@ Die Vorlagenverschachtelung wird unterstützt:
 <div data-sly-call="${nav @ page=currentPage}" data-sly-unwrap></div>
 ```
 
-## Sly Element {#sly-element}
+## Sly-Element {#sly-element}
 
 Das HTML-Tag `<sly>` kann verwendet werden, um das aktuelle Element zu entfernen, sodass nur die untergeordneten Elemente angezeigt werden können. Die Funktionalität ähnelt dem Blockelement `data-sly-unwrap` :
 
