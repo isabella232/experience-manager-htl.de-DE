@@ -1,17 +1,17 @@
 ---
 title: Erste Schritte mit HTL
-description: Die von AEM unterstützte Vorlagensprache HTL löst JSP als bevorzugtes und empfohlenes serverseitiges Vorlagensystem für HTML in AEM ab.
+description: Die von AEM unterstützte Vorlagensprache HTL löst JSP als bevorzugtes und empfohlenes Server-seitiges Vorlagensystem für HTML in AEM ab.
 exl-id: c95eb1b3-3b96-4727-8f4f-d54e7136a8f9
 source-git-commit: 8e70ee4921a7ea071ab7e06947824c371f4013d8
-workflow-type: tm+mt
+workflow-type: ht
 source-wordcount: '2471'
-ht-degree: 92%
+ht-degree: 100%
 
 ---
 
 # Erste Schritte mit HTL {#getting-started-with-htl}
 
-Die von Adobe Experience Manager (AEM) unterstützte HTML-Vorlagensprache (HTL) ist das bevorzugte und empfohlene serverseitige Vorlagensystem für HTML in AEM. Sie ersetzt JSP (JavaServer Pages), wie es in früheren Versionen von AEM verwendet wurde.
+Die von Adobe Experience Manager (AEM) unterstützte HTML-Vorlagensprache (HTL) ist das bevorzugte und empfohlene Server-seitige Vorlagen-System für HTML in AEM. Sie ersetzt JSP (JavaServer Pages), das in früheren Versionen von AEM verwendet wurde.
 
 >[!NOTE]
 >
@@ -36,21 +36,21 @@ Bevor wir mit der HTML-Vorlagensprache beginnen können, müssen wir im Voraus e
 
 **Weist HTL Einschränkungen auf, die bei JSP nicht vorhanden sind?** - HTL weist im Vergleich zu JSP keine wirklichen Einschränkungen auf. Was mit JSP erledigt werden kann, sollte auch mit HTL erreichbar sein. HTL ist per Definition in verschiedener Hinsicht strenger als JSP. Was vielleicht in nur einer JSP-Datei erreicht werden kann, muss unter Umständen in eine Java-Klasse oder eine JavaScript-Datei separiert werden, damit es in HTL erreicht werden kann. Dies ist jedoch generell erwünscht, um eine entsprechende Trennung von Belangen zwischen der Logik und dem Markup sicherzustellen.
 
-**Werden JSP-Tag-Bibliotheken durch HTL unterstützt?** - Nein, aber wie im Abschnitt  [Laden der Client-](getting-started.md#loading-client-libraries) Bibliothek gezeigt, weisen die  [template &amp; ](block-statements.md#template-call) callinstructions ein ähnliches Muster auf.
+**Werden JSP-Tag-Bibliotheken durch HTL unterstützt?** - Nein, aber wie im Abschnitt [Laden von Client-Bibliotheken](getting-started.md#loading-client-libraries) gezeigt, bieten die Anweisungen [Vorlage und Aufruf](block-statements.md#template-call) ein ähnliches Muster.
 
 **Können die HTL-Funktionen für ein AEM-Projekt erweitert werden?** - Nein, das können sie nicht. HTL verfügt über leistungsstarke Erweiterungsmechanismen für die Wiederverwendung der Logik (die [Anwendungs-API](getting-started.md#use-api-for-accessing-logic)) und des Markups (die Anweisungen [template &amp; call](block-statements.md#template-call)), die verwendet werden können, um den Code der Projekte zu modularisieren.
 
-**Was sind die Hauptvorteile von HTL im Vergleich zu JSP?** - Sicherheit und Projekteffizienz sind die wichtigsten Vorteile, die in der  [Übersicht](overview.md) beschrieben werden.
+**Was sind die Hauptvorteile von HTL im Vergleich zu JSP?** - Sicherheit und Projekteffizienz sind die wichtigsten Vorteile, die in der [Übersicht](overview.md) genauer beschrieben werden.
 
 **Wird JSP schließlich verschwinden?** - Für diese Zeilen gibt es derzeit keine Pläne.
 
 ## Grundsätzliche HTL-Konzepte {#fundamental-concepts-of-htl}
 
-Die HTML-Vorlagensprache verwendet eine Ausdruckssprache zum Einfügen von Inhaltsteilen in das gerenderte Markup und über HTML5-Datenattribute zum Definieren von Anweisungen über Markup-Blöcke (wie Bedingungen oder Wiederholungen). Wenn HTL in Java-Servlets kompiliert wird, werden die Ausdrücke und die HTL-Datenattribute komplett serverseitig ausgewertet. Zudem ist in der HTML-Ausgabe nichts mehr davon sichtbar.
+Die HTML-Vorlagensprache verwendet eine Ausdruckssprache zum Einfügen von Inhaltsteilen in das gerenderte Markup und über HTML5-Datenattribute zum Definieren von Anweisungen über Markup-Blöcke (wie Bedingungen oder Wiederholungen). Wenn HTL in Java-Servlets kompiliert wird, werden die Ausdrücke und die HTL-Datenattribute komplett Server-seitig ausgewertet. Zudem ist in der HTML-Ausgabe nichts mehr davon sichtbar.
 
 ### Blöcke und Ausdrücke  {#blocks-and-expressions}
 
-Hier finden Sie ein erstes Beispiel, das wie besehen in der Datei **`template.html`** enthalten sein könnte:
+Hier finden Sie ein erstes Beispiel, das in der Datei **`template.html`** enthalten sein könnte:
 
 ```xml
 <h1 data-sly-test="${properties.jcr:title}">
@@ -60,13 +60,13 @@ Hier finden Sie ein erstes Beispiel, das wie besehen in der Datei **`template.ht
 
 Es können zwei Syntaxarten unterschieden werden:
 
-* **[Blockanweisungen](block-statements.md)**  - So zeigen Sie die  **&lt;h1>** -Element ein  [`data-sly-test`](block-statements.md#test) HTML5-Datenattribut verwendet. HTL stellt mehrere solcher Attribute bereit. Dadurch können HTML-Elementen Verhaltensweisen angehängt werden, wobei allen `data-sly` vorangestellt ist.
+* **[Blockanweisungen](block-statements.md)** - Zum bedingten Anzeigen des Elements **&lt;h1>** wird ein HTML5-Datenattribut [`data-sly-test`](block-statements.md#test) verwendet. HTL stellt mehrere solcher Attribute bereit. Dadurch können HTML-Elementen Verhaltensweisen angehängt werden, wobei allen `data-sly` vorangestellt ist.
 
-* **[Ausdruckssprache](expression-language.md)**  - HTL-Ausdrücke werden durch Zeichen  `${` und  `}`getrennt. Diese Ausdrücke werden zur Laufzeit ausgewertet und ihr Wert wird in den ausgehenden HTML-Stream eingeschleust.
+* **[Ausdruckssprache](expression-language.md)** - HTL-Ausdrücke sind durch die Zeichen `${` und `}` voneinander getrennt. Diese Ausdrücke werden zur Laufzeit ausgewertet und ihr Wert wird in den ausgehenden HTML-Stream eingeschleust.
 
 Die zwei Seiten, die oben verknüpft wurden, enthalten die detaillierte Liste der für die Syntax verfügbaren Funktionen.
 
-### Das SLY-Element   {#the-sly-element}
+### Das SLY-Element  {#the-sly-element}
 
 Ein zentrales Konzept von HTL besteht darin, die Möglichkeit zu eröffnen, vorhandene HTML-Elemente zum Definieren von Blockanweisungen erneut zu verwenden. Dadurch erübrigt sich die Notwendigkeit, zusätzliche Trennzeichen einzufügen, um zu definieren, wo die Anweisung beginnt und endet. Diese unauffällige Annotation des Markups zur Umwandlung einer statischen HTML in eine funktionierende dynamische Vorlage ermöglicht es, dass die Gültigkeit des HTML-Codes nicht gebrochen wird, wodurch weiterhin die ordnungsgemäße Anzeige erfolgt, sogar als statische Dateien.
 
@@ -81,14 +81,14 @@ Beispiel:
 </sly>
 ```
 
-gibt etwas wie die folgende HTML aus, jedoch nur, wenn eine **`jcr:title`** - und eine **`jcr:description`** -Eigenschaft definiert sind und keine der beiden leer ist:
+gibt etwas wie das folgende HTML aus, aber nur, wenn sowohl eine **`jcr:title`**- als auch eine **`jcr:description`**-Eigenschaft definiert sind und keine der beiden leer ist:
 
 ```xml
 <h1>MY TITLE</h1>
 <p>MY DESCRIPTION</p>
 ```
 
-Beachten Sie, dass das SLY-Element nur verwendet werden soll, wenn kein vorhandenes Element mit der Blockanweisung hätte kommentiert werden können, da SLY-Elemente den von der Sprache angebotenen Wert davon abhalten, den statischen HTML-Code bei der dynamischen Darstellung nicht zu ändern.
+Es sollte jedoch beachtet werden, das SLY-Element nur dann zu verwenden, wenn kein vorhandenes Element mit der Blockanweisung versehen werden konnte, da SLY-Elemente den Wert der Sprache verhindern, den statischen HTML-Code nicht zu verändern, wenn er dynamisch gemacht wird.
 
 Wenn das vorherige Beispiel beispielsweise bereits in einem DIV-Element umbrochen worden wäre, wäre das hinzugefügte SLY-Element missbräuchlich:
 
@@ -110,7 +110,7 @@ und das DIV-Element könnte annotiert werden mit der Bedingung:
 </div>
 ```
 
-### HTL-Kommentare   {#htl-comments}
+### HTL-Kommentare  {#htl-comments}
 
 Im folgenden Beispiel wird in **Zeile 1** ein HTL-Kommentar und in **Zeile 2** ein HTML-Kommentar gezeigt:
 
@@ -125,11 +125,11 @@ Die Inhalte der HTML-Standardkommentare werden jedoch weitergegeben und die Ausd
 
 HTML-Kommentare dürfen keine HTL-Kommentare enthalten und umgekehrt.
 
-### Spezielle Kontexte   {#special-contexts}
+### Spezielle Kontexte  {#special-contexts}
 
 Um HTL bestmöglich zu verwenden, ist es wichtig, die Konsequenzen zu verstehen, die sich daraus ergeben, dass sie auf der HTML-Syntax basiert.
 
-### Element- und Attributnamen   {#element-and-attribute-names}
+### Element- und Attributnamen  {#element-and-attribute-names}
 
 Ausdrücke können nur in HTML-Text- oder -Attributwerten platziert werden, jedoch nicht in Elementnamen oder Attributnamen, sonst wäre die HTML nicht mehr gültig. Zum dynamischen Festlegen der Elementnamen kann die Anweisung [`data-sly-element`](block-statements.md#element) für die gewünschten Elemente verwendet werden und zum dynamischen Festlegen der Attributnamen oder sogar zum Festlegen von mehreren Attributen gleichzeitig, die Anweisung [`data-sly-attribute`](block-statements.md#attribute).
 
@@ -167,7 +167,7 @@ gibt etwas wie die folgende HTML aus:
 -->
 ```
 
-### Explizite Kontexte erforderlich   {#explicit-contexts-required}
+### Explizite Kontexte erforderlich  {#explicit-contexts-required}
 
 Wie im unten folgenden Abschnitt [Automatische kontextsensitive Maskierung](getting-started.md#automatic-context-aware-escaping) erläutert, besteht ein Ziel der HTL darin, das Risiko von Sicherheitslücken beim Cross-Site-Scripting (XSS) zu reduzieren, indem automatisch auf alle Ausdrücke die kontextsensitive Maskierung angewendet wird. Auch wenn HTL automatisch den Kontext der im HTML-Markup platzierten Ausdrücke erkennen kann, analysiert sie nicht die Syntax der Inline-JavaScript oder CSS und verlässt sich daher darauf, dass der Entwickler explizit angibt, welcher exakte Kontext auf solche Ausdrücke anzuwenden ist.
 
@@ -186,17 +186,17 @@ Weitere Details über das Steuern der Maskierung finden Sie im Abschnitt über d
 
 In den speziellen Fällen, in denen es erforderlich ist, die Einschränkungen der Skript-, Stil- und Kommentarkontexte zu umgehen, ist es möglich, den zugehörigen Inhalt in einer separaten HTL-Datei zu isolieren. Alles in seiner eigenen Datei Befindliche wird durch HTL als normales HTML-Fragment interpretiert unter Nichtberücksichtigung des begrenzten Kontexts, in dem es möglicherweise enthalten war.
 
-Ein Beispiel finden Sie weiter unten im Abschnitt [Arbeiten mit clientseitigen Vorlagen](getting-started.md#working-with-client-side-templates).
+Ein Beispiel finden Sie weiter unten im Abschnitt [Arbeiten mit Client-seitigen Vorlagen](getting-started.md#working-with-client-side-templates).
 
 >[!CAUTION]
 >
 >Diese Technik kann Sicherheitslücken beim Cross-Site-Scripting (XSS) hervorrufen. Daher sollten Sicherheitsaspekte sorgfältig geprüft werden, wenn sie verwendet wird. Es gibt für gewöhnlich bessere Möglichkeiten für die Implementierung desselben Aspekts, als sich auf diese Praktik zu verlassen.
 
-## Allgemeine HTL-Funktionen   {#general-capabilities-of-htl}
+## Allgemeine HTL-Funktionen  {#general-capabilities-of-htl}
 
 In diesem Abschnitt werden die allgemeinen Funktionen der HTML-Vorlagensprache kurz behandelt.
 
-### Anwendungs-API für den Zugriff auf die Logik   {#use-api-for-accessing-logic}
+### Anwendungs-API für den Zugriff auf die Logik  {#use-api-for-accessing-logic}
 
 Siehe folgendes Beispiel:
 
@@ -204,7 +204,7 @@ Siehe folgendes Beispiel:
 <p data-sly-use.logic="logic.js">${logic.title}</p>
 ```
 
-Die folgende serverseitig ausgeführte JavaScript-Datei mit dem Namen `logic.js` ist dabei daneben platziert:
+Die folgende Server-seitig ausgeführte JavaScript-Datei mit dem Namen `logic.js` ist dabei daneben platziert:
 
 ```javascript
 use(function () {
@@ -216,11 +216,11 @@ use(function () {
 
 Da die HTML-Vorlagensprache es nicht zulässt, Code im Markup zu vermischen, bietet sie stattdessen den Anwendungs-API-Erweiterungsmechanismus, um Code einfach über die Vorlage auszuführen.
 
-Im obigen Beispiel wird ein serverseitiges ausgeführtes JavaScript-Element verwendet, um den Titel auf 10 Zeichen zu kürzen. Es wäre jedoch auch möglich gewesen, Java-Code zu verwenden, um dieselbe Aktion durchzuführen, indem ein vollqualifizierter Java-Klassenname angegeben worden wäre. Im Allgemeinen sollte Geschäftslogik nach Möglichkeit in Java erstellt werden. Wenn für die Komponente jedoch einige ansichtsspezifische Änderungen an den von der Java-API bereitgestellten Elementen vorgenommen werden müssen, kann es praktisch sein, dafür einige serverseitige ausgeführte JavaScript-Elemente zu verwenden.
+Im obigen Beispiel wird ein Server-seitiges ausgeführtes JavaScript-Element verwendet, um den Titel auf 10 Zeichen zu kürzen. Es wäre jedoch auch möglich gewesen, Java-Code zu verwenden, um dieselbe Aktion durchzuführen, indem ein vollqualifizierter Java-Klassenname angegeben worden wäre. Im Allgemeinen sollte Geschäftslogik nach Möglichkeit in Java erstellt werden. Wenn für die Komponente jedoch einige ansichtsspezifische Änderungen an den von der Java-API bereitgestellten Elementen vorgenommen werden müssen, kann es praktisch sein, dafür einige Server-seitige ausgeführte JavaScript-Elemente zu verwenden.
 
 Weitere Informationen dazu finden Sie in den folgenden Abschnitten:
 
-* Im Abschnitt zur [`data-sly-use`-Anweisung](block-statements.md#use) wird alles erläutert, was mit dieser Anweisung möglich ist.
+* Im Abschnitt zur [`data-sly-use`Anweisung](block-statements.md#use) wird all das erklärt, was mit dieser Anweisung vorgenommen werden kann.
 * Die [Anwendungs-API-Seite](use-api.md) enthält einige Informationen, die dabei helfen, sich zwischen dem Schreiben der Logik in Java oder in JavaScript zu entscheiden.
 * Für detaillierte Informationen über das Schreiben der Logik sind die Seiten über die [JavaScript-Anwendungs-API](use-api-javascript.md) und die [Java-Anwendungs-API](use-api-java.md) hilfreich.
 
@@ -314,7 +314,7 @@ Jede Hilfsvorlage erwartet eine **`categories`**-Option für das Referenzieren d
 
 Im Folgenden finden Sie zwei kurze Beispiele:
 
-### Vollständiges Laden mehrerer Client-Bibliotheken gleichzeitig   {#loading-multiple-client-libraries-fully-at-once}
+### Vollständiges Laden mehrerer Client-Bibliotheken gleichzeitig  {#loading-multiple-client-libraries-fully-at-once}
 
 ```xml
 <sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
@@ -337,9 +337,9 @@ Im Folgenden finden Sie zwei kurze Beispiele:
 </html>
 ```
 
-Im zweiten obigen Beispiel würde, sofern die HTML-Elemente **`head`** und **`body`** in unterschiedlichen Dateien platziert werden würden, die Vorlage **`clientlib.html`** anschließend in jeder Datei geladen werden müssen, die sie benötigt.
+Im zweiten obigen Beispiel würde, sofern die HTML-Elemente **`head`** und **`body`** in unterschiedlichen Dateien platziert würden, die Vorlage **`clientlib.html`** anschließend in jeder Datei geladen werden müssen, die sie benötigt.
 
-Der Abschnitt zu den Anweisungen [template &amp; call](block-statements.md#template-call) enthält weitere Details darüber, wie das Deklarieren und Aufrufen solcher Vorlagen funktioniert.
+Der Abschnitt zu den Anweisungen [template und call](block-statements.md#template-call) enthält weitere Details darüber, wie das Deklarieren und Aufrufen solcher Vorlagen funktioniert.
 
 ### Weitergeben von Daten an den Client {#passing-data-to-the-client}
 
@@ -366,7 +366,7 @@ use(function () {
 });
 ```
 
-Von dort aus ist es einfach, sich vorzustellen, wie ein clientseitiges JavaScript-Element auf dieses Attribut zugreifen und das JSON-Objekt erneut analysieren kann. Dies wäre beispielsweise das entsprechende in eine Client-Bibliothek zu platzierende JavaScript-Element:
+Von dort aus ist es einfach, sich vorzustellen, wie ein Client-seitiges JavaScript-Element auf dieses Attribut zugreifen und das JSON-Objekt erneut analysieren kann. Dies wäre beispielsweise das entsprechende in eine Client-Bibliothek zu platzierende JavaScript-Element:
 
 ```javascript
 var elements = document.querySelectorAll("[data-json]");
@@ -376,9 +376,9 @@ for (var i = 0; i < elements.length; i++) {
 }
 ```
 
-### Arbeiten mit clientseitigen Vorlagen   {#working-with-client-side-templates}
+### Arbeiten mit Client-seitigen Vorlagen  {#working-with-client-side-templates}
 
-Ein spezieller Fall, in dem die im Abschnitt [Einschränkungen für Erhebungen spezieller Kontexte](getting-started.md#lifting-limitations-of-special-contexts) erläuterte Technik legitimerweise verwendet werden kann, besteht im Schreiben von clientseitigen Vorlagen (beispielsweise Handlebars), die sich in **script**-Elementen befinden. Der Grund, weshalb diese Technik in diesem Fall sicher verwendet werden kann, besteht darin, dass das **script**-Element nicht wie angenommen JavaScript-Elemente enthält, sondern weitere HTML-Elemente. Im Folgenden finden Sie ein Beispiel, wie dies funktionieren würde:
+Ein spezieller Fall, in dem die im Abschnitt [Einschränkungen für Erhebungen spezieller Kontexte](getting-started.md#lifting-limitations-of-special-contexts) erläuterte Technik legitimerweise verwendet werden kann, besteht im Schreiben von Client-seitigen Vorlagen (beispielsweise Handlebars), die sich in **script**-Elementen befinden. Der Grund, weshalb diese Technik in diesem Fall sicher verwendet werden kann, besteht darin, dass das **script**-Element nicht wie angenommen JavaScript-Elemente enthält, sondern weitere HTML-Elemente. Im Folgenden finden Sie ein Beispiel, wie dies funktionieren würde:
 
 ```xml
 <!--/* template.html file: */-->
@@ -394,9 +394,9 @@ Ein spezieller Fall, in dem die im Abschnitt [Einschränkungen für Erhebungen s
 </div>
 ```
 
-Wie oben gezeigt, kann das im Element **`script`** einzuschließende Markup HTL-Blockanweisungen enthalten. Zudem müssen die Ausdrücke keine expliziten Kontexte bereitstellen, da die Inhalte der Handlebars-Vorlage in ihrer eigenen Datei isoliert wurden. In diesem Beispiel wird zudem gezeigt, wie die serverseitig ausgeführte HTL (wie im Element **`h2`**) mit einer clientseitig ausgeführten Vorlagensprache, beispielsweise Handlebars (im Element **`h3`** gezeigt), kombiniert werden kann.
+Wie oben gezeigt, kann das im Element **`script`** einzuschließende Markup HTL-Blockanweisungen enthalten. Zudem müssen die Ausdrücke keine expliziten Kontexte bereitstellen, da die Inhalte der Handlebars-Vorlage in ihrer eigenen Datei isoliert wurden. In diesem Beispiel wird zudem gezeigt, wie die Server-seitig ausgeführte HTL (wie im Element **`h2`**) mit einer Client-seitig ausgeführten Vorlagensprache, beispielsweise Handlebars (im Element **`h3`** gezeigt), kombiniert werden kann.
 
-Eine modernere Technik bestünde jedoch darin, stattdessen das HTML-Element **`template`** zu verwenden. Damit würde sich die Notwendigkeit erübrigen, die Inhalte der Vorlagen in separaten Dateien zu isolieren.
+Eine modernere Technik bestünde jedoch darin, stattdessen das HTML-Element **`template`** zu verwenden. Damit würde sich die Notwendigkeit erübrigen, die Inhalte der Vorlagen in separaten Dateien zu isolieren.
 
 **Lesen Sie als Nächstes:**
 
