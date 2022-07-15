@@ -3,9 +3,9 @@ title: Globale HTL-Objekte
 description: Ohne etwas angeben zu müssen, bietet HTL Zugriff auf alle Objekte, die nach dem Einschließen von global.jsp in JSP verfügbar waren.
 exl-id: ca590b92-f1b3-4e44-a04a-a2c10dff256f
 source-git-commit: 8e70ee4921a7ea071ab7e06947824c371f4013d8
-workflow-type: tm+mt
+workflow-type: ht
 source-wordcount: '220'
-ht-degree: 86%
+ht-degree: 100%
 
 ---
 
@@ -19,9 +19,9 @@ Diese Objekte bieten praktischen Zugriff auf häufig verwendete Informationen. A
 
 | Variablenname | Beschreibung |
 |--- |--- |
-| `properties` | Liste der Eigenschaften der aktuellen Resource. Unterstützt von [org.apache.sling.api.resource.ValueMap](https://helpx.adobe.com/experience-manager/6-5/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/resource/ValueMap.html) |
-| `pageProperties` | Liste der Seiteneigenschaften der aktuellen Page. Unterstützt von [org.apache.sling.api.resource.ValueMap](https://helpx.adobe.com/experience-manager/6-5/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/resource/ValueMap.html) |
-| `inheritedPageProperties` | Liste der vererbten Seiteneigenschaften der aktuellen Page. Unterstützt von [org.apache.sling.api.resource.ValueMap](https://helpx.adobe.com/experience-manager/6-5/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/resource/ValueMap.html) |
+| `properties` | Liste der Eigenschaften der aktuellen Ressource. Unterstützt durch [org.apache.sling.api.resource.ValueMap](https://helpx.adobe.com/de/experience-manager/6-5/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/resource/ValueMap.html) |
+| `pageProperties` | Liste der Seiteneigenschaften der aktuellen Seite. Unterstützt durch [org.apache.sling.api.resource.ValueMap](https://helpx.adobe.com/de/experience-manager/6-5/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/resource/ValueMap.html) |
+| `inheritedPageProperties` | Liste der vererbten Seiteneigenschaften der aktuellen Seite. Unterstützt durch [org.apache.sling.api.resource.ValueMap](https://helpx.adobe.com/de/experience-manager/6-5/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/resource/ValueMap.html) |
 
 ## Java-unterstützte Objekte {#java-backed-objects}
 
@@ -57,7 +57,7 @@ Die hilfreichsten Variablen in der folgenden Tabelle sind in Fettdruck hervorgeh
 
 ## JavaScript-unterstützte Objekte {#javascript-backed-objects}
 
-Es ist möglich, die HTL-Logik mit JavaScript zu unterstützen. Die bevorzugte oder empfohlene Methode ist jedoch die Verwendung von [Sling-Modellen.](https://sling.apache.org/documentation/bundles/models.html)
+Es ist möglich, die HTL-Logik mit JavaScript zu unterstützen. Die bevorzugte oder empfohlene Methode ist jedoch die Verwendung von [Sling-Modellen](https://sling.apache.org/documentation/bundles/models.html).
 
 <!-- 
 
