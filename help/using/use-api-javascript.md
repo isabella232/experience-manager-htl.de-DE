@@ -1,17 +1,17 @@
 ---
 title: HTL-JavaScript-Anwendungs-API
-description: Die HTML-Vorlagensprache - HTL - JavaScript-Anwendungs-API ermöglicht einer HTL-Datei den Zugriff auf in JavaScript geschriebenen Hilfscode.
+description: Durch die JavaScript-Use-API in HTML-Vorlagensprache (HTML Template Language, HTL) kann eine HTL-Datei auf den in JavaScript geschriebenen Hilfs-Code zugreifen.
 exl-id: e98bfbd5-fa64-48c7-bd14-477d4c5e1788
 source-git-commit: 8e70ee4921a7ea071ab7e06947824c371f4013d8
-workflow-type: tm+mt
+workflow-type: ht
 source-wordcount: '324'
-ht-degree: 87%
+ht-degree: 100%
 
 ---
 
 # HTL-JavaScript-Anwendungs-API {#htl-javascript-use-api}
 
-Die JavaScript-Anwendungs-API für die HTML-Vorlagensprache (HTL) ermöglicht einer HTL-Datei den Zugriff auf in JavaScript geschriebenen Hilfscode. Dadurch kann die gesamte komplexe Geschäftslogik im JavaScript-Code verkapselt werden, während der HTL-Code nur die direkte Markup-Produktion verarbeiten muss.
+Durch die JavaScript-Use-API in HTML-Vorlagensprache (HTML Template Language, HTL) kann eine HTL-Datei auf den in JavaScript geschriebenen Hilfs-Code zugreifen. Dadurch kann die gesamte komplexe Geschäftslogik im JavaScript-Code verkapselt werden, während der HTL-Code nur die direkte Markup-Produktion verarbeiten muss.
 
 Die folgenden Konventionen werden verwendet.
 
@@ -35,7 +35,7 @@ use(['dep1.js', 'dep2.js'], function (Dep1, Dep2) {
 });
 ```
 
-## Ein einfaches Beispiel  {#a-simple-example}
+## Ein einfaches Beispiel {#a-simple-example}
 
 Wir definieren eine Komponente, `info`, unter
 
@@ -67,7 +67,7 @@ use(function () {
 </div>
 ```
 
-Zudem erstellen wir einen Inhaltsknoten, der die Komponente `info` verwendet unter
+Zudem erstellen wir einen Inhaltsknoten. Dieser verwendet die Komponente `info` unter
 
 `/content/my-example` mit Eigenschaften:
 
@@ -114,7 +114,7 @@ Beachten Sie die folgende Komponentenvorlage:
 </section>
 ```
 
-Die entsprechende Logik kann mithilfe des folgenden serverseitigen JavaScript-Elements geschrieben werden, das sich in der Datei `component.js` direkt neben der Vorlage befindet.
+Die entsprechende Logik kann mithilfe des folgenden Server-seitigen JavaScript-Elements geschrieben werden, das sich in der Datei `component.js` direkt neben der Vorlage befindet.
 
 ```javascript
 use(function () {
@@ -194,7 +194,7 @@ Anschließend ist dies die in der Datei `template.html` befindliche Vorlage:
 </template>
 ```
 
-Die entsprechende Logik kann mithilfe des folgenden serverseitigen Java-Script-Elements geschrieben werden, das sich in der Datei `template.js` direkt neben der Vorlagendatei befindet:
+Die entsprechende Logik kann mithilfe des folgenden Server-seitigen Java-Script-Elements geschrieben werden, das sich in der Datei `template.js` direkt neben der Vorlagendatei befindet:
 
 ```javascript
 use(function () {
