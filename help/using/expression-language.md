@@ -3,9 +3,9 @@ title: HTL-Ausdruckssprache
 description: Die HTML-Vorlagensprache verwendet eine Ausdruckssprache für den Zugriff auf den Datenstrukturen, die die dynamischen Elemente der HTML-Ausgabe bereitstellen.
 exl-id: 57e3961b-8c84-4d56-a049-597c7b277448
 source-git-commit: 89b9e89254f341e74f1a5a7b99735d2e69c8a91e
-workflow-type: tm+mt
+workflow-type: ht
 source-wordcount: '1852'
-ht-degree: 81%
+ht-degree: 100%
 
 ---
 
@@ -20,7 +20,7 @@ Die HTML-Vorlagensprache verwendet eine Ausdruckssprache für den Zugriff auf de
 </h1>
 ```
 
-Ausdrücke können durch Voranstellen eines `\` -Zeichens maskiert werden, z. B. wird `\${test}` `${test}` gerendert.
+Ausdrücke können durch Voranstellen eines `\`-Zeichens maskiert werden, so wird beispielsweise `\${test}` als `${test}` dargestellt.
 
 >[!NOTE]
 >
@@ -47,17 +47,17 @@ Die einfachere Punkt-Notation sollte in den meisten Fällen bevorzugt werden. De
 
 Bei den Eigenschaften, auf die zugegriffen wurde, kann es sich um Funktionen handeln. Das Weitergeben von Argumenten wird jedoch nicht unterstützt. Daher ist nur der Zugriff auf Funktionen möglich, die keine Argumente erwarten. Dazu zählen beispielsweise Getter. Hierbei handelt es sich um eine erwünschte Einschränkung. Sie soll die Menge der in Ausdrücken eingebetteten Logik reduzieren. Bei Bedarf kann die Anweisung [`data-sly-use`](block-statements.md#use) verwendet werden, um Parameter an die Logik weiterzugeben.
 
-Im obigen Beispiel wird ebenfalls gezeigt, dass der Zugriff auf die Java-Getter-Funktionen, beispielsweise `getTitle()``get`, auch möglich ist, ohne  Elemente voranzustellen, und durch Kleinschreibung des folgenden Zeichens.
+Im obigen Beispiel wird ebenfalls gezeigt, dass der Zugriff auf die Java-Getter-Funktionen, beispielsweise `getTitle()`, auch möglich ist, ohne `get` Elemente voranzustellen, und durch Kleinschreibung des folgenden Zeichens.
 
-### Gültige Bezeichnerzeichen {#valid-identifier-characters}
+### Gültige Kennungszeichen {#valid-identifier-characters}
 
-Die Variablennamen, sog. Bezeichner, sind mit bestimmten Regeln konform. Sie müssen mit einem Buchstaben (`A`-`Z` und `a`-`z`) oder einem Unterstrich (`_`) beginnen. Nachfolgende Zeichen können auch Ziffern (`0`-`9`) oder ein Doppelpunkt (`:`) sein. Unicode-Buchstaben wie `å` und `ü` können in Bezeichnern nicht verwendet werden.
+Die Variablennamen, sog. Kennungen, sind mit bestimmten Regeln konform. Sie müssen mit einem Buchstaben (`A`-`Z` und `a`-`z`) oder einem Unterstrich (`_`) beginnen, und die nachfolgenden Zeichen können auch Ziffern (`0`-`9`) oder Doppelpunkte (`:`) sein. Unicode-Buchstaben wie `å` und `ü` können in Bezeichnern nicht verwendet werden.
 
-Da der Doppelpunkt (`:`) in Eigenschaftsnamen häufig vorkommt, sollte betont werden, dass es sich um ein bequemes gültiges Bezeichnerzeichen handelt:
+Da der Doppelpunkt (`:`) in AEM-Eigenschaftsnamen häufig vorkommt, sollte hervorgehoben werden, dass es sich hierbei um ein praktisches, gültiges Kennungszeichen handelt:
 
 `${properties.jcr:title}`
 
-Die Klammer-Notation kann verwendet werden, um auf Eigenschaften zuzugreifen, die ungültige Bezeichnerzeichen enthalten. Dazu zählt beispielsweise das Leerzeichen im folgenden Beispiel:
+Die Klammer-Notation kann verwendet werden, um auf Eigenschaften zuzugreifen, die ungültige Kennungszeichen enthalten. Dazu zählt beispielsweise das Leerzeichen im folgenden Beispiel:
 
 `${properties['my property']}`
 
@@ -91,7 +91,7 @@ Es gibt nur einen Zahlentyp: positive Ganzzahlen. Demgegenüber werden andere Za
 
 ### Zeichenfolgen {#strings}
 
-Zeichenfolgen stellen Textdaten dar und können in einfache oder doppelte Anführungszeichen gesetzt werden:
+Zeichenfolgen stellen Textdaten dar und können in einfache oder doppelte Anführungszeichen gesetzt sein:
 
 `${'foo'} ${"bar"}`
 
@@ -100,10 +100,10 @@ Neben normalen Zeichen können die folgenden Sonderzeichen verwendet werden:
 * `\\` Umgekehrter Schrägstrich
 * `\'` Einfaches Anführungszeichen (oder Apostroph)
 * `\"` Doppeltes Anführungszeichen
-* `\t` Tab
+* `\t` Tabulator
 * `\n` Neue Zeile
 * `\r` Wagenrücklauf
-* `\f` Formularfeed
+* `\f` Seitenvorschub
 * `\b` Rücktaste
 * `\uXXXX` Durch die vier Hexadezimalziffern XXXX angegebenes Unicode-Zeichen.\
    Im Folgenden finden Sie einige nützliche Unicode-Maskierungssequenzen:
@@ -111,7 +111,7 @@ Neben normalen Zeichen können die folgenden Sonderzeichen verwendet werden:
    * `\u0022` für `"`
    * `\u0027` für `'`
 
-Bei Zeichen, die oben nicht aufgeführt sind, wird vor einem umgekehrten Schrägstrich ein Fehler angezeigt.
+Bei den oben nicht aufgeführten Zeichen führt das Voranstellen eines umgekehrten Schrägstrichs zur Anzeige eines Fehlers.
 
 Im Folgenden finden Sie einige Beispiele zur Verwendung der Zeichenfolgenmaskierung:
 
@@ -150,11 +150,11 @@ Arrays sind hilfreich, um eine Liste der Werte anhand der Vorlage bereitzustelle
 
 Diese Operatoren werden für gewöhnlich mit Booleschen Werten verwendet. Sie geben jedoch wie in JavaScript tatsächlich den Wert eines der angegebenen Operanden zurück. Bei der Verwendung mit nicht Booleschen Werten geben sie möglicherweise einen nicht Booleschen Wert zurück.
 
-Wenn ein Wert in `true` umgewandelt werden kann, ist der Wert sozusagen wahr. Wenn ein Wert in `false` umgewandelt werden kann, ist der Wert sozusagen falsch. Werte, die in `false` konvertiert werden können, sind nicht definierte Variablen, Nullwerte, die Zahl 0 und leere Zeichenfolgen.
+Wenn ein Wert in `true` umgewandelt werden kann, ist der Wert sozusagen wahr. Wenn ein Wert in `false` umgewandelt werden kann, ist der Wert sozusagen falsch. Werte, die in `false` umgewandelt werden können, sind: undefinierte Variablen, Null-Werte, die Zahl 0 und leere Zeichenfolgen.
 
-#### Logisches NICHT {#logical-not}
+#### Logisches NOT {#logical-not}
 
-`${!myVar}` gibt zurück,  `false` wenn der einzelne Operand in  `true`konvertiert werden kann; Andernfalls wird  `true`zurückgegeben.
+`${!myVar}` gibt `false` zurück, wenn sein einfacher Operand in `true` umgewandelt werden kann; andernfalls gibt es `true` zurück.
 
 Dieser Operator kann zum Beispiel zum Umkehren einer Testbedingung verwendet werden. Dazu zählt beispielsweise, dass ein Element nur dann angezeigt wird, wenn keine untergeordneten Seiten vorhanden sind:
 
@@ -162,9 +162,9 @@ Dieser Operator kann zum Beispiel zum Umkehren einer Testbedingung verwendet wer
 <p data-sly-test="${!currentPage.hasChild}">current page has no children</p>
 ```
 
-#### Logisches UND  {#logical-and}
+#### Logisches AND  {#logical-and}
 
-`${varOne && varTwo}` gibt zurück,  `varOne` wenn es falsy ist; Andernfalls wird  `varTwo`zurückgegeben.
+`${varOne && varTwo}` gibt `varOne` zurück, wenn es fehlerhaft ist; andernfalls gibt es `varTwo` zurück.
 
 Dieser Operator kann verwendet werden, um zwei Bedingungen gleichzeitig zu testen, beispielsweise zum Verifizieren des Vorhandenseins von zwei Eigenschaften:
 
@@ -175,15 +175,15 @@ Dieser Operator kann verwendet werden, um zwei Bedingungen gleichzeitig zu teste
 </div>
 ```
 
-Der logische UND-Operator kann auch verwendet werden, um HTML-Attribute bedingt darzustellen, da HTL Attribute mit dynamisch festgelegten Werten entfernt, die als false oder zu einer leeren Zeichenfolge ausgewertet werden. Im folgenden Beispiel wird das Attribut `class` nur gezeigt, wenn `logic.showClass` wahr ist und wenn `logic.className` vorhanden und nicht leer ist:
+Der logische AND-Operator kann auch verwendet werden, um HTML-Attribute bedingt darzustellen, da HTL Attribute mit dynamisch festgelegten Werten entfernt, die als false oder zu einer leeren Zeichenfolge ausgewertet werden. Im folgenden Beispiel wird das Attribut `class` nur gezeigt, wenn `logic.showClass` wahr ist und wenn `logic.className` vorhanden und nicht leer ist:
 
 ```xml
 <div class="${logic.showClass && logic.className}">...</div>
 ```
 
-#### Logisches ODER {#logical-or}
+#### Logisches OR {#logical-or}
 
-`${varOne || varTwo}` gibt zurück,  `varOne` wenn es wahr ist; Andernfalls wird  `varTwo`zurückgegeben.
+`${varOne || varTwo}` gibt `varOne` zurück, wenn es wahrheitsgemäß ist; andernfalls gibt es `varTwo` zurück.
 
 Dieser Operator kann verwendet werden, um zu testen, ob eine der zwei Bedingungen zutrifft, beispielsweise zum Verifizieren des Vorhandenseins von mindestens einer Eigenschaft:
 
@@ -191,9 +191,9 @@ Dieser Operator kann verwendet werden, um zu testen, ob eine der zwei Bedingunge
 <div data-sly-test="${properties.jcr:title || properties.jcr:description}">...</div>
 ```
 
-Da der logische ODER-Operator die erste wahre Variable zurückgibt, gestaltet sich seine Verwendung auch sehr praktisch, wenn es darum geht, Ausweichwerte bereitzustellen.
+Da der logische OR-Operator die erste wahre Variable zurückgibt, gestaltet sich seine Verwendung auch sehr praktisch, wenn es darum geht, Ausweichwerte bereitzustellen.
 
-Sie kann auch verwendet werden, um HTML-Attribute bedingt anzuzeigen, da HTL Attribute mit Werten entfernt, die von Ausdrücken festgelegt werden, die als &quot;false&quot;oder als leere Zeichenfolge ausgewertet werden. Im folgenden Beispiel wird daher der Titel **`properties.jcr:`** angezeigt, sofern er vorhanden und nicht leer ist. Ansonsten wird **`properties.jcr:description`** angezeigt, sofern er vorhanden und nicht leer ist. Andernfalls wird die Meldung &quot;no title or description provided&quot;(Kein Titel oder keine Beschreibung bereitgestellt) angezeigt:
+Er kann auch zur bedingten Anzeige von HTML-Attributen verwendet werden, da HTL Attribute mit Werten entfernt, die durch Ausdrücke gesetzt wurden, die als „false“ oder als leere Zeichenfolge ausgewertet werden. Im folgenden Beispiel wird demnach der Titel **`properties.jcr:`** angezeigt, sofern er vorhanden und nicht leer ist, andernfalls wird **`properties.jcr:description`** angezeigt, sofern er vorhanden und nicht leer ist. Sonst wird die Meldung „no title or description provided“ (Kein Titel oder keine Beschreibung bereitgestellt) angezeigt:
 
 ```xml
 <p>${properties.jcr:title || properties.jcr:description || "no title or description provided"}</p>
@@ -211,7 +211,7 @@ Dieser Operator kann für gewöhnlich verwendet werden, um Bedingungen in Ausdr�
 
 >[!TIP]
 >
->Da Doppelzeichen auch in Bezeichnern zulässig sind, sollten die ternären Operatoren durch Leerzeichen getrennt werden, um dem Parser Klarheit zu bieten:
+>Da in Kennungen auch Doppelpunkte erlaubt sind, ist es am besten, die ternären Operatoren durch ein Leerzeichen zu trennen, um dem Parser Klarheit zu verschaffen:
 
 ```xml
 <p>${properties.showDescription ? properties.jcr:description : properties.jcr:title}</p>
@@ -226,15 +226,15 @@ Die Gleich- und Ungleich-Operatoren unterstützen nur Operanden identischen Typs
 * Boolesche Werte sind identisch, wenn beide `true` oder `false` sind.
 * Null- oder undefinierte Variablen sind identisch mit sich selbst und miteinander.
 
-`${varOne == varTwo}` gibt zurück,  `true` wenn  `varOne` und gleich  `varTwo` sind.
+`${varOne == varTwo}` gibt `true` zurück, wenn `varOne` und `varTwo` gleich sind.
 
-`${varOne != varTwo}` gibt zurück,  `true` wenn  `varOne` und nicht gleich  `varTwo` sind.
+`${varOne != varTwo}` gibt `true` zurück, wenn `varOne` und `varTwo` nicht gleich sind.
 
 Die relationalen Operatoren unterstützen nur Operanden, die Zahlen sind. Bei allen anderen Typen wird ein Fehler angezeigt.
 
-`${varOne > varTwo}` gibt zurück,  `true` wenn größer  `varOne` ist als  `varTwo`.
+`${varOne > varTwo}` gibt `true` zurück, wenn `varOne` größer als `varTwo` ist.
 
-`${varOne < varTwo}` gibt zurück,  `true` wenn kleiner  `varOne` ist als  `varTwo`.
+`${varOne < varTwo}` gibt `true` zurück, wenn `varOne` kleiner als `varTwo` ist.
 
 `${varOne >= varTwo}` gibt `true` zurück, wenn `varOne` größer als/gleich `varTwo` ist.
 
@@ -242,7 +242,7 @@ Die relationalen Operatoren unterstützen nur Operanden, die Zahlen sind. Bei al
 
 ### Gruppierungsklammern {#grouping-parentheses}
 
-Der Gruppierungsoperator `()`  steuert die Priorität der Auswertung in Ausdrücken.
+Der Gruppierungsoperator `()` steuert die Priorität der Auswertung in Ausdrücken.
 
 `${varOne && (varTwo || varThree)}`
 
@@ -309,7 +309,7 @@ Fügt die HTML-Erweiterung und ein Fragment (#value) zu einem Pfad hinzu.
 <a href="${item.path @ extension = 'html', fragment=item.name}">${item.name}</a>
 ```
 
-Der `@extension` funktioniert in allen Szenarien und prüft, ob die Erweiterung hinzugefügt werden soll oder nicht.
+Der Parameter `@extension` funktioniert in allen Szenarien und prüft, ob die Erweiterung hinzugefügt werden soll oder nicht.
 
 ```xml
 ${ link @ extension = 'html' }
@@ -317,7 +317,7 @@ ${ link @ extension = 'html' }
 
 ### Zahlen-/Datumsformatierung {#number-date-formatting}
 
-HTL ermöglicht die native Formatierung von Zahlen und Daten, ohne benutzerdefinierten Code zu schreiben. Dies unterstützt auch die Zeitzone und das Gebietsschema.
+HTL unterstützt native Formatierungen von Zahlen und Daten, ohne dass benutzerdefinierter Code geschrieben werden muss. Dies unterstützt auch die Zeitzone und das Gebietsschema.
 
 Die folgenden Beispiele zeigen, dass das Format zuerst festgelegt wird und dann der Wert, der formatiert werden muss:
 
@@ -332,11 +332,11 @@ Die folgenden Beispiele zeigen, dass das Format zuerst festgelegt wird und dann 
 
 >[!NOTE]
 >
->Ausführliche Informationen zum Format, das Sie verwenden können, finden Sie unter [HTL-specification](https://github.com/Adobe-Marketing-Cloud/htl-spec/blob/master/SPECIFICATION.md).
+>Ausführliche Informationen zu dem Format, das Sie verwenden können, finden Sie unter [HTL-Spezifikation](https://github.com/Adobe-Marketing-Cloud/htl-spec/blob/master/SPECIFICATION.md).
 
 ### Internationalisierung  {#internationalization}
 
-Übersetzt die Zeichenfolge mithilfe des aktuellen [Wörterbuchs](https://experienceleague.adobe.com/docs/experience-manager-65/developing/components/internationalization/i18n-translator.html) in die Sprache der aktuellen *Quelle* (siehe unten). Wenn keine Übersetzung gefunden wird, wird die ursprüngliche Zeichenfolge verwendet.
+Übersetzt die Zeichenfolge mithilfe des aktuellen [Wörterbuchs](https://experienceleague.adobe.com/docs/experience-manager-65/developing/components/internationalization/i18n-translator.html?lang=de) in die Sprache der aktuellen *Quelle* (siehe unten). Wenn keine Übersetzung gefunden wird, wird die ursprüngliche Zeichenfolge verwendet.
 
 ```xml
 ${'Page' @ i18n}
@@ -348,7 +348,7 @@ Die Option „hint“ kann verwendet werden, um Übersetzern einen entsprechende
 ${'Page' @ i18n, hint='Translation Hint'}
 ```
 
-Die Standardquelle für die Sprache ist `resource`, d. h. der Text wird in dieselbe Sprache übersetzt wie der Inhalt. Dies kann in `user` geändert werden, d. h. die Sprache wird vom Browser-Gebietsschema oder vom Gebietsschema des angemeldeten Benutzers übernommen:
+Die Standardquelle für die Sprache lautet `resource`. Der Text wird demnach in dieselbe Sprache übersetzt wie der Inhalt. Dies kann in `user` geändert werden, was bedeutet, dass die Sprache vom Gebietsschema des Browsers oder vom Gebietsschema des angemeldeten Benutzers übernommen wird:
 
 ```xml
 ${'Page' @ i18n, source='user'}
@@ -382,11 +382,11 @@ Der Anzeigekontext eines HTL-Ausdrucks bezieht sich auf seine Position in der St
 
 Außer in Kontexten vom Typ script (JS) und style (CSS) erkennt HTL automatisch den Kontext der Ausdrücke und maskiert sie entsprechend, um XSS-Sicherheitsprobleme zu verhindern. Im Fall von Skripts und CSS muss das gewünschte Kontextverhalten explizit festgelegt werden. Zusätzlich kann das Kontextverhalten zudem in jedem anderen Fall explizit festgelegt werden, in dem das automatische Verhalten überschrieben werden soll.
 
-Im Folgenden finden Sie drei Variablen in drei verschiedenen Kontexten:
+Wir haben hier drei Variablen in drei verschiedenen Kontexten:
 
-* `properties.link` (  `uri` context)
-* `properties.title` (`attribute` context)
-* `properties.text` (`text` context)
+* `properties.link` (`uri`-Kontext)
+* `properties.title` (`attribute`-Kontext)
+* `properties.text` (`text`-Kontext)
 
 HTL maskiert diese unterschiedlich entsprechend den Sicherheitsanforderungen ihrer jeweiligen Kontexte. In normalen Fällen, wie im folgenden, ist keine explizite Kontexteinstellung erforderlich:
 
@@ -429,10 +429,10 @@ Maskierung und XSS-Schutz können auch deaktiviert werden:
 | `number` | Zum Anzeigen von Zahlen | Validiert den URI dahingehend, ob er eine Ganzzahl enthält, gibt bei fehlerhafter Validierung 0 aus. |
 | `attributeName` | Standard für data-sly-attribute beim Festlegen von Attributnamen | Validiert den Attributnamen, gibt bei fehlerhafter Validierung keine Werte aus. |
 | `elementName` | Standard für data-sly-element | Validiert den Elementnamen, gibt bei fehlerhafter Validierung nichts aus. |
-| `scriptToken` | Für JS-Bezeichner, literale Zahlen oder literale Zeichenfolgen | Validiert das JavaScript-Token, gibt bei fehlerhafter Validierung keine Werte aus. |
+| `scriptToken` | Für JS-Kennungen, literale Zahlen oder literale Zeichenfolgen | Validiert das JavaScript-Token, gibt bei fehlerhafter Validierung keine Werte aus. |
 | `scriptString` | In JS-Zeichenfolgen | Kodiert Zeichen, die aus der Zeichenfolge ausbrechen würden. |
 | `scriptComment` | In JS-Kommentaren | Validiert den JavaScript-Kommentar, gibt bei fehlerhafter Validierung keine Werte aus. |
-| `styleToken` | Für CSS-Bezeichner, Zahlen, Dimensionen, Zeichenfolgen, hexadezimale Farbwerte oder Funktionen. | Validiert das CSS-Token, gibt bei fehlerhafter Validierung keine Werte aus. |
+| `styleToken` | Für CSS-Kennungen, Zahlen, Dimensionen, Zeichenfolgen, hexadezimale Farbwerte oder Funktionen. | Validiert das CSS-Token, gibt bei fehlerhafter Validierung keine Werte aus. |
 | `styleString` | In CSS-Zeichenfolgen | Kodiert Zeichen, die aus der Zeichenfolge ausbrechen würden. |
 | `styleComment` | In CSS-Kommentaren | Validiert den CSS-Kommentar, gibt bei fehlerhafter Validierung keine Werte aus. |
 | `unsafe` | Trifft nur zu, wenn keiner der oben genannten Punkte den Auftrag vornimmt | Deaktiviert die Maskierung und den XSS-Schutz vollständig. |
