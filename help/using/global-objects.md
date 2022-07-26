@@ -1,11 +1,11 @@
 ---
 title: Globale HTL-Objekte
-description: Ohne etwas angeben zu müssen, bietet HTL Zugriff auf alle Objekte, die nach dem Einschließen von global.jsp in JSP verfügbar waren.
+description: Erfahren Sie mehr über nummerierbare Objekte, Java-unterstützte Objekte und JavaScript-unterstützte Objekte. Suchen Sie die Variablennamen und Beschreibungen für diese globalen HTL-Objekte, die in AEM verwendet werden.
 exl-id: ca590b92-f1b3-4e44-a04a-a2c10dff256f
-source-git-commit: 8e70ee4921a7ea071ab7e06947824c371f4013d8
-workflow-type: ht
-source-wordcount: '220'
-ht-degree: 100%
+source-git-commit: 7b53eff0652f650ffb8caae0e69aa349b5c548eb
+workflow-type: tm+mt
+source-wordcount: '223'
+ht-degree: 88%
 
 ---
 
@@ -20,8 +20,8 @@ Diese Objekte bieten praktischen Zugriff auf häufig verwendete Informationen. A
 | Variablenname | Beschreibung |
 |--- |--- |
 | `properties` | Liste der Eigenschaften der aktuellen Ressource. Unterstützt durch [org.apache.sling.api.resource.ValueMap](https://helpx.adobe.com/de/experience-manager/6-5/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/resource/ValueMap.html) |
-| `pageProperties` | Liste der Seiteneigenschaften der aktuellen Seite. Unterstützt durch [org.apache.sling.api.resource.ValueMap](https://helpx.adobe.com/de/experience-manager/6-5/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/resource/ValueMap.html) |
-| `inheritedPageProperties` | Liste der vererbten Seiteneigenschaften der aktuellen Seite. Unterstützt durch [org.apache.sling.api.resource.ValueMap](https://helpx.adobe.com/de/experience-manager/6-5/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/resource/ValueMap.html) |
+| `pageProperties` | Liste der Seiteneigenschaften der aktuellen Seite. Unterstützt durch [org.apache.sling.api.resource.ValueMap](https://helpx.adobe.com/experience-manager/6-5/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/resource/ValueMap.html) |
+| `inheritedPageProperties` | Liste der vererbten Seiteneigenschaften der aktuellen Seite. Unterstützt durch [org.apache.sling.api.resource.ValueMap](https://helpx.adobe.com/experience-manager/6-5/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/resource/ValueMap.html) |
 
 ## Java-unterstützte Objekte {#java-backed-objects}
 

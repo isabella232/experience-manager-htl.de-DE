@@ -1,11 +1,11 @@
 ---
 title: HTL-Ausdruckssprache
-description: Die HTML-Vorlagensprache verwendet eine Ausdruckssprache für den Zugriff auf den Datenstrukturen, die die dynamischen Elemente der HTML-Ausgabe bereitstellen.
+description: Erfahren Sie mehr über die Verwendung der HTL-Ausdruckssprache in AEM. Die HTML-Vorlagensprache verwendet eine Ausdruckssprache für den Zugriff auf den Datenstrukturen, die die dynamischen Elemente der HTML-Ausgabe bereitstellen.
 exl-id: 57e3961b-8c84-4d56-a049-597c7b277448
-source-git-commit: 89b9e89254f341e74f1a5a7b99735d2e69c8a91e
-workflow-type: ht
-source-wordcount: '1852'
-ht-degree: 100%
+source-git-commit: 7b53eff0652f650ffb8caae0e69aa349b5c548eb
+workflow-type: tm+mt
+source-wordcount: '1860'
+ht-degree: 99%
 
 ---
 
