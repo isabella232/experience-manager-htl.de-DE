@@ -1,11 +1,11 @@
 ---
 title: HTL-JavaScript-Anwendungs-API
-description: Erfahren Sie, wie die JavaScript-Anwendungs-API der HTML-Vorlagensprache (HTL) einer HTL-Datei den Zugriff auf in JavaScript geschriebenen Hilfscode ermöglicht.
+description: Erfahren Sie, wie die JavaScript-Anwendungs-API der HTML-Vorlagensprache (HTL) einer HTL-Datei den Zugriff auf in JavaScript geschriebenen Hilfs-Code ermöglicht.
 exl-id: e98bfbd5-fa64-48c7-bd14-477d4c5e1788
 source-git-commit: 7b53eff0652f650ffb8caae0e69aa349b5c548eb
-workflow-type: tm+mt
+workflow-type: ht
 source-wordcount: '326'
-ht-degree: 93%
+ht-degree: 100%
 
 ---
 
