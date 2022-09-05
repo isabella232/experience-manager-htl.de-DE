@@ -7,9 +7,9 @@ feature-set: Experience Manager
 feature: Developer Tools
 role: Developer
 source-git-commit: f9b59d5fcc380413f2727b06f41ecacca6518227
-workflow-type: tm+mt
+workflow-type: ht
 source-wordcount: '46'
-ht-degree: 89%
+ht-degree: 100%
 
 ---
 
@@ -24,4 +24,4 @@ ht-degree: 89%
 + [AEM-Erweiterungen](aem-extensions.md)
 + [Entwickler-Tools](developer-tools.md)
 + [Code-Beispiele](code-samples.md)
-+ [HTL-Verlauf](history.md)
++ [Geschichte von HTL](history.md)
