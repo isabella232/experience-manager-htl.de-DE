@@ -1,28 +1,28 @@
 ---
 title: Globale HTL-Objekte
-description: Erfahren Sie mehr über Aufzählungsobjekte, Java-unterstützte Objekte und JavaScript-unterstützte Objekte in HTL.
+description: Erfahren Sie mehr über aufzählbare Objekte, Java-gestützte Objekte und JavaScript-gestützte Objekte in HTL.
 exl-id: ca590b92-f1b3-4e44-a04a-a2c10dff256f
 source-git-commit: 5ab1275c984135fe946f36905bbc979cf19edd80
-workflow-type: tm+mt
+workflow-type: ht
 source-wordcount: '200'
-ht-degree: 32%
+ht-degree: 100%
 
 ---
 
 
 # Globale HTL-Objekte {#htl-global-objects}
 
-Ohne etwas angeben zu müssen, bietet HTL Zugriff auf viele Objekte, die für Entwickler nützlich sind. Diese Objekte sind zusätzlich zu denen vorhanden, die über die [Anwendungs-API.](java-use-api.md)
+Ohne etwas spezifizieren zu müssen, bietet HTL Zugang zu vielen Objekten, die für Entwickelnde nützlich sind. Diese Objekte kommen zu denen hinzu, die über die [Anwendungs-API](java-use-api.md) eingeführt werden können.
 
 >[!NOTE]
 >
->Für Entwickler, die mit der JSP-Entwicklung in AEM vertraut sind, bietet HTL Zugriff auf alle Objekte, die in JSP verfügbar waren, nachdem `global.jsp`.
+>Für Entwickelnde, die mit der JSP-Entwicklung in AEM vertraut sind, bietet HTL Zugriff auf alle Objekte, die in JSP üblicherweise verfügbar sind, einschließlich `global.jsp`.
 
 ## Aufzählungsobjekte {#enumerable-objects}
 
-Diese Objekte bieten praktischen Zugriff auf häufig verwendete Informationen. Auf ihren Inhalt kann mit Punkt-Notation zugegriffen werden und sie können mithilfe von `data-sly-list` oder `data-sly-repeat`.
+Diese Objekte bieten praktischen Zugriff auf häufig verwendete Informationen. Auf ihren Inhalt kann mit der Punktnotation zugegriffen werden, und sie können mit `data-sly-list` oder `data-sly-repeat` durchlaufen werden.
 
-| Variablenname | Beschreibung | Unterstützt von |
+| Variablenname | Beschreibung | Unterstützt durch |
 |--- |--- |--- |
 | `properties` | Liste der Eigenschaften der aktuellen Ressource | [`org.apache.sling.api.resource.ValueMap`](https://developer.adobe.com/experience-manager/reference-materials/6-5/javadoc/org/apache/sling/api/resource/ValueMap.html) |
 | `pageProperties` | Liste der Seiteneigenschaften der aktuellen Seite | [`org.apache.sling.api.resource.ValueMap`](https://developer.adobe.com/experience-manager/reference-materials/6-5/javadoc/org/apache/sling/api/resource/ValueMap.html) |
