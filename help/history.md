@@ -1,22 +1,22 @@
 ---
-title: HTL-Verlauf
-description: Lange Benutzer von AEM erhalten in diesem Dokument einen Hintergrund für HTL, wie JSP ersetzt wird und wie der Name von Sightly geändert wird.
+title: Geschichte von HTL
+description: Für Personen, die schon lange mit AEM arbeiten, enthält dieses Dokument Hintergrundinformationen zu HTL, zu dessen Ablösung von JSP und zur Änderung des früheren Namens Sightly.
 exl-id: 00985b35-2130-4946-959a-0a09a34a0f05
 source-git-commit: 5ab1275c984135fe946f36905bbc979cf19edd80
-workflow-type: tm+mt
+workflow-type: ht
 source-wordcount: '542'
-ht-degree: 50%
+ht-degree: 100%
 
 ---
 
 
-# HTL-Verlauf {#history-of-htl}
+# Geschichte von HTL {#history-of-htl}
 
-Lange Benutzer von AEM erhalten in diesem Dokument einen Hintergrund für HTL, wie JSP ersetzt wird und wie der Name von Sightly geändert wird.
+Für Personen, die schon lange mit AEM arbeiten, enthält dieses Dokument Hintergrundinformationen zu HTL, zu dessen Ablösung von JSP und zur Änderung des früheren Namens Sightly.
 
 ## Zuvor als Sightly bezeichnet {#sightly}
 
-HTML Template Language (HTL) ist das bevorzugte und empfohlene serverseitige Vorlagensystem zum HTML in Adobe Experience Manager. Sie ersetzt JSP (JavaServer Pages), das in früheren Versionen von AEM verwendet wurde.
+HTML Template Language (HTL) ist das bevorzugte und empfohlene Server-seitige Vorlagensystem für HTML in Adobe Experience Manager. Sie ersetzt JSP (JavaServer Pages), das in früheren Versionen von AEM verwendet wurde.
 
 ## HTL über JSP {#htl-over-jsp}
 
@@ -33,34 +33,34 @@ HTL-Dateien können sogar in derselben Komponente zusammen mit JSPs und ESPs ver
 
 ## Häufig gestellte Fragen {#frequently-asked-questions}
 
-Dies sind einige Fragen, die häufig von erfahrenen AEM-Entwicklern gestellt werden, die neu bei HTL sind.
+Hier werden einige Fragen beantwortet, die häufig von erfahrenen AEM-Entwickler/innen gestellt werden, für die HTL neu ist.
 
 ### Weist HTL Einschränkungen auf, die bei JSP nicht vorhanden sind? {#limitations}
 
-HTL weist im Vergleich zu JSP keine wirklichen Einschränkungen auf. Was mit JSP erledigt werden kann, sollte auch mit HTL erreichbar sein. HTL ist in verschiedener Hinsicht jedoch grundsätzlich strenger als JSP. Was in einer einzelnen JSP-Datei erreicht werden kann, muss möglicherweise in eine Java-Klasse oder eine JavaScript-Datei unterteilt werden, damit es in HTL erreichbar ist. Dies ist jedoch generell erwünscht, um eine entsprechende Trennung von Belangen zwischen der Logik und dem Markup sicherzustellen.
+HTL weist im Vergleich zu JSP keine wirklichen Einschränkungen auf. Was mit JSP erledigt werden kann, sollte auch mit HTL erreichbar sein. HTL ist jedoch in mehreren Aspekten strenger als JSP. Was in einer einzigen JSP-Datei erreicht werden kann, muss in HTL möglicherweise in eine Java-Klasse oder eine JavaScript-Datei aufgeteilt werden, um es zu erreichen. Dies ist jedoch generell erwünscht, um eine entsprechende Trennung von Belangen zwischen der Logik und dem Markup sicherzustellen.
 
 ### Werden JSP-Tag-Bibliotheken durch HTL unterstützt? {#tag-libraries}
 
-Nein, aber wie im [Laden von Client-Bibliotheken](getting-started.md#loading-client-libraries) -Abschnitt des Dokuments &quot;Erste Schritte&quot;bieten die Anweisungen template &amp; call ein ähnliches Muster.
+Nein, aber wie im Abschnitt [Laden von Client-Bibliotheken](getting-started.md#loading-client-libraries) des Dokuments zu den ersten Schritten gezeigt, bieten die Template- und Call-Anweisungen ein ähnliches Muster.
 
 ### Können die HTL-Funktionen für ein AEM-Projekt erweitert werden? {#extended}
 
-Nein, das können sie nicht. HTL verfügt über leistungsstarke Erweiterungsmechanismen für die Wiederverwendung der Logik (die [Anwendungs-API](#use-api-for-accessing-logic)) und des Markups (die Anweisungen template &amp; call ), die zur Modularisierung des Projektcodes verwendet werden können.
+Nein, das können sie nicht. HTL verfügt über leistungsfähige Erweiterungsmechanismen für die Wiederverwendung von Logik (die [Anwendungs-API](#use-api-for-accessing-logic)) und von Markup (die Template- und Call-Anweisungen), die zur Modularisierung des Codes von Projekten genutzt werden können.
 
 ### Was sind die Hauptvorteile von HTL im Vergleich zu JSP? {#benefits}
 
-Sicherheit und Projekteffizienz sind die wichtigsten Vorteile, die im Abschnitt [Überblick.](overview.md)
+Sicherheit und Projekteffizienz sind die Hauptvorteile, die in der [Übersicht](overview.md) näher erläutert werden.
 
-### Wird JSP schließlich verschwinden? {#go-away}
+### Wird JSP letztendlich verschwinden? {#go-away}
 
-Es gibt keine Pläne in dieser Richtung.
+Es gibt keine Pläne in dieser Hinsicht.
 
-## Was ist in einem Namen? {#what-is-in-a-name}
+## Was verbirgt sich hinter einem Namen? {#what-is-in-a-name}
 
-In AEM 6.0 und 6.1 wurde HTL als **Sightly**. Adobe umbenannt in **HTML-Vorlagensprache** oder **HTL** , um klarzustellen, wozu die Spezifikation dient, und um sie an die Benennungsrichtlinien der Adobe im Allgemeinen anzupassen. Diese Namensänderung wurde im August 2016 wirksam und gilt für AEM Version 6.0 und höher.
+In AEM 6.0 und 6.1 wurde die HTL als **Sightly** bezeichnet. Adobe hat sie in **HTML Template Language** oder **HTL** umbenannt, um klarzustellen, wofür die Spezifikation gedacht ist, und um sich an Adobes Namensrichtlinien im Allgemeinen anzupassen. Diese Namensänderung wurde im August 2016 wirksam und gilt für AEM Version 6.0 und höher.
 
 >[!NOTE]
 >
->Die Namensänderung wirkt sich weder auf den Code noch auf die API aus. Daher ist die Kompatibilität nicht betroffen. Weitere Informationen finden Sie unter [Sehen Sie sich hierzu das Ankündigungsvideo an.](https://helpx.adobe.com/de/experience-manager/how-to/announce-htl.html)
+>Die Namensänderung wirkt sich weder auf den Code noch auf die API aus. Daher ist die Kompatibilität nicht betroffen. Weitere Informationen finden Sie [in diesem Ankündigungsvideo](https://helpx.adobe.com/de/experience-manager/how-to/announce-htl.html).
 
-Um mehr über HTL zu erfahren und einen guten Ausgangspunkt zu finden, ist unser offizieller [Erste Schritte mit dem Handbuch zum HTML Templating Language (HTL).](overview.md)
+Weitere Informationen über HTL und einen guten Einstieg bietet unser offizielles [Handbuch zur Einführung in die HTML Templating Language (HTL)](overview.md).
