@@ -3,7 +3,7 @@ title: Geschichte von HTL
 description: Für Personen, die schon lange mit AEM arbeiten, enthält dieses Dokument Hintergrundinformationen zu HTL, zu dessen Ablösung von JSP und zur Änderung des früheren Namens Sightly.
 exl-id: 00985b35-2130-4946-959a-0a09a34a0f05
 source-git-commit: 88edbd2fd66de960460df5928a3b42846d32066b
-workflow-type: tm+mt
+workflow-type: ht
 source-wordcount: '542'
 ht-degree: 100%
 
