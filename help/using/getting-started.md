@@ -3,9 +3,9 @@ title: Erste Schritte mit HTL
 description: Lernen Sie HTL kennen, das bevorzugte und empfohlene Server-seitige Vorlagensystem für HTML in AEM, und verstehen Sie die wichtigsten Konzepte der Sprache und ihre grundlegenden Konstrukte.
 exl-id: c95eb1b3-3b96-4727-8f4f-d54e7136a8f9
 source-git-commit: 88edbd2fd66de960460df5928a3b42846d32066b
-workflow-type: tm+mt
+workflow-type: ht
 source-wordcount: '2170'
-ht-degree: 84%
+ht-degree: 100%
 
 ---
 
@@ -32,7 +32,7 @@ Diese HTL-Dokumentation konzentriert sich auf die Verwendung von HTL zur Entwick
 
 ## Grundsätzliche HTL-Konzepte {#fundamental-concepts-of-htl}
 
-Die HTML-Vorlagensprache verwendet eine Ausdruckssprache, um Inhaltselemente in das gerenderte Markup einzufügen, und HTML5-Datenattribute, um Anweisungen über Markup-Blöcke zu definieren (z. B. Bedingungen oder Iterationen). Wenn HTL in Java-Servlets kompiliert wird, werden die Ausdrücke und die HTL-Datenattribute komplett Server-seitig ausgewertet. Zudem ist in der HTML-Ausgabe nichts mehr davon sichtbar.
+Die HTML-Vorlagensprache verwendet eine Ausdruckssprache, um Teile des Inhalts in das gerenderte Markup einzufügen, und HTML5-Datenattribute, um Anweisungen über Blöcke von Markup (wie Bedingungen oder Iterationen) zu definieren. Wenn HTL in Java-Servlets kompiliert wird, werden die Ausdrücke und die HTL-Datenattribute komplett Server-seitig ausgewertet. Zudem ist in der HTML-Ausgabe nichts mehr davon sichtbar.
 
 >[!TIP]
 >
@@ -57,9 +57,9 @@ Siehe die [HTL-Spezifikation](specification.md) für Details zu beiden Syntaxen.
 
 ### Das SLY-Element  {#the-sly-element}
 
-Ein zentrales Konzept von HTL ist die Möglichkeit, vorhandene HTML-Elemente wiederzuverwenden, um Blockanweisungen zu definieren, ohne dass zusätzliche Begrenzungszeichen eingefügt werden müssen, die festlegen, wo die Anweisung beginnt und endet. Diese unauffällige Anmerkung des Markups, um eine statische HTML in eine funktionierende dynamische Vorlage umzuwandeln, bietet den Vorteil, dass die Gültigkeit des HTML-Codes nicht unterbrochen wird und daher immer noch korrekt angezeigt wird, auch nicht als statische Dateien.
+Ein zentrales Konzept von HTL ist die Möglichkeit, vorhandene HTML-Elemente wiederzuverwenden, um Blockanweisungen zu definieren, ohne dass zusätzliche Begrenzungszeichen eingefügt werden müssen, die festlegen, wo die Anweisung beginnt und endet. Diese unauffällige Anmerkung des Markups zur Umwandlung eines statischen HTML-Codes in eine funktionierende dynamische Vorlage bietet den Vorteil, dass die Gültigkeit des HTML-Codes nicht beeinträchtigt wird und daher auch als statische Dateien weiterhin korrekt angezeigt werden.
 
-Manchmal ist jedoch möglicherweise kein vorhandenes Element an der exakten Position vorhanden, an der eine Blockanweisung eingefügt werden muss. Für solche Fälle ist es möglich, ein spezielles `sly`-Element einzufügen, das automatisch aus der Ausgabe entfernt wird, während die angehängten Blockanweisungen ausgeführt werden und ihr Inhalt entsprechend angezeigt wird.
+Es kann jedoch vorkommen, dass an der Stelle, an der eine Blockanweisung eingefügt werden soll, kein Element vorhanden ist. Für solche Fälle ist es möglich, ein spezielles `sly`-Element einzufügen, das automatisch aus der Ausgabe entfernt wird, während die angehängten Blockanweisungen ausgeführt werden und ihr Inhalt entsprechend angezeigt wird.
 
 Im folgenden Beispiel...
 
@@ -108,11 +108,11 @@ Das folgende Beispiel zeigt einen HTL-Kommentar in der ersten Zeile und einen HT
 <!-- An HTML Comment -->
 ```
 
-HTL-Kommentare sind HTML-Kommentare mit einer zusätzlichen JavaScript-ähnlichen Syntax. Der gesamte HTL-Kommentar und alle darin enthaltenen Elemente werden vom Prozessor vollständig ignoriert und aus der Ausgabe entfernt.
+HTL-Kommentare sind HTML-Kommentare mit einer zusätzlichen JavaScript-ähnlichen Syntax. Der gesamte HTL-Kommentar und alles, was darin steht, wird vom Prozessor vollständig ignoriert und aus der Ausgabe entfernt.
 
-Der Inhalt von standardmäßigen HTML-Kommentaren wird jedoch weitergegeben und die Ausdrücke innerhalb des Kommentars werden ausgewertet.
+Der Inhalt von Standard-HTML-Kommentaren wird jedoch durchgelassen und die Ausdrücke innerhalb des Kommentars werden ausgewertet.
 
-HTML-Kommentare dürfen keine HTL-Kommentare enthalten und umgekehrt.
+HTML-Kommentare können keine HTL-Kommentare enthalten und umgekehrt.
 
 ### Spezielle Kontexte  {#special-contexts}
 
@@ -130,17 +130,17 @@ Ausdrücke können nur in HTML-Text oder Attributwerte eingefügt werden, nicht 
 
 ### Kontexte ohne Blockanweisungen {#contexts-without-block-statements}
 
-Da HTL Datenattribute zur Definition von Blockanweisungen verwendet, ist es nicht möglich, solche Blockanweisungen innerhalb der folgenden Kontexte zu definieren und dort können nur Ausdrücke verwendet werden:
+Da HTL Datenattribute zur Definition von Blockanweisungen verwendet, ist es nicht möglich, solche Blockanweisungen in folgenden Kontexten zu definieren, und es können dort nur Ausdrücke verwendet werden:
 
 * HTML-Kommentare
-* Skriptelemente
-* Stilelemente
+* Skript-Elemente
+* Stil-Elemente
 
 Der Grund besteht darin, dass der Inhalt dieser Kontexte Text ist und keine HTML, wobei darin enthaltene HTML-Elemente als einfache Zeichendaten erkannt werden. Ohne echte HTML-Elemente ist die Ausführung von `data-sly`-Attributen demnach nicht möglich.
 
 Dies mag nach einer erheblichen Einschränkung klingen, ist jedoch erwünscht, da die HTML Template Language nicht dazu missbraucht werden sollte, Ausgaben zu erzeugen, die nicht HTML sind. Im Abschnitt [Anwendungs-API für den Zugriff auf die Logik](#use-api-for-accessing-logic) unten wird erläutert, wie zusätzliche Logik über die Vorlage abgerufen werden kann, die verwendet werden kann, wenn die komplexe Ausgabe für diese Kontexte vorbereitet werden muss. Zum Beispiel kann die Logik der Komponente zum einfachen Senden von Daten vom Back-End- zum Front-End-Skript eine JSON-Zeichenfolge generieren, die anschließend in einem Datenattribut mit einem einfachen HTL-Ausdruck platziert werden kann.
 
-Im folgenden Beispiel wird das Verhalten bei HTML-Kommentaren veranschaulicht, in Skript- oder Stilelementen wird jedoch dasselbe Verhalten beobachtet:
+Das folgende Beispiel veranschaulicht das Verhalten für HTML-Kommentare, aber in Skript- oder Stilelementen würde das gleiche Verhalten beobachtet werden:
 
 ```xml
 <!--
@@ -149,7 +149,7 @@ Im folgenden Beispiel wird das Verhalten bei HTML-Kommentaren veranschaulicht, i
 -->
 ```
 
-gibt etwas wie die folgende HTML aus:
+gibt etwas wie das folgende HTML aus:
 
 ```xml
 <!--
@@ -160,11 +160,11 @@ gibt etwas wie die folgende HTML aus:
 
 ### Explizite Kontexte erforderlich  {#explicit-contexts-required}
 
-Wie im unten folgenden Abschnitt [Automatische kontextsensitive Maskierung](#automatic-context-aware-escaping) erläutert, besteht ein Ziel der HTL darin, das Risiko von Sicherheitslücken beim Cross-Site-Scripting (XSS) zu reduzieren, indem automatisch auf alle Ausdrücke die kontextsensitive Maskierung angewendet wird. HTL kann zwar automatisch den Kontext von Ausdrücken erkennen, die innerhalb des HTML-Markups platziert werden, analysiert jedoch nicht die Syntax von Inline-JavaScript oder CSS und verlässt sich daher darauf, dass der Entwickler explizit angibt, welcher genaue Kontext auf solche Ausdrücke angewendet werden soll.
+Wie im unten folgenden Abschnitt [Automatische kontextsensitive Maskierung](#automatic-context-aware-escaping) erläutert, besteht ein Ziel der HTL darin, das Risiko von Sicherheitslücken beim Cross-Site-Scripting (XSS) zu reduzieren, indem automatisch auf alle Ausdrücke die kontextsensitive Maskierung angewendet wird. Während HTL den Kontext von Ausdrücken, die innerhalb von HTML-Markup platziert sind, automatisch erkennen kann, analysiert es nicht die Syntax von Inline-JavaScript oder CSS. Es ist daher darauf angewiesen, dass die Entwicklerin oder der Entwickler explizit angibt, welcher genaue Kontext auf solche Ausdrücke angewendet werden muss.
 
-Da die Nichtanwendung der richtigen Maskierung zu XSS-Schwachstellen führt, entfernt HTL daher die Ausgabe aller Ausdrücke, die sich in Skript- und Stilkontexten befinden, wenn der Kontext nicht deklariert wurde.
+Da die Nichtanwendung der korrekten Maskierung zu XSS-Schwachstellen führt, entfernt HTL daher die Ausgabe aller Ausdrücke, die sich in Skript- und Stilkontexten befinden, wenn der Kontext nicht angegeben wurde.
 
-Im Folgenden finden Sie ein Beispiel für das Festlegen des Kontexts für Ausdrücke, die in Skripten und Stilen platziert werden:
+Hier ist ein Beispiel dafür, wie der Kontext für Ausdrücke innerhalb von Skripten und Stilen festgelegt wird:
 
 ```xml
 <script> var trackingID = "${myTrackingID @ context='scriptString'}"; </script>
@@ -237,10 +237,10 @@ Wenn der Wert der Eigenschaft `class` leer ist, entfernt die HTML-Vorlagensprach
 
 Wieder ist dies deswegen möglich, weil HTL die HTML-Syntax versteht und daher Attribute mit dynamischen Werten nur dann anzeigen kann, wenn ihr Wert nicht leer ist. Dies ist sehr praktisch, da es das Hinzufügen eines Bedingungsblocks um die Attribute herum vermeidet, was das Markup ungültig und unlesbar gemacht hätte.
 
-Darüber hinaus ist der Typ der im Ausdruck platzierten Variablen wichtig:
+Außerdem ist der Typ der im Ausdruck enthaltenen Variablen von Bedeutung:
 
 * **Zeichenfolge:**
-   * **nicht leer:** Legt die Zeichenfolge als Attributwert fest.
+   * **nicht leer:** Setzt die Zeichenfolge als Attributwert.
    * **leer:** Entfernt das Attribut vollständig.
 
 * **Zahl:** Legt den Wert als Attributwert fest.
