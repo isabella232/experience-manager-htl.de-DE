@@ -3,9 +3,9 @@ title: HTL-Java-Anwendungs-API
 description: Die HTL-Java-Anwendungs-API ermöglicht einer HTL-Datei den Zugriff auf Hilfsmethoden in einer benutzerdefinierten Java-Klasse.
 exl-id: 9a9a2bf8-d178-4460-a3ec-cbefcfc09959
 source-git-commit: 88edbd2fd66de960460df5928a3b42846d32066b
-workflow-type: tm+mt
+workflow-type: ht
 source-wordcount: '1510'
-ht-degree: 95%
+ht-degree: 100%
 
 ---
 
@@ -71,7 +71,7 @@ Wenn auf diesen Inhalt zugegriffen wird, wird die HTL-Datei ausgeführt. Innerha
 
 ### Hinzufügen einer Anwendungsklasse {#adding-a-use-class}
 
-Die Komponente `info` benötigt in ihrer gegebenen Form keine Anwendungsklasse, um ihre sehr einfache Funktion zu erfüllen. Es gibt jedoch Fälle, in denen Sie Dinge tun müssen, die in HTL nicht möglich sind, und daher benötigen Sie eine Anwendungsklasse. Beachten Sie jedoch Folgendes:
+Die Komponente `info` benötigt in ihrer gegebenen Form keine Anwendungsklasse, um ihre sehr einfache Funktion zu erfüllen. Es gibt jedoch Fälle, in denen Sie Dinge tun müssen, die in HTL nicht möglich sind, und daher eine Anwendungsklasse benötigen. Beachten Sie aber das Folgende:
 
 >[!NOTE]
 >
@@ -121,7 +121,7 @@ Lassen Sie uns nun die verschiedenen Teile des Codes durchgehen.
 
 Die Java-Anwendungsklasse kann auf zwei Arten installiert werden:
 
-* **Lokal** – Bei einer lokalen Installation wird die Java-Quelldatei neben der HTL-Datei im gleichen Repository-Ordner abgelegt. Die Quelle wird automatisch nach Bedarf kompiliert. Es ist kein separater Kompilierungs- oder Verpackungsschritt erforderlich.
+* **Lokal** – Bei einer lokalen Installation wird die Java-Quelldatei neben der HTL-Datei im gleichen Repository-Ordner abgelegt. Die Quelle wird bei Bedarf automatisch kompiliert. Es ist kein separater Kompilierungs- oder Paketierungsschritt erforderlich.
 * **Bundle** – Bei einer Bundle-Installation muss die Java-Klasse innerhalb eines OSGi-Bundles kompiliert und bereitgestellt werden, wobei der Standard-Bereitstellungsmechanismus von AEM für Bundles verwendet wird (siehe Abschnitt [Bundled Java Class](#bundled-java-class)).
 
 Um zu wissen, welche Methode Sie wann anwenden sollten, sollten Sie diese beiden Punkte beachten:
@@ -222,7 +222,7 @@ Alternativ kann auf häufig verwendete Kontextobjekte auch direkt über die ents
 
 ### Getter-Methoden {#getter-methods}
 
-Sobald die Anwendungsklasse initialisiert wurde, wird die HTL-Datei ausgeführt. Während dieser Phase ruft HTL normalerweise den Status verschiedener Member-Variablen der Anwendungsklasse ab und rendert sie zur Präsentation.
+Sobald die Anwendungsklasse initialisiert ist, wird die HTL-Datei ausgeführt. In dieser Phase wird HTL in der Regel den Status verschiedener Mitgliedsvariablen der Anwendungsklasse abrufen und sie für die Darstellung rendern.
 
 Um den Zugriff auf diese Werte von der HTL-Datei aus zu ermöglichen, müssen Sie benutzerdefinierte Getter-Methoden in der Anwendungsklasse gemäß der folgenden Namenskonvention definieren:
 
