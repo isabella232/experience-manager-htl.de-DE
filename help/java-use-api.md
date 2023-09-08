@@ -3,9 +3,9 @@ title: HTL-Java-Anwendungs-API
 description: Die HTL-Java-Anwendungs-API ermöglicht einer HTL-Datei den Zugriff auf Hilfsmethoden in einer benutzerdefinierten Java-Klasse.
 exl-id: 9a9a2bf8-d178-4460-a3ec-cbefcfc09959
 source-git-commit: 83f07cab5e2f4604701708f6a1a4bc19e3b54107
-workflow-type: tm+mt
+workflow-type: ht
 source-wordcount: '1505'
-ht-degree: 98%
+ht-degree: 100%
 
 ---
 
@@ -33,7 +33,7 @@ Die Anwendungs-API-POJOs können auch eine öffentliche Methode namens init mit 
 
 Die `bindings`-Karte kann Objekte enthalten, die dem derzeit ausgeführten HTL-Skript einen Kontext geben, den das Anwendungs-API-Objekt für seine Verarbeitung nutzen kann.
 
-## Ein einfaches Beispiel  {#a-simple-example}
+## Ein einfaches Beispiel {#a-simple-example}
 
 Dieses Beispiel veranschaulicht die Verwendung der Anwendungs-API.
 
@@ -153,9 +153,9 @@ public class Info extends WCMUsePojo {
 >
 >Bei der Verwendung von Bindestrichen in den Namen von Repository-Elementen handelt es sich um eine empfohlene Praxis in der AEM-Entwicklung. Bindestriche sind jedoch in Java-Paketnamen ungültig. Daher müssen **alle Bindestriche im Repository-Pfad für den Paketnamen in Unterstriche umgewandelt werden**.
 
-### Erweitern   `WCMUsePojo` {#extending-wcmusepojo}
+### Erweitern `WCMUsePojo` {#extending-wcmusepojo}
 
-Es gibt zwar verschiedene Möglichkeiten, eine Java-Klasse mit HTL zu integrieren, die einfachste besteht jedoch darin, die `WCMUsePojo` -Klasse. Für unser Beispiel `/apps/my-example/component/info/Info.java`:
+Es gibt zwar eine Reihe von Möglichkeiten, eine Java-Klasse mit HTL zu integrieren, jedoch besteht die einfachste Möglichkeit darin, die `WCMUsePojo`-Klasse zu erweitern. Für unser Beispiel `/apps/my-example/component/info/Info.java`:
 
 ```java
 package apps.my_example.components.info;
@@ -192,7 +192,7 @@ public class Info extends WCMUsePojo {
 
 ### Kontext {#context}
 
-Die Methode [aktivieren](https://developer.adobe.com/experience-manager/reference-materials/6-5/javadoc/com/adobe/cq/sightly/WCMUsePojo.html) wird für gewöhnlich verwendet, um anhand des aktuellen Kontexts (beispielsweise der aktuellen Anforderung und Ressource) die in Ihrem HTL-Code erforderlichen Werte vorab zu berechnen und zu speichern (in Nutzervariablen). 
+Die Methode [aktivieren](https://developer.adobe.com/experience-manager/reference-materials/6-5/javadoc/com/adobe/cq/sightly/WCMUsePojo.html) wird für gewöhnlich verwendet, um anhand des aktuellen Kontexts (beispielsweise der aktuellen Anforderung und Ressource) die in Ihrem HTL-Code erforderlichen Werte vorab zu berechnen und zu speichern (in Nutzervariablen).
 
 Die Klasse `WCMUsePojo` ermöglicht den Zugriff auf dieselbe Reihe von Kontextobjekten, die in einer HTL-Datei verfügbar sind (siehe das Dokument [Globale Objekte](global-objects.md).)
 
