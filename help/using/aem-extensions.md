@@ -4,7 +4,7 @@ description: AEM bietet Erweiterungen der HTL-Spezifikation für AEM an, um Ihne
 exl-id: d78cb84d-f958-45e2-9c6c-df86a68277d5
 source-git-commit: 88edbd2fd66de960460df5928a3b42846d32066b
 workflow-type: ht
-source-wordcount: '308'
+source-wordcount: '234'
 ht-degree: 100%
 
 ---

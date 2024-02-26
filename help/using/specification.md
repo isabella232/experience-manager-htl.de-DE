@@ -4,7 +4,7 @@ description: Ausführliche Informationen zur Syntax finden Sie in der HTL-Spezif
 exl-id: c0657476-4db6-4fad-ad87-9252b5003237
 source-git-commit: 88edbd2fd66de960460df5928a3b42846d32066b
 workflow-type: ht
-source-wordcount: '152'
+source-wordcount: '144'
 ht-degree: 100%
 
 ---

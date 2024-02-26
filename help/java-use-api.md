@@ -4,7 +4,7 @@ description: Die HTL-Java-Anwendungs-API ermöglicht einer HTL-Datei den Zugriff
 exl-id: 9a9a2bf8-d178-4460-a3ec-cbefcfc09959
 source-git-commit: 83f07cab5e2f4604701708f6a1a4bc19e3b54107
 workflow-type: ht
-source-wordcount: '1505'
+source-wordcount: '1162'
 ht-degree: 100%
 
 ---
@@ -153,7 +153,7 @@ public class Info extends WCMUsePojo {
 >
 >Bei der Verwendung von Bindestrichen in den Namen von Repository-Elementen handelt es sich um eine empfohlene Praxis in der AEM-Entwicklung. Bindestriche sind jedoch in Java-Paketnamen ungültig. Daher müssen **alle Bindestriche im Repository-Pfad für den Paketnamen in Unterstriche umgewandelt werden**.
 
-### Erweitern `WCMUsePojo` {#extending-wcmusepojo}
+### Erweitern von `WCMUsePojo` {#extending-wcmusepojo}
 
 Es gibt zwar eine Reihe von Möglichkeiten, eine Java-Klasse mit HTL zu integrieren, jedoch besteht die einfachste Möglichkeit darin, die `WCMUsePojo`-Klasse zu erweitern. Für unser Beispiel `/apps/my-example/component/info/Info.java`:
 
